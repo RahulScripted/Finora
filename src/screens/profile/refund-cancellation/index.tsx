@@ -1,16 +1,19 @@
-import ScreenHeader from "@components/screen-header";
-import { useTheme } from "@context/Theme/ThemeContext";
-import { StyleSheet, View } from "react-native";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
+import LegalContentScreen from "@components/legal-content";
+import { useTranslation } from "react-i18next";
+import { REFUND_LAST_UPDATED, REFUND_SECTION_KEYS } from "@data-types/legal/constants";
+import { SUPPORT_CONTACTS } from "@shared/contact-details";
 
 export default function RefundCancellationScreen() {
-  const { colors } = useTheme();
-  const insets = useSafeAreaInsets();
+  const { t } = useTranslation();
   return (
-    <View style={[s.container, { backgroundColor: colors.background, paddingTop: insets.top + 16 }]}>
-      <ScreenHeader title="Refund & Cancellation" />
-    </View>
+    <LegalContentScreen
+      title={t("refund.refund_title")}
+      lastUpdated={REFUND_LAST_UPDATED}
+      titleNamespace="refund"
+      contentNamespace="refund_content"
+      sectionKeys={REFUND_SECTION_KEYS}
+      contactTitle={t("refund.contact")}
+      contacts={SUPPORT_CONTACTS}
+    />
   );
 }
-
-const s = StyleSheet.create({ container: { flex: 1, paddingHorizontal: 16 } });

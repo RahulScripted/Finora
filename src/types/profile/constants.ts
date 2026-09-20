@@ -34,6 +34,7 @@ export const PROFILE_SECTIONS: ProfileMenuSection[] = [
     items: [
       { icon: "bank-minus", label: "NACH Cancellation Request", subtitle: "Cancel your NACH mandate", color: "#E99A24", route: "nach-cancellation" },
       { icon: "certificate-outline", label: "NDC Certificate Request", subtitle: "No dues certificate", color: "#3B61FF", route: "ndc-certificate" },
+      { icon: "card-account-phone-outline", label: "Update Contact Details", subtitle: "Keep your contact info current", color: "#16A477", route: "update-contact" },
     ],
   },
 ];

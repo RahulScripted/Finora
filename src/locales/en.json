@@ -17,12 +17,421 @@
       "company": { "label": "Company", "subtitle": "Business information" },
       "documents": { "label": "Documents", "subtitle": "Uploaded documents" },
       "settings": { "label": "Settings", "subtitle": "App preferences" },
-      "privacyPolicy": { "label": "Privacy Policy", "subtitle": "How we handle your data" },
-      "termsConditions": { "label": "Terms & Conditions", "subtitle": "Terms of service" },
-      "refundCancellation": { "label": "Refund & Cancellation", "subtitle": "Refund policy details" },
-      "nachCancellation": { "label": "NACH Cancellation Request", "subtitle": "Cancel your NACH mandate" },
-      "ndcCertificate": { "label": "NDC Certificate Request", "subtitle": "No dues certificate" }
+      "privacyPolicy": {
+        "label": "Privacy Policy",
+        "subtitle": "How we handle your data"
+      },
+      "termsConditions": {
+        "label": "Terms & Conditions",
+        "subtitle": "Terms of service"
+      },
+      "refundCancellation": {
+        "label": "Refund & Cancellation",
+        "subtitle": "Refund policy details"
+      },
+      "nachCancellation": {
+        "label": "NACH Cancellation Request",
+        "subtitle": "Cancel your NACH mandate"
+      },
+      "ndcCertificate": {
+        "label": "NDC Certificate Request",
+        "subtitle": "No dues certificate"
+      }
     }
+  },
+  "legal": {
+    "privacy_title": "Privacy Policy",
+    "data_protected": "Data Protected",
+    "contact_support": "Contact Us",
+    "info_collected": "1. Information We Collect",
+    "location": "2. Location Information",
+    "how_we_use": "3. How We Use Your Information",
+    "how_we_share": "4. How We Share Information",
+    "cookies": "5. Cookies & Similar Technologies",
+    "data_security": "6. Data Security",
+    "data_retention": "7. Data Retention",
+    "your_rights": "8. Your Choices & Rights",
+    "third_party": "9. Third-Party Services",
+    "childrens": "10. Children's Privacy",
+    "changes": "11. Changes to This Policy"
+  },
+  "privacy_content": {
+    "info_collected": [
+      "Name, email, phone number and account details",
+      "Financial details such as loan, payment or transaction information",
+      "Device type, OS, app version, IP address and crash reports"
+    ],
+    "location": [
+      "Approximate or precise location when a feature requires it",
+      "Used to enable location features, improve security and detect unusual activity",
+      "You can allow, deny or change location permissions in device settings",
+      "Some features may not work if location access is disabled"
+    ],
+    "how_we_use": [
+      "Provide and operate our services and manage your account",
+      "Process requests, transactions and provide customer support",
+      "Detect and prevent fraud or unauthorised activity",
+      "Improve app functionality and send service-related communications",
+      "Comply with applicable legal and regulatory requirements"
+    ],
+    "how_we_share": [
+      "Trusted providers for hosting, analytics, payments and security",
+      "Service providers access only what is necessary to perform their role",
+      "Disclosed when required by applicable law or a valid governmental request",
+      "We do not sell your personal information"
+    ],
+    "cookies": [
+      "Cookies and device identifiers to keep you signed in and remember preferences",
+      "Used to understand usage, improve performance and diagnose issues",
+      "Some technologies can be controlled through device or browser settings"
+    ],
+    "data_security": [
+      "Reasonable technical and organisational measures protect your information",
+      "No internet transmission can be guaranteed completely secure",
+      "You are responsible for keeping your credentials confidential"
+    ],
+    "data_retention": [
+      "Information is kept only as long as needed to provide services",
+      "Retained to meet legal obligations, resolve disputes and prevent fraud",
+      "Deleted or anonymised when no longer required"
+    ],
+    "your_rights": [
+      "Request access to or correction of your information",
+      "Request deletion where applicable",
+      "Withdraw certain permissions or consents",
+      "Control device permissions such as location access"
+    ],
+    "third_party": [
+      "Finora may link to or integrate with third-party services",
+      "Third-party services operate under their own privacy policies",
+      "Review the privacy policy of any third-party service before sharing information"
+    ],
+    "childrens": [
+      "Finora is not intended for children below the minimum age required by law",
+      "We do not knowingly collect information from children",
+      "Contact us if you believe a child has provided personal information"
+    ],
+    "changes": [
+      "This policy may be updated to reflect changes in services or legal requirements",
+      "The Last Updated date at the top will reflect any changes",
+      "We encourage you to review this policy periodically"
+    ]
+  },
+  "terms": {
+    "terms_title": "Terms & Conditions",
+    "intro": "Overview",
+    "applicant_declaration": "Applicant Declaration",
+    "facility_grant": "Grant of the Facility",
+    "accuracy": "Accuracy of Information",
+    "disclosure_consent": "Consent to Disclosure",
+    "co_lending_consent": "Co-Lending & Communications",
+    "uidai": "UIDAI / Aadhaar Declarations",
+    "acceptance": "Acceptance"
+  },
+  "terms_content": {
+    "intro": [
+      "Our website, mobile applications and related software (the Application) are owned and operated by the Company incorporated under the laws of India.",
+      "These Terms form a binding legal agreement between the Company and you, the Applicant.",
+      "Please read these Terms before registering, accessing, browsing, downloading or using anything from the Application."
+    ],
+    "applicant_declaration": [
+      "This application for a lending facility is made to a Lender who provides the facility with the assistance of the platform.",
+      "The platform collects, analyses and disseminates information and documents to Lenders to enable financial and other services.",
+      "You agree to submit, sign and execute all facility agreements and documents required by the Lender or the platform.",
+      "This declaration is made for the benefit and reliance of the Lender and the platform."
+    ],
+    "facility_grant": [
+      "Grant of the Facility is at the sole discretion of the Lender or platform and subject to execution of required documents.",
+      "The Lender or platform may reject your application without assigning any reason, and you cannot appeal or contest that decision.",
+      "Any processing fee paid in relation to the application is non-refundable, including where the application is rejected.",
+      "Information and documents submitted may be retained and may not be returned to you."
+    ],
+    "accuracy": [
+      "You declare that you are a citizen of or resident in India.",
+      "All particulars, information and documents provided are true, correct, accurate and up to date.",
+      "You have not withheld or suppressed any material information.",
+      "You will inform the Lender or platform of changes in occupation, employment, residency, control, capital structure or management."
+    ],
+    "disclosure_consent": [
+      "You consent to disclosure by the Lender or platform of information relating to you, your directors and group companies or partners.",
+      "You waive the right of notice, privacy and privity for such disclosure as permitted under applicable law.",
+      "Any default or non-performance may be disclosed to the RBI, credit information companies and other authorised agencies.",
+      "Information may be disclosed to actual or potential assignees, transferees or participants in the Lender's rights and obligations.",
+      "The Lender or platform may seek information about you from regulatory authorities and third parties on a continuing basis."
+    ],
+    "co_lending_consent": [
+      "You consent to the platform sharing your data with co-lending partners for collection, storage, analysis and dissemination.",
+      "Data may be used for verification, authentication and to assess eligibility for loans and value-added services.",
+      "You may be contacted by authorised members, agents or lending partners by email, telephone or text message.",
+      "You agree to receive promotional materials and special offers and to provide KYC documents required by the RBI.",
+      "This declaration and application may be routed to multiple Lenders at the discretion of the platform.",
+      "Funds availed will be used only for the sanctioned purpose and not for any speculative, illegal or anti-social purpose."
+    ],
+    "uidai": [
+      "You voluntarily consent to the platform or Lender using your Aadhaar number, name and biometrics to authenticate you with UIDAI.",
+      "Aadhaar details will be used only for demographic authentication, validation, e-KYC and OTP authentication.",
+      "A record of the search may be retained as per applicable laws for KYC verification or Aadhaar-based authentication.",
+      "Your biometric details will not be stored or shared and will be submitted to CIDR only for authentication.",
+      "You confirm the Aadhaar details submitted are accurate, current and complete and will not hold the platform liable for incorrect information provided by you.",
+      "You consent to Aadhaar-based authentication for e-sign generation, e-mandate registration and validating your consent to the agreements."
+    ],
+    "acceptance": [
+      "By accepting this declaration you are deemed to have read, understood and agreed to be bound by these Terms.",
+      "You represent that the declarations are made in your true and lawful capacity.",
+      "The Lender and platform will rely on the correctness and accuracy of your declarations.",
+      "Any inaccuracy or falsehood gives the Lender or platform the right to cancel the Facility and exercise all available rights under applicable law."
+    ]
+  },
+  "refund": {
+    "refund_title": "Refund & Cancellation",
+    "general": "1. General Payment Terms",
+    "failed": "2. Failed Transactions",
+    "duplicate": "3. Duplicate Payments",
+    "requests": "4. Refund Requests",
+    "processing": "5. Refund Processing",
+    "cancellation": "6. Cancellation of Services",
+    "non_refundable": "7. Non-Refundable Transactions",
+    "payment_failures": "8. Payment Failures",
+    "provider_processing": "9. Payment Provider Processing",
+    "verification": "10. Refund Verification",
+    "changes_payment": "11. Changes to Payment Services",
+    "policy_updates": "12. Policy Updates",
+    "contact": "13. Contact Us"
+  },
+  "refund_content": {
+    "general": [
+      "This policy applies to payments made through Finora using supported digital payment methods such as cards, bank accounts, wallets and UPI.",
+      "The availability of specific payment methods may vary depending on the service and payment provider."
+    ],
+    "failed": [
+      "If an amount is debited but the transaction shows as failed, the payment may be automatically reversed by the payment provider.",
+      "Reversal time may depend on your bank, card issuer or payment gateway.",
+      "If the amount is not reversed within the expected period, contact Finora Support with the transaction details."
+    ],
+    "duplicate": [
+      "If the same payment is processed more than once, Finora may verify the duplicate transaction.",
+      "The excess amount may be refunded to the original method, adjusted against a future payment, or handled per service-specific terms.",
+      "The method and timing may depend on the payment provider and the nature of the transaction."
+    ],
+    "requests": [
+      "If you believe you are entitled to a refund, contact Finora Support using the details in the application.",
+      "You may be asked for the transaction ID, date and time, amount, payment method and payment confirmation.",
+      "Finora may review the transaction before approving a refund."
+    ],
+    "processing": [
+      "Approved refunds are generally initiated through the original payment method where technically possible.",
+      "The time to appear in your account depends on your bank, payment gateway, network and payment method.",
+      "Finora is not responsible for delays caused by a bank, processor, network or third-party provider after the refund is initiated."
+    ],
+    "cancellation": [
+      "Where a service allows cancellation, you may request it through the app or by contacting Finora Support.",
+      "Cancellation eligibility may vary depending on the service and the stage of the request.",
+      "Some transactions may not be cancellable once processing has started or the service is complete."
+    ],
+    "non_refundable": [
+      "Certain fees or services may be non-refundable where clearly communicated before the transaction is completed.",
+      "Non-refundable payments will generally not be refunded except where required by law or where Finora determines an exception is appropriate."
+    ],
+    "payment_failures": [
+      "Finora may not be responsible for payment failures outside its reasonable control.",
+      "This includes incorrect payment information, insufficient funds or transaction limits.",
+      "This includes bank or provider restrictions, expired or blocked instruments and gateway or network failures.",
+      "This includes connectivity problems, bank holidays, maintenance and fraud-prevention measures.",
+      "Where a payment fails, Finora may communicate the transaction status through the app or other channels."
+    ],
+    "provider_processing": [
+      "Payments may be processed by third-party payment providers with their own terms and timelines.",
+      "Finora may rely on transaction information from the payment provider to determine payment status."
+    ],
+    "verification": [
+      "Finora may perform reasonable checks before processing a refund, including verifying the transaction and payment status.",
+      "Checks may include the associated account, the reason for the request and whether the amount was already refunded.",
+      "False or fraudulent refund information may result in rejection and restrictions on account access."
+    ],
+    "changes_payment": [
+      "Finora may add, remove, suspend or modify supported payment methods or providers from time to time.",
+      "Changes may be made for operational, security, technical, legal or business reasons."
+    ],
+    "policy_updates": [
+      "We may update this policy from time to time.",
+      "The updated version will be published through the app or website and the Last Updated date will be revised.",
+      "We recommend reviewing this policy periodically."
+    ],
+    "contact": [
+      "For questions about a payment, cancellation, refund or transaction status, contact Finora Support through the app.",
+      "Finora Support Email: support@finora.example"
+    ]
+  },
+  "contactDetails": {
+    "title": "Update Contact Details",
+    "menu_label": "Update Contact Details",
+    "menu_subtitle": "Keep your contact info current",
+    "why_important": "Why Keep Contact Info Updated?",
+    "communication": "1. Communication",
+    "security": "2. Security & Convenience",
+    "opportunities": "3. Opportunities",
+    "reach_us": "How Can I Reach Finora?",
+    "request_update": "Requesting an Update",
+    "self_service": "Self-Service Updates"
+  },
+  "contact_content": {
+    "why_important": [
+      "Keeping your contact information up to date helps ensure you receive important communications.",
+      "It helps you maintain secure access to your account and stay informed about relevant services and opportunities."
+    ],
+    "communication": [
+      "Finora may use your registered mobile number and email to reach you when necessary.",
+      "This includes transaction alerts, payment reminders, account updates and service notifications."
+    ],
+    "security": [
+      "Your registered contact information may be used to authenticate your account and provide secure digital services.",
+      "Depending on available services, you may view account information, access statements, perform eligible transactions and raise service requests online."
+    ],
+    "opportunities": [
+      "Keeping your contact information updated helps ensure you do not miss relevant information about services, features, benefits or offers.",
+      "Finora may communicate service updates, promotional offers or other opportunities through your registered contact details, subject to your preferences."
+    ],
+    "reach_us": [
+      "You can contact Finora through the support channels provided in the app or website.",
+      "Phone and email support options are available within the application."
+    ],
+    "request_update": [
+      "You can request an update or change to your registered contact information by contacting Finora Support.",
+      "For security, Finora may require you to verify your identity before making any changes."
+    ],
+    "self_service": [
+      "If self-service account management is available, you may update your mobile number or email in your account settings.",
+      "Log in with your registered credentials and go to Profile, Account Settings or Contact Information to review or update your details.",
+      "If self-service changes are not available, contact Finora Support for assistance."
+    ]
+  },
+  "serviceRequests": {
+    "nach_cancellation": {
+      "title": "NACH Cancellation Request",
+      "menu_label": "NACH Cancellation",
+      "menu_subtitle": "Request cancellation of your NACH mandate",
+      "description": "Submit a request to cancel your active NACH mandate linked to your account.",
+      "request_title": "Cancel NACH Mandate",
+      "information": [
+        "You can request cancellation of an active NACH mandate associated with your account.",
+        "The cancellation request may require verification of your identity and account details.",
+        "Your request will be reviewed and processed subject to applicable banking and payment network procedures.",
+        "Until the cancellation is confirmed, the existing mandate may remain active.",
+        "Cancellation of a NACH mandate does not automatically cancel any outstanding payment, repayment or other financial obligation."
+      ],
+      "required_details": {
+        "title": "Required Details",
+        "items": [
+          "Registered mobile number",
+          "Account or loan reference number",
+          "NACH mandate details, if available",
+          "Reason for cancellation",
+          "Any supporting document requested during verification"
+        ]
+      },
+      "request_reason": {
+        "title": "Reason for Cancellation",
+        "placeholder": "Select or enter the reason for cancelling your NACH mandate"
+      },
+      "confirmation": {
+        "title": "Confirm Cancellation Request",
+        "message": "I confirm that I want to submit a request to cancel my NACH mandate.",
+        "note": "Submitting this request does not guarantee immediate cancellation. The mandate will remain subject to processing and confirmation."
+      },
+      "status": {
+        "submitted": "Cancellation request submitted",
+        "processing": "Cancellation request is being processed",
+        "completed": "NACH mandate cancellation completed",
+        "rejected": "Cancellation request could not be processed"
+      },
+      "success_message": "Your NACH cancellation request has been submitted successfully. You can track the request status from the application.",
+      "support_message": "If you need assistance with your NACH cancellation request, contact Finora Support through the app."
+    },
+    "ndc_certificate": {
+      "title": "NDC Certificate Request",
+      "menu_label": "No Due Certificate",
+      "menu_subtitle": "Request your No Due Certificate",
+      "description": "Submit a request for a No Due Certificate confirming that there are no outstanding dues associated with an eligible account or facility.",
+      "request_title": "Request No Due Certificate",
+      "information": [
+        "You can request a No Due Certificate after your eligible financial obligations have been fully settled.",
+        "The certificate is issued only after Finora verifies the account status and confirms that there are no outstanding dues.",
+        "Any pending amount, unresolved transaction, fee, charge or other obligation may affect your eligibility for the certificate.",
+        "The request may require verification of your identity and account details.",
+        "The availability and processing time of the certificate may vary depending on the account and verification process."
+      ],
+      "eligibility": {
+        "title": "Eligibility",
+        "items": [
+          "The relevant account or financial facility should have no outstanding dues.",
+          "All applicable payments should be successfully received and reflected in the account.",
+          "There should be no pending payment, adjustment, dispute or other unresolved obligation.",
+          "Additional verification may be required before the certificate is issued."
+        ]
+      },
+      "required_details": {
+        "title": "Required Details",
+        "items": [
+          "Registered mobile number",
+          "Account or loan reference number",
+          "Account or facility details",
+          "Any supporting document requested during verification"
+        ]
+      },
+      "confirmation": {
+        "title": "Confirm NDC Request",
+        "message": "I confirm that I want to submit a request for my No Due Certificate.",
+        "note": "The certificate will be issued only after the account status and outstanding dues, if any, have been verified."
+      },
+      "status": {
+        "submitted": "NDC request submitted",
+        "processing": "NDC request is being processed",
+        "completed": "No Due Certificate issued",
+        "rejected": "NDC request could not be processed"
+      },
+      "success_message": "Your No Due Certificate request has been submitted successfully. You can track the request status from the application.",
+      "support_message": "If you need assistance with your No Due Certificate request, contact Finora Support through the app."
+    }
+  },
+  "about_app": {
+    "title": "About Finora",
+    "app_name": "Finora",
+    "secure": "Secure & Protected",
+    "quick_actions": "Need a Hand?",
+    "contact_support": "Call Support",
+    "email_support": "Drop Us an Email",
+    "visit_website": "Visit Our Website",
+    "app_information": "App Details",
+    "version": "App Version",
+    "sdk_version": "Expo SDK",
+    "platform": "Platform",
+    "environment": "Environment",
+    "about_company": "Who We Are",
+    "company": "Company",
+    "founded": "Started In",
+    "website": "Website",
+    "customer_care": "We're Here to Help",
+    "call_us": "Give Us a Call",
+    "email_us": "Send Us an Email",
+    "grievance_officer": "Grievance & Support",
+    "grievance_description": "Have a concern that needs attention? Our grievance team is here to help resolve it.",
+    "officer_name": "Grievance Officer",
+    "officer_role": "Grievance & Escalation",
+    "contact": "Contact",
+    "email": "Email",
+    "office_address": "Find Us",
+    "headquarters": "Office Address",
+    "open_in_maps": "Open in Maps",
+    "connect_with_us": "Stay Connected",
+    "legal": "Legal & Policies",
+    "privacy_policy": "Privacy Policy",
+    "terms_conditions": "Terms & Conditions",
+    "refund_policy": "Refund & Cancellation",
+    "view_policy": "View Policy",
+    "view_terms": "View Terms",
+    "technology": "Built With",
+    "footer_version": "Version {{version}}",
+    "copyright": "© Finora. Built for simpler, smarter financial journeys."
   },
   "more": {
     "menu": {

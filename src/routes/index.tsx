@@ -31,6 +31,7 @@ import TermsConditionsScreen from "@screens/profile/terms-conditions";
 import RefundCancellationScreen from "@screens/profile/refund-cancellation";
 import NachCancellationScreen from "@screens/profile/nach-cancellation";
 import NdcCertificateScreen from "@screens/profile/ndc-certificate";
+import UpdateContactScreen from "@screens/profile/update-contact";
 
 const Tab = createBottomTabNavigator();
 
@@ -168,6 +169,7 @@ export default function AppRoutes() {
           <Tab.Screen name="refund-cancellation" component={RefundCancellationScreen} options={HIDDEN_TAB} />
           <Tab.Screen name="nach-cancellation" component={NachCancellationScreen} options={HIDDEN_TAB} />
           <Tab.Screen name="ndc-certificate" component={NdcCertificateScreen} options={HIDDEN_TAB} />
+          <Tab.Screen name="update-contact" component={UpdateContactScreen} options={HIDDEN_TAB} />
         </Tab.Navigator>
       </NavigationContainer>
     </NavigationIndependentTree>

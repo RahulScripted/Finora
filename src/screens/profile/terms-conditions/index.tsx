@@ -1,16 +1,17 @@
-import ScreenHeader from "@components/screen-header";
-import { useTheme } from "@context/Theme/ThemeContext";
-import { StyleSheet, View } from "react-native";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
+import LegalContentScreen from "@components/legal-content";
+import { useTranslation } from "react-i18next";
+import { TERMS_LAST_UPDATED, TERMS_SECTION_KEYS } from "@data-types/legal/constants";
 
 export default function TermsConditionsScreen() {
-  const { colors } = useTheme();
-  const insets = useSafeAreaInsets();
+  const { t } = useTranslation();
   return (
-    <View style={[s.container, { backgroundColor: colors.background, paddingTop: insets.top + 16 }]}>
-      <ScreenHeader title="Terms & Conditions" />
-    </View>
+    <LegalContentScreen
+      title={t("terms.terms_title")}
+      badgeLabel={t("legal.data_protected")}
+      lastUpdated={TERMS_LAST_UPDATED}
+      titleNamespace="terms"
+      contentNamespace="terms_content"
+      sectionKeys={TERMS_SECTION_KEYS}
+    />
   );
 }
-
-const s = StyleSheet.create({ container: { flex: 1, paddingHorizontal: 16 } });

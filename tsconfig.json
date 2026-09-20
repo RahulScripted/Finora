@@ -18,7 +18,8 @@
       "@animations/*": ["src/animations/*"],
       "@helpers/*": ["src/helpers/*"],
       "@assets/*": ["assets/*"],
-      "@screens/*": ["src/screens/*"]
+      "@screens/*": ["src/screens/*"],
+      "@shared/*": ["src/shared/*"]
     }
   },
   "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"]

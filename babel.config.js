@@ -19,6 +19,7 @@ module.exports = function (api) {
             "@helpers": "./src/helpers",
             "@assets": "./assets",
             "@screens": "./src/screens",
+            "@shared": "./src/shared",
           },
         },
       ],
