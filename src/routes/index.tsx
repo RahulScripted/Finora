@@ -1,0 +1,175 @@
+import AnimatedTabBar from "@components/tab-bar/AnimatedTabBar";
+import { useTheme } from "@context/Theme/ThemeContext";
+import { useAppDispatch, useAppSelector } from "@store";
+import { popRoute, pushRoute } from "@store/navSlice";
+import { HomeIcon, InvoiceIcon, MoreIcon, OffersIcon, RepayIcon } from "@assets/svgs/TabIcons";
+import {
+  NavigationContainer,
+  NavigationIndependentTree,
+  useNavigationContainerRef,
+  type NavigationState,
+} from "@react-navigation/native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import React, { useCallback, useEffect } from "react";
+import { BackHandler } from "react-native";
+
+import HomeScreen from "@screens/home";
+import CreditScreen from "@screens/credit";
+import MoneyScreen from "@screens/money";
+import InvoicesScreen from "@screens/invoices";
+import MoreScreen from "@screens/more";
+import ProfileScreen from "@screens/profile";
+import PersonalScreen from "@screens/profile/personal";
+import CompanyScreen from "@screens/profile/company";
+import ProfileDocumentsScreen from "@screens/profile/documents";
+import AboutAppScreen from "@screens/profile/about-app";
+import RateUsScreen from "@screens/profile/rate-us";
+import SettingsScreen from "@screens/profile/settings";
+import QuickReviewScreen from "@screens/profile/quick-review";
+import PrivacyPolicyScreen from "@screens/profile/privacy-policy";
+import TermsConditionsScreen from "@screens/profile/terms-conditions";
+import RefundCancellationScreen from "@screens/profile/refund-cancellation";
+import NachCancellationScreen from "@screens/profile/nach-cancellation";
+import NdcCertificateScreen from "@screens/profile/ndc-certificate";
+
+const Tab = createBottomTabNavigator();
+
+const HIDDEN_TAB = {
+  tabBarItemStyle: { display: "none" as const },
+  unmountOnBlur: true,
+};
+
+export default function AppRoutes() {
+  const { colors } = useTheme();
+  const dispatch = useAppDispatch();
+  const navStack = useAppSelector((s) => s.nav.stack);
+  const navigationRef = useNavigationContainerRef();
+
+  const resolveTabRoute = useCallback(
+    (routeName: string): string => {
+      const state = navigationRef.getRootState();
+      if (!state) return routeName;
+      for (const route of state.routes) {
+        if (route.name === routeName) return routeName;
+        const nested = route.state;
+        if (nested) {
+          for (const nestedRoute of (nested.routes as any[])) {
+            if (nestedRoute.name === routeName) return route.name;
+          }
+        }
+      }
+      return routeName;
+    },
+    [navigationRef],
+  );
+
+  // Hardware back — pop navSlice stack, navigate to previous, no infinite loops
+  useEffect(() => {
+    const handler = BackHandler.addEventListener("hardwareBackPress", () => {
+      if (!navigationRef.isReady()) return false;
+
+      // Let nested stack handle its own back first
+      const state = navigationRef.getRootState();
+      const activeRoute = state?.routes[state.index];
+      const nestedState = activeRoute?.state;
+      if (nestedState && nestedState.index != null && nestedState.index > 0) {
+        navigationRef.goBack();
+        return true;
+      }
+
+      // At root — exit app
+      if (navStack.length <= 1) return false;
+
+      dispatch(popRoute());
+      const previous = navStack[navStack.length - 2];
+      const target = resolveTabRoute(previous || "home");
+      navigationRef.navigate(target as never);
+      return true;
+    });
+    return () => handler.remove();
+  }, [navigationRef, navStack, resolveTabRoute, dispatch]);
+
+  const getActiveRouteName = useCallback(
+    (state: NavigationState | undefined): string | undefined => {
+      if (!state) return undefined;
+      const route = state.routes[state.index];
+      if (route.state) return getActiveRouteName(route.state as NavigationState);
+      return route.name;
+    },
+    [],
+  );
+
+  const onStateChange = useCallback(
+    (state: NavigationState | undefined) => {
+      if (!state) return;
+      const current = getActiveRouteName(state);
+      if (current) dispatch(pushRoute(current));
+    },
+    [getActiveRouteName, dispatch],
+  );
+
+  return (
+    <NavigationIndependentTree>
+      <NavigationContainer
+        ref={navigationRef}
+        onStateChange={onStateChange}
+        onUnhandledAction={() => {
+          if (navigationRef.isReady()) navigationRef.navigate("home" as never);
+        }}
+      >
+        <Tab.Navigator
+          initialRouteName="home"
+          tabBar={(props) => <AnimatedTabBar {...props} />}
+          screenOptions={{
+            headerShown: false,
+            tabBarActiveTintColor: colors.accent,
+            tabBarInactiveTintColor: colors.textMuted,
+            sceneStyle: { backgroundColor: colors.background },
+          }}
+        >
+          {/* Visible tabs */}
+          <Tab.Screen
+            name="home"
+            component={HomeScreen}
+            options={{ title: "Home", tabBarIcon: ({ color, size, focused }) => <HomeIcon size={size} color={color} filled={focused} /> }}
+          />
+          <Tab.Screen
+            name="credit"
+            component={CreditScreen}
+            options={{ title: "Credit", tabBarIcon: ({ color, size, focused }) => <OffersIcon size={size} color={color} filled={focused} /> }}
+          />
+          <Tab.Screen
+            name="money"
+            component={MoneyScreen}
+            options={{ title: "Money", tabBarIcon: ({ color, size, focused }) => <RepayIcon size={size} color={color} filled={focused} /> }}
+          />
+          <Tab.Screen
+            name="invoices"
+            component={InvoicesScreen}
+            options={{ title: "Invoices", tabBarIcon: ({ color, size, focused }) => <InvoiceIcon size={size} color={color} filled={focused} /> }}
+          />
+          <Tab.Screen
+            name="more"
+            component={MoreScreen}
+            options={{ title: "More", tabBarIcon: ({ color, size, focused }) => <MoreIcon size={size} color={color} filled={focused} /> }}
+          />
+
+          {/* Hidden screens — navigated to from More/Profile, not shown in tab bar */}
+          <Tab.Screen name="profile" component={ProfileScreen} options={HIDDEN_TAB} />
+          <Tab.Screen name="personal" component={PersonalScreen} options={HIDDEN_TAB} />
+          <Tab.Screen name="company" component={CompanyScreen} options={HIDDEN_TAB} />
+          <Tab.Screen name="documents" component={ProfileDocumentsScreen} options={HIDDEN_TAB} />
+          <Tab.Screen name="about-app" component={AboutAppScreen} options={HIDDEN_TAB} />
+          <Tab.Screen name="rate-us" component={RateUsScreen} options={HIDDEN_TAB} />
+          <Tab.Screen name="settings" component={SettingsScreen} options={HIDDEN_TAB} />
+          <Tab.Screen name="quick-review" component={QuickReviewScreen} options={HIDDEN_TAB} />
+          <Tab.Screen name="privacy-policy" component={PrivacyPolicyScreen} options={HIDDEN_TAB} />
+          <Tab.Screen name="terms-conditions" component={TermsConditionsScreen} options={HIDDEN_TAB} />
+          <Tab.Screen name="refund-cancellation" component={RefundCancellationScreen} options={HIDDEN_TAB} />
+          <Tab.Screen name="nach-cancellation" component={NachCancellationScreen} options={HIDDEN_TAB} />
+          <Tab.Screen name="ndc-certificate" component={NdcCertificateScreen} options={HIDDEN_TAB} />
+        </Tab.Navigator>
+      </NavigationContainer>
+    </NavigationIndependentTree>
+  );
+}
