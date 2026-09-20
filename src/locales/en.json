@@ -1,0 +1,39 @@
+{
+  "common": {
+    "days": "days",
+    "retry": "Retry",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "back": "Go back",
+    "loading": "Loading..."
+  },
+  "profile": {
+    "sections": {
+      "policies": "Policies",
+      "benefits": "Benefits"
+    },
+    "items": {
+      "personal": { "label": "Personal", "subtitle": "Your personal details" },
+      "company": { "label": "Company", "subtitle": "Business information" },
+      "documents": { "label": "Documents", "subtitle": "Uploaded documents" },
+      "settings": { "label": "Settings", "subtitle": "App preferences" },
+      "privacyPolicy": { "label": "Privacy Policy", "subtitle": "How we handle your data" },
+      "termsConditions": { "label": "Terms & Conditions", "subtitle": "Terms of service" },
+      "refundCancellation": { "label": "Refund & Cancellation", "subtitle": "Refund policy details" },
+      "nachCancellation": { "label": "NACH Cancellation Request", "subtitle": "Cancel your NACH mandate" },
+      "ndcCertificate": { "label": "NDC Certificate Request", "subtitle": "No dues certificate" }
+    }
+  },
+  "more": {
+    "menu": {
+      "businessPartners": "Business Partners",
+      "documents": "Documents",
+      "trackSpends": "Track Spends",
+      "support": "Support",
+      "rateUs": "Rate Us",
+      "aboutApp": "About App",
+      "quickReview": "Quick Review",
+      "settings": "Settings"
+    }
+  }
+}

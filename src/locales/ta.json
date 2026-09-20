@@ -1,0 +1,39 @@
+{
+  "common": {
+    "days": "நாட்கள்",
+    "retry": "மீண்டும் முயற்சிக்கவும்",
+    "cancel": "ரத்து செய்",
+    "confirm": "உறுதிப்படுத்து",
+    "back": "பின் செல்",
+    "loading": "ஏற்றுகிறது..."
+  },
+  "profile": {
+    "sections": {
+      "policies": "கொள்கைகள்",
+      "benefits": "நன்மைகள்"
+    },
+    "items": {
+      "personal": { "label": "தனிப்பட்ட", "subtitle": "உங்கள் தனிப்பட்ட விவரங்கள்" },
+      "company": { "label": "நிறுவனம்", "subtitle": "வணிக தகவல்" },
+      "documents": { "label": "ஆவணங்கள்", "subtitle": "பதிவேற்றிய ஆவணங்கள்" },
+      "settings": { "label": "அமைப்புகள்", "subtitle": "செயலி விருப்பங்கள்" },
+      "privacyPolicy": { "label": "தனியுரிமைக் கொள்கை", "subtitle": "உங்கள் தரவை நாங்கள் எவ்வாறு கையாளுகிறோம்" },
+      "termsConditions": { "label": "விதிமுறைகள் & நிபந்தனைகள்", "subtitle": "சேவை விதிமுறைகள்" },
+      "refundCancellation": { "label": "பணத்திரும்பம் & ரத்து", "subtitle": "பணத்திரும்பக் கொள்கை விவரங்கள்" },
+      "nachCancellation": { "label": "NACH ரத்து கோரிக்கை", "subtitle": "உங்கள் NACH ஆணையை ரத்து செய்யவும்" },
+      "ndcCertificate": { "label": "NDC சான்றிதழ் கோரிக்கை", "subtitle": "நிலுவை இல்லை சான்றிதழ்" }
+    }
+  },
+  "more": {
+    "menu": {
+      "businessPartners": "வணிக பங்குதாரர்கள்",
+      "documents": "ஆவணங்கள்",
+      "trackSpends": "செலவுகளைக் கண்காணி",
+      "support": "ஆதரவு",
+      "rateUs": "எங்களை மதிப்பிடு",
+      "aboutApp": "செயலி பற்றி",
+      "quickReview": "விரைவு மதிப்பாய்வு",
+      "settings": "அமைப்புகள்"
+    }
+  }
+}

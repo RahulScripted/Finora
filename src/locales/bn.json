@@ -1,0 +1,39 @@
+{
+  "common": {
+    "days": "দিন",
+    "retry": "আবার চেষ্টা করুন",
+    "cancel": "বাতিল করুন",
+    "confirm": "নিশ্চিত করুন",
+    "back": "ফিরে যান",
+    "loading": "লোড হচ্ছে..."
+  },
+  "profile": {
+    "sections": {
+      "policies": "নীতিমালা",
+      "benefits": "সুবিধা"
+    },
+    "items": {
+      "personal": { "label": "ব্যক্তিগত", "subtitle": "আপনার ব্যক্তিগত তথ্য" },
+      "company": { "label": "কোম্পানি", "subtitle": "ব্যবসায়িক তথ্য" },
+      "documents": { "label": "নথিপত্র", "subtitle": "আপলোড করা নথিপত্র" },
+      "settings": { "label": "সেটিংস", "subtitle": "অ্যাপ পছন্দসমূহ" },
+      "privacyPolicy": { "label": "গোপনীয়তা নীতি", "subtitle": "আমরা কীভাবে আপনার ডেটা পরিচালনা করি" },
+      "termsConditions": { "label": "নিয়ম ও শর্তাবলী", "subtitle": "পরিষেবার শর্তাবলী" },
+      "refundCancellation": { "label": "রিফান্ড ও বাতিলকরণ", "subtitle": "রিফান্ড নীতির বিবরণ" },
+      "nachCancellation": { "label": "NACH বাতিলকরণের অনুরোধ", "subtitle": "আপনার NACH ম্যান্ডেট বাতিল করুন" },
+      "ndcCertificate": { "label": "NDC সার্টিফিকেটের অনুরোধ", "subtitle": "কোনো বকেয়া নেই সার্টিফিকেট" }
+    }
+  },
+  "more": {
+    "menu": {
+      "businessPartners": "ব্যবসায়িক অংশীদার",
+      "documents": "নথিপত্র",
+      "trackSpends": "খরচ ট্র্যাক করুন",
+      "support": "সহায়তা",
+      "rateUs": "আমাদের রেট করুন",
+      "aboutApp": "অ্যাপ সম্পর্কে",
+      "quickReview": "দ্রুত পর্যালোচনা",
+      "settings": "সেটিংস"
+    }
+  }
+}

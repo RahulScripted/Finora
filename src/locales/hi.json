@@ -1,0 +1,39 @@
+{
+  "common": {
+    "days": "दिन",
+    "retry": "पुनः प्रयास करें",
+    "cancel": "रद्द करें",
+    "confirm": "पुष्टि करें",
+    "back": "वापस जाएं",
+    "loading": "लोड हो रहा है..."
+  },
+  "profile": {
+    "sections": {
+      "policies": "नीतियां",
+      "benefits": "लाभ"
+    },
+    "items": {
+      "personal": { "label": "व्यक्तिगत", "subtitle": "आपकी व्यक्तिगत जानकारी" },
+      "company": { "label": "कंपनी", "subtitle": "व्यावसायिक जानकारी" },
+      "documents": { "label": "दस्तावेज़", "subtitle": "अपलोड किए गए दस्तावेज़" },
+      "settings": { "label": "सेटिंग्स", "subtitle": "ऐप प्राथमिकताएं" },
+      "privacyPolicy": { "label": "गोपनीयता नीति", "subtitle": "हम आपके डेटा को कैसे संभालते हैं" },
+      "termsConditions": { "label": "नियम और शर्तें", "subtitle": "सेवा की शर्तें" },
+      "refundCancellation": { "label": "रिफंड और रद्दीकरण", "subtitle": "रिफंड नीति विवरण" },
+      "nachCancellation": { "label": "NACH रद्दीकरण अनुरोध", "subtitle": "अपना NACH मैंडेट रद्द करें" },
+      "ndcCertificate": { "label": "NDC प्रमाणपत्र अनुरोध", "subtitle": "कोई बकाया प्रमाणपत्र नहीं" }
+    }
+  },
+  "more": {
+    "menu": {
+      "businessPartners": "व्यावसायिक साझेदार",
+      "documents": "दस्तावेज़",
+      "trackSpends": "खर्च ट्रैक करें",
+      "support": "सहायता",
+      "rateUs": "हमें रेट करें",
+      "aboutApp": "ऐप के बारे में",
+      "quickReview": "त्वरित समीक्षा",
+      "settings": "सेटिंग्स"
+    }
+  }
+}

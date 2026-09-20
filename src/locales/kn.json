@@ -1,0 +1,39 @@
+{
+  "common": {
+    "days": "ದಿನಗಳು",
+    "retry": "ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ",
+    "cancel": "ರದ್ದುಮಾಡಿ",
+    "confirm": "ದೃಢೀಕರಿಸಿ",
+    "back": "ಹಿಂದೆ ಹೋಗಿ",
+    "loading": "ಲೋಡ್ ಆಗುತ್ತಿದೆ..."
+  },
+  "profile": {
+    "sections": {
+      "policies": "ನೀತಿಗಳು",
+      "benefits": "ಪ್ರಯೋಜನಗಳು"
+    },
+    "items": {
+      "personal": { "label": "ವೈಯಕ್ತಿಕ", "subtitle": "ನಿಮ್ಮ ವೈಯಕ್ತಿಕ ವಿವರಗಳು" },
+      "company": { "label": "ಕಂಪನಿ", "subtitle": "ವ್ಯಾಪಾರ ಮಾಹಿತಿ" },
+      "documents": { "label": "ದಾಖಲೆಗಳು", "subtitle": "ಅಪ್‌ಲೋಡ್ ಮಾಡಿದ ದಾಖಲೆಗಳು" },
+      "settings": { "label": "ಸೆಟ್ಟಿಂಗ್‌ಗಳು", "subtitle": "ಅಪ್ಲಿಕೇಶನ್ ಆದ್ಯತೆಗಳು" },
+      "privacyPolicy": { "label": "ಗೌಪ್ಯತಾ ನೀತಿ", "subtitle": "ನಾವು ನಿಮ್ಮ ಡೇಟಾವನ್ನು ಹೇಗೆ ನಿರ್ವಹಿಸುತ್ತೇವೆ" },
+      "termsConditions": { "label": "ನಿಯಮಗಳು & ಷರತ್ತುಗಳು", "subtitle": "ಸೇವಾ ನಿಯಮಗಳು" },
+      "refundCancellation": { "label": "ಮರುಪಾವತಿ & ರದ್ದತಿ", "subtitle": "ಮರುಪಾವತಿ ನೀತಿ ವಿವರಗಳು" },
+      "nachCancellation": { "label": "NACH ರದ್ದತಿ ವಿನಂತಿ", "subtitle": "ನಿಮ್ಮ NACH ಆದೇಶವನ್ನು ರದ್ದುಮಾಡಿ" },
+      "ndcCertificate": { "label": "NDC ಪ್ರಮಾಣಪತ್ರ ವಿನಂತಿ", "subtitle": "ಬಾಕಿ ಇಲ್ಲದ ಪ್ರಮಾಣಪತ್ರ" }
+    }
+  },
+  "more": {
+    "menu": {
+      "businessPartners": "ವ್ಯಾಪಾರ ಪಾಲುದಾರರು",
+      "documents": "ದಾಖಲೆಗಳು",
+      "trackSpends": "ಖರ್ಚುಗಳನ್ನು ಟ್ರ್ಯಾಕ್ ಮಾಡಿ",
+      "support": "ಬೆಂಬಲ",
+      "rateUs": "ನಮ್ಮನ್ನು ರೇಟ್ ಮಾಡಿ",
+      "aboutApp": "ಅಪ್ಲಿಕೇಶನ್ ಬಗ್ಗೆ",
+      "quickReview": "ತ್ವರಿತ ವಿಮರ್ಶೆ",
+      "settings": "ಸೆಟ್ಟಿಂಗ್‌ಗಳು"
+    }
+  }
+}

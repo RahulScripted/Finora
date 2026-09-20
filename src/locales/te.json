@@ -1,0 +1,39 @@
+{
+  "common": {
+    "days": "రోజులు",
+    "retry": "మళ్లీ ప్రయత్నించండి",
+    "cancel": "రద్దు చేయి",
+    "confirm": "నిర్ధారించు",
+    "back": "వెనుకకు వెళ్లు",
+    "loading": "లోడ్ అవుతోంది..."
+  },
+  "profile": {
+    "sections": {
+      "policies": "విధానాలు",
+      "benefits": "ప్రయోజనాలు"
+    },
+    "items": {
+      "personal": { "label": "వ్యక్తిగత", "subtitle": "మీ వ్యక్తిగత వివరాలు" },
+      "company": { "label": "కంపెనీ", "subtitle": "వ్యాపార సమాచారం" },
+      "documents": { "label": "పత్రాలు", "subtitle": "అప్‌లోడ్ చేసిన పత్రాలు" },
+      "settings": { "label": "సెట్టింగ్‌లు", "subtitle": "యాప్ ప్రాధాన్యతలు" },
+      "privacyPolicy": { "label": "గోప్యతా విధానం", "subtitle": "మేము మీ డేటాను ఎలా నిర్వహిస్తాము" },
+      "termsConditions": { "label": "నిబంధనలు & షరతులు", "subtitle": "సేవా నిబంధనలు" },
+      "refundCancellation": { "label": "వాపసు & రద్దు", "subtitle": "వాపసు విధాన వివరాలు" },
+      "nachCancellation": { "label": "NACH రద్దు అభ్యర్థన", "subtitle": "మీ NACH ఆదేశాన్ని రద్దు చేయండి" },
+      "ndcCertificate": { "label": "NDC ధృవీకరణ అభ్యర్థన", "subtitle": "బకాయిలు లేని ధృవీకరణ పత్రం" }
+    }
+  },
+  "more": {
+    "menu": {
+      "businessPartners": "వ్యాపార భాగస్వాములు",
+      "documents": "పత్రాలు",
+      "trackSpends": "ఖర్చులను ట్రాక్ చేయండి",
+      "support": "మద్దతు",
+      "rateUs": "మమ్మల్ని రేట్ చేయండి",
+      "aboutApp": "యాప్ గురించి",
+      "quickReview": "శీఘ్ర సమీక్ష",
+      "settings": "సెట్టింగ్‌లు"
+    }
+  }
+}

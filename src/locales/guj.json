@@ -1,0 +1,39 @@
+{
+  "common": {
+    "days": "દિવસ",
+    "retry": "ફરી પ્રયાસ કરો",
+    "cancel": "રદ કરો",
+    "confirm": "પુષ્ટિ કરો",
+    "back": "પાછા જાઓ",
+    "loading": "લોડ થઈ રહ્યું છે..."
+  },
+  "profile": {
+    "sections": {
+      "policies": "નીતિઓ",
+      "benefits": "લાભો"
+    },
+    "items": {
+      "personal": { "label": "વ્યક્તિગત", "subtitle": "તમારી વ્યક્તિગત વિગતો" },
+      "company": { "label": "કંપની", "subtitle": "વ્યવસાય માહિતી" },
+      "documents": { "label": "દસ્તાવેજો", "subtitle": "અપલોડ કરેલા દસ્તાવેજો" },
+      "settings": { "label": "સેટિંગ્સ", "subtitle": "એપ્લિકેશન પસંદગીઓ" },
+      "privacyPolicy": { "label": "ગોપનીયતા નીતિ", "subtitle": "અમે તમારો ડેટા કેવી રીતે સંભાળીએ છીએ" },
+      "termsConditions": { "label": "નિયમો અને શરતો", "subtitle": "સેવાની શરતો" },
+      "refundCancellation": { "label": "રિફંડ અને રદ્દીકરણ", "subtitle": "રિફંડ નીતિ વિગતો" },
+      "nachCancellation": { "label": "NACH રદ્દીકરણ વિનંતી", "subtitle": "તમારો NACH આદેશ રદ કરો" },
+      "ndcCertificate": { "label": "NDC પ્રમાણપત્ર વિનંતી", "subtitle": "કોઈ બાકી નથી પ્રમાણપત્ર" }
+    }
+  },
+  "more": {
+    "menu": {
+      "businessPartners": "વ્યવસાય ભાગીદારો",
+      "documents": "દસ્તાવેજો",
+      "trackSpends": "ખર્ચ ટ્રૅક કરો",
+      "support": "સહાય",
+      "rateUs": "અમને રેટ કરો",
+      "aboutApp": "એપ્લિકેશન વિશે",
+      "quickReview": "ઝડપી સમીક્ષા",
+      "settings": "સેટિંગ્સ"
+    }
+  }
+}

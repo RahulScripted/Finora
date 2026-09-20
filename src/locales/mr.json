@@ -1,0 +1,39 @@
+{
+  "common": {
+    "days": "दिवस",
+    "retry": "पुन्हा प्रयत्न करा",
+    "cancel": "रद्द करा",
+    "confirm": "पुष्टी करा",
+    "back": "मागे जा",
+    "loading": "लोड होत आहे..."
+  },
+  "profile": {
+    "sections": {
+      "policies": "धोरणे",
+      "benefits": "फायदे"
+    },
+    "items": {
+      "personal": { "label": "वैयक्तिक", "subtitle": "तुमची वैयक्तिक माहिती" },
+      "company": { "label": "कंपनी", "subtitle": "व्यवसाय माहिती" },
+      "documents": { "label": "कागदपत्रे", "subtitle": "अपलोड केलेली कागदपत्रे" },
+      "settings": { "label": "सेटिंग्ज", "subtitle": "अॅप प्राधान्ये" },
+      "privacyPolicy": { "label": "गोपनीयता धोरण", "subtitle": "आम्ही तुमचा डेटा कसा हाताळतो" },
+      "termsConditions": { "label": "नियम व अटी", "subtitle": "सेवेच्या अटी" },
+      "refundCancellation": { "label": "परतावा व रद्दीकरण", "subtitle": "परतावा धोरण तपशील" },
+      "nachCancellation": { "label": "NACH रद्दीकरण विनंती", "subtitle": "तुमचा NACH आदेश रद्द करा" },
+      "ndcCertificate": { "label": "NDC प्रमाणपत्र विनंती", "subtitle": "थकबाकी नसल्याचे प्रमाणपत्र" }
+    }
+  },
+  "more": {
+    "menu": {
+      "businessPartners": "व्यवसाय भागीदार",
+      "documents": "कागदपत्रे",
+      "trackSpends": "खर्च ट्रॅक करा",
+      "support": "सहाय्य",
+      "rateUs": "आम्हाला रेट करा",
+      "aboutApp": "अॅप विषयी",
+      "quickReview": "जलद पुनरावलोकन",
+      "settings": "सेटिंग्ज"
+    }
+  }
+}
