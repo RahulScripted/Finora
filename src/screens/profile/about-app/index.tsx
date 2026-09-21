@@ -2,7 +2,9 @@ import ScreenHeader from "@components/screen-header";
 import { useTheme } from "@context/Theme/ThemeContext";
 import { useTranslation } from "react-i18next";
 import { Linking, ScrollView, StyleSheet, View } from "react-native";
+import { useRef } from "react";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { useScrollToTop } from "@shared/scroll-to-top";
 import { CONTACT_SUPPORT_EMAIL, CONTACT_SUPPORT_PHONE } from "@shared/contact-details";
 import {
   COMPANY_FOUNDED,
@@ -29,11 +31,14 @@ export default function AboutAppScreen() {
   const { t } = useTranslation();
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
+  const scrollRef = useRef<ScrollView>(null);
+  useScrollToTop(scrollRef);
 
   return (
     <View style={[s.container, { backgroundColor: colors.background, paddingTop: insets.top + 16 }]}>
       <ScreenHeader title={t("about_app.title")} />
       <ScrollView
+        ref={scrollRef}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={[s.scroll, { paddingBottom: insets.bottom + 32 }]}
       >

@@ -1,6 +1,7 @@
 import ScreenHeader from "@components/screen-header";
 import { useTheme } from "@context/Theme/ThemeContext";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { useRef } from "react";
 import { useTranslation } from "react-i18next";
 import {
   Linking,
@@ -11,6 +12,7 @@ import {
   View,
 } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { useScrollToTop } from "@shared/scroll-to-top";
 
 export type ServiceRequestContact = {
   icon: string;
@@ -49,13 +51,15 @@ export default function ServiceRequestScreen({ namespace, listBlocks = [], conta
   const { t } = useTranslation();
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
+  const scrollRef = useRef<ScrollView>(null);
+  useScrollToTop(scrollRef);
 
   const information = t(`${namespace}.information`, { returnObjects: true }) as string[];
 
   return (
     <View style={[s.container, { backgroundColor: colors.background, paddingTop: insets.top + 16 }]}>
       <ScreenHeader title={t(`${namespace}.title`)} />
-      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={s.scroll}>
+      <ScrollView ref={scrollRef} showsVerticalScrollIndicator={false} contentContainerStyle={s.scroll}>
         {/* Description banner */}
         <View style={[s.banner, { backgroundColor: colors.accent + "18" }]}>
           <MaterialCommunityIcons name="information-outline" size={18} color={colors.accent} />

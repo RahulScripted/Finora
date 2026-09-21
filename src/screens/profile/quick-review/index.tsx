@@ -1,18 +1,5 @@
-import ScreenHeader from "@components/screen-header";
-import { useTheme } from "@context/Theme/ThemeContext";
-import { StyleSheet, View } from "react-native";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
+import EmptyScreen from "@shared/empty-screen";
 
 export default function QuickReviewScreen() {
-  const { colors } = useTheme();
-  const insets = useSafeAreaInsets();
-  return (
-    <View style={[s.container, { backgroundColor: colors.background, paddingTop: insets.top + 16 }]}>
-      <ScreenHeader title="Quick Review" />
-    </View>
-  );
+  return <EmptyScreen title="Quick Review" icon="map-marker-path" label="A guided overview of your account." />;
 }
-
-const s = StyleSheet.create({
-  container: { flex: 1, paddingHorizontal: 16 },
-});

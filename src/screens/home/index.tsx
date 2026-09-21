@@ -1,18 +1,5 @@
-import { useTheme } from "@context/Theme/ThemeContext";
-import { StyleSheet, Text, View } from "react-native";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
+import EmptyScreen from "@shared/empty-screen";
 
 export default function HomeScreen() {
-  const { colors } = useTheme();
-  const insets = useSafeAreaInsets();
-  return (
-    <View style={[s.container, { backgroundColor: colors.background, paddingTop: insets.top }]}>
-      <Text style={[s.title, { color: colors.textPrimary }]}>Home</Text>
-    </View>
-  );
+  return <EmptyScreen title="Home" icon="home-outline" label="Your dashboard is on its way." />;
 }
-
-const s = StyleSheet.create({
-  container: { flex: 1, alignItems: "center", justifyContent: "center" },
-  title: { fontSize: 24, fontWeight: "700" },
-});

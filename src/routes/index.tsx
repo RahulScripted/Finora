@@ -15,7 +15,7 @@ import { BackHandler } from "react-native";
 import { useGlobalLoading } from "@context/Loading/GlobalLoadingContext";
 
 import HomeScreen from "@screens/home";
-import CreditScreen from "@screens/credit";
+import CreditScreen from "@/src/screens/offer";
 import MoneyScreen from "@screens/money";
 import InvoicesScreen from "@screens/invoices";
 import MoreScreen from "@screens/more";
@@ -34,6 +34,7 @@ import NachCancellationScreen from "@screens/profile/nach-cancellation";
 import NdcCertificateScreen from "@screens/profile/ndc-certificate";
 import UpdateContactScreen from "@screens/profile/update-contact";
 import TrackSpendScreen from "@screens/track-spend";
+import CreditScoreScreen from "@screens/credit-score";
 import PaymentHistoryScreen from "@screens/payment-history";
 
 const Tab = createBottomTabNavigator();
@@ -142,16 +143,16 @@ export default function AppRoutes() {
             sceneStyle: { backgroundColor: colors.background },
           }}
         >
-          {/* Visible tabs */}
+          {/* Visible tabs — Home · Invoices · Money · Offers · More */}
           <Tab.Screen
             name="home"
             component={HomeScreen}
             options={{ title: "Home", tabBarIcon: ({ color, size, focused }) => <HomeIcon size={size} color={color} filled={focused} /> }}
           />
           <Tab.Screen
-            name="credit"
-            component={CreditScreen}
-            options={{ title: "Credit", tabBarIcon: ({ color, size, focused }) => <OffersIcon size={size} color={color} filled={focused} /> }}
+            name="invoices"
+            component={InvoicesScreen}
+            options={{ title: "Invoices", tabBarIcon: ({ color, size, focused }) => <InvoiceIcon size={size} color={color} filled={focused} /> }}
           />
           <Tab.Screen
             name="money"
@@ -159,9 +160,9 @@ export default function AppRoutes() {
             options={{ title: "Money", tabBarIcon: ({ color, size, focused }) => <RepayIcon size={size} color={color} filled={focused} /> }}
           />
           <Tab.Screen
-            name="invoices"
-            component={InvoicesScreen}
-            options={{ title: "Invoices", tabBarIcon: ({ color, size, focused }) => <InvoiceIcon size={size} color={color} filled={focused} /> }}
+            name="credit"
+            component={CreditScreen}
+            options={{ title: "Offers", tabBarIcon: ({ color, size, focused }) => <OffersIcon size={size} color={color} filled={focused} /> }}
           />
           <Tab.Screen
             name="more"
@@ -185,6 +186,7 @@ export default function AppRoutes() {
           <Tab.Screen name="ndc-certificate" component={NdcCertificateScreen} options={HIDDEN_TAB} />
           <Tab.Screen name="update-contact" component={UpdateContactScreen} options={HIDDEN_TAB} />
           <Tab.Screen name="track-spends" component={TrackSpendScreen} options={HIDDEN_TAB} />
+          <Tab.Screen name="credit-score" component={CreditScoreScreen} options={HIDDEN_TAB} />
           <Tab.Screen name="payment-history" component={PaymentHistoryScreen} options={HIDDEN_TAB} />
         </Tab.Navigator>
       </NavigationContainer>

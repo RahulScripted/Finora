@@ -1,6 +1,7 @@
 import ScreenHeader from "@components/screen-header";
 import { useTheme } from "@context/Theme/ThemeContext";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { useRef } from "react";
 import { useTranslation } from "react-i18next";
 import {
   Linking,
@@ -11,6 +12,7 @@ import {
   View,
 } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { useScrollToTop } from "@shared/scroll-to-top";
 
 export type LegalContact = {
   icon: string;
@@ -54,11 +56,13 @@ export default function LegalContentScreen({
   const { t } = useTranslation();
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
+  const scrollRef = useRef<ScrollView>(null);
+  useScrollToTop(scrollRef);
 
   return (
     <View style={[s.container, { backgroundColor: colors.background, paddingTop: insets.top + 16 }]}>
       <ScreenHeader title={title} />
-      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={s.scroll}>
+      <ScrollView ref={scrollRef} showsVerticalScrollIndicator={false} contentContainerStyle={s.scroll}>
         {(badgeLabel || lastUpdated) && (
           <View style={s.badgeRow}>
             {badgeLabel ? (

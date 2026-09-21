@@ -1,15 +1,19 @@
 import { useTheme } from "@context/Theme/ThemeContext";
 import { useNavigation } from "@react-navigation/native";
+import { useRef } from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import MenuRow from "@components/menu-row";
 import ProfileCard from "@components/profile-card";
 import { MORE_MENU } from "@data-types/more/constants";
+import { useScrollToTop } from "@shared/scroll-to-top";
 
 export default function MoreScreen() {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
   const navigation = useNavigation<any>();
+  const scrollRef = useRef<ScrollView>(null);
+  useScrollToTop(scrollRef);
 
   return (
     <View style={[s.container, { backgroundColor: colors.background, paddingTop: insets.top + 16 }]}>
@@ -21,7 +25,7 @@ export default function MoreScreen() {
         onPress={() => navigation.navigate("profile")}
       />
 
-      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={s.list}>
+      <ScrollView ref={scrollRef} showsVerticalScrollIndicator={false} contentContainerStyle={s.list}>
         {MORE_MENU.map((item) => (
           <MenuRow
             key={item.route}

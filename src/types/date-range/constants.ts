@@ -1,7 +1,5 @@
 export type DateRange = {
-  /** ISO date string (yyyy-mm-dd) */
   start: string;
-  /** ISO date string (yyyy-mm-dd) */
   end: string;
 };
 

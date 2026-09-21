@@ -3,7 +3,7 @@ import DateRangePicker from "@components/date-range-picker";
 import ScreenHeader from "@components/screen-header";
 import { useTheme } from "@context/Theme/ThemeContext";
 import { useNavigation } from "@react-navigation/native";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { RefreshControl, ScrollView, StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -12,6 +12,7 @@ import { PrimaryButton } from "@helpers/button";
 import type { Period } from "@data-types/track-spend/constants";
 import type { DateRange } from "@data-types/date-range/constants";
 import { formatShortDate } from "@utils/format-locals";
+import { useScrollToTop } from "@shared/scroll-to-top";
 import CategoryBreakdown from "./components/category-breakdown";
 import CostOfFunds from "./components/cost-of-funds";
 import Hero from "./components/hero";
@@ -41,6 +42,8 @@ function TrackSpendInner() {
   const [statementOpen, setStatementOpen] = useState(false);
   const { data, isLoading, isRefetching, refetch } = useSpendSummary(period);
   const { scrollY, viewportH } = useScrollRevealValues();
+  const scrollRef = useRef<ScrollView>(null);
+  useScrollToTop(scrollRef);
 
   const customLabel = customRange
     ? `${formatShortDate(customRange.start)} – ${formatShortDate(customRange.end)}`
@@ -55,6 +58,7 @@ function TrackSpendInner() {
     <View style={[s.container, { backgroundColor: colors.background, paddingTop: insets.top + 16 }]}>
       <ScreenHeader title={t("track_spend.title")} />
       <ScrollView
+        ref={scrollRef}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={[s.scroll, { paddingBottom: insets.bottom + 32 }]}
         refreshControl={<RefreshControl refreshing={isRefetching} onRefresh={refetch} tintColor={colors.accent} />}

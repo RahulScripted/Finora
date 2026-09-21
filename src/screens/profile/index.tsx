@@ -2,19 +2,23 @@ import MenuRow from "@components/menu-row";
 import ScreenHeader from "@components/screen-header";
 import { useTheme } from "@context/Theme/ThemeContext";
 import { useNavigation } from "@react-navigation/native";
+import { useRef } from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { PROFILE_SECTIONS } from "@data-types/profile/constants";
+import { useScrollToTop } from "@shared/scroll-to-top";
 
 export default function ProfileScreen() {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
   const navigation = useNavigation<any>();
+  const scrollRef = useRef<ScrollView>(null);
+  useScrollToTop(scrollRef);
 
   return (
     <View style={[s.container, { backgroundColor: colors.background, paddingTop: insets.top + 16 }]}>
       <ScreenHeader title="Profile" />
-      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={s.scroll}>
+      <ScrollView ref={scrollRef} showsVerticalScrollIndicator={false} contentContainerStyle={s.scroll}>
         {PROFILE_SECTIONS.map((section) => (
           <View key={section.title} style={s.section}>
             {section.title ? (
