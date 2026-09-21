@@ -5,6 +5,7 @@ import AppRoutes from "../src/routes";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { Provider } from "react-redux";
+import Toast from "react-native-toast-message";
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
           </ThemeProvider>
         </Provider>
       </SafeAreaProvider>
+      <Toast />
     </GestureHandlerRootView>
   );
 }

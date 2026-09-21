@@ -10,8 +10,9 @@ import {
   type NavigationState,
 } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import React, { useCallback, useEffect } from "react";
+import React, { useCallback, useEffect, useRef } from "react";
 import { BackHandler } from "react-native";
+import { useGlobalLoading } from "@context/Loading/GlobalLoadingContext";
 
 import HomeScreen from "@screens/home";
 import CreditScreen from "@screens/credit";
@@ -32,6 +33,8 @@ import RefundCancellationScreen from "@screens/profile/refund-cancellation";
 import NachCancellationScreen from "@screens/profile/nach-cancellation";
 import NdcCertificateScreen from "@screens/profile/ndc-certificate";
 import UpdateContactScreen from "@screens/profile/update-contact";
+import TrackSpendScreen from "@screens/track-spend";
+import PaymentHistoryScreen from "@screens/payment-history";
 
 const Tab = createBottomTabNavigator();
 
@@ -45,6 +48,9 @@ export default function AppRoutes() {
   const dispatch = useAppDispatch();
   const navStack = useAppSelector((s) => s.nav.stack);
   const navigationRef = useNavigationContainerRef();
+  const { showLoading, hideLoading } = useGlobalLoading();
+  // Track the active route so we only fire on actual screen changes.
+  const currentRouteRef = useRef<string | undefined>(undefined);
 
   const resolveTabRoute = useCallback(
     (routeName: string): string => {
@@ -104,9 +110,17 @@ export default function AppRoutes() {
     (state: NavigationState | undefined) => {
       if (!state) return;
       const current = getActiveRouteName(state);
-      if (current) dispatch(pushRoute(current));
+      if (current) {
+        dispatch(pushRoute(current));
+        // Show the global loader briefly on each screen change.
+        if (current !== currentRouteRef.current) {
+          currentRouteRef.current = current;
+          showLoading();
+          setTimeout(hideLoading, 900);
+        }
+      }
     },
-    [getActiveRouteName, dispatch],
+    [getActiveRouteName, dispatch, showLoading, hideLoading],
   );
 
   return (
@@ -170,6 +184,8 @@ export default function AppRoutes() {
           <Tab.Screen name="nach-cancellation" component={NachCancellationScreen} options={HIDDEN_TAB} />
           <Tab.Screen name="ndc-certificate" component={NdcCertificateScreen} options={HIDDEN_TAB} />
           <Tab.Screen name="update-contact" component={UpdateContactScreen} options={HIDDEN_TAB} />
+          <Tab.Screen name="track-spends" component={TrackSpendScreen} options={HIDDEN_TAB} />
+          <Tab.Screen name="payment-history" component={PaymentHistoryScreen} options={HIDDEN_TAB} />
         </Tab.Navigator>
       </NavigationContainer>
     </NavigationIndependentTree>

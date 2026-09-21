@@ -20,6 +20,7 @@ module.exports = function (api) {
             "@assets": "./assets",
             "@screens": "./src/screens",
             "@shared": "./src/shared",
+            "@mock": "./src/mock",
           },
         },
       ],

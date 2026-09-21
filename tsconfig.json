@@ -19,7 +19,8 @@
       "@helpers/*": ["src/helpers/*"],
       "@assets/*": ["assets/*"],
       "@screens/*": ["src/screens/*"],
-      "@shared/*": ["src/shared/*"]
+      "@shared/*": ["src/shared/*"],
+      "@mock/*": ["src/mock/*"]
     }
   },
   "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"]

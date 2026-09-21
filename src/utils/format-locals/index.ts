@@ -188,3 +188,56 @@ export function formatMonthShort(monthIndex: number): string {
 export function formatDaysText(days: number, t: (key: string, opts?: any) => string): string {
   return convertDigits(String(days)) + " " + t("common.days");
 }
+
+/* ------------------------------------------------------------------ */
+/* Spend formatting helpers (used by Track Spend and others)          */
+/* ------------------------------------------------------------------ */
+
+const FALLBACK_MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+/** Localized short month names, read from the active locale. */
+export function getMonthsShort(): string[] {
+  const months = i18n.t("common.months", { returnObjects: true }) as unknown;
+  return Array.isArray(months) && months.length === 12 ? (months as string[]) : FALLBACK_MONTHS;
+}
+
+/** 428650 -> "₹4,28,650" (Indian digit grouping, localized digits). */
+export function formatINR(n: number): string {
+  const digits = Math.round(Math.abs(n)).toString();
+  const last3 = digits.slice(-3);
+  const rest = digits.slice(0, -3);
+  const grouped = rest ? `${rest.replace(/\B(?=(\d{2})+(?!\d))/g, ",")},${last3}` : last3;
+  return `${n < 0 ? "-" : ""}₹${convertDigits(grouped)}`;
+}
+
+/** 570000 -> "₹5.7L", 428650 -> "₹4.29L", 25000 -> "₹25,000" */
+export function formatLakh(n: number): string {
+  if (Math.abs(n) < 100_000) return formatINR(n);
+  const lakhs = Math.round((n / 100_000) * 100) / 100;
+  return `₹${convertDigits(String(lakhs))}L`;
+}
+
+const DAY_MS = 86_400_000;
+const startOfDay = (d: Date) => new Date(d.getFullYear(), d.getMonth(), d.getDate()).getTime();
+
+/** Whole days between today and an ISO date (negative = in the past). */
+export function daysUntil(iso: string): number {
+  return Math.round((startOfDay(new Date(iso)) - startOfDay(new Date())) / DAY_MS);
+}
+
+/** ISO date -> "5 Sep" using localized month names + digits. */
+export function formatShortDate(iso: string): string {
+  const d = new Date(iso);
+  return `${convertDigits(String(d.getDate()))} ${getMonthsShort()[d.getMonth()]}`;
+}
+
+/** "Kapoor Foods" -> "KF" */
+export function initialsOf(name: string): string {
+  return name
+    .split(" ")
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((w) => w[0])
+    .join("")
+    .toUpperCase();
+}
