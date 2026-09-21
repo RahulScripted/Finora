@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { StyleSheet, Text, View } from "react-native";
 import type { SpendSummary } from "@data-types/track-spend/constants";
 import { formatINR, initialsOf } from "@utils/format-locals";
-import Card from "../shared/card";
+import Card from "@shared/card";
 
 type Props = { data: SpendSummary };
 
@@ -40,7 +40,7 @@ export default function InvoiceSpend({ data }: Props) {
                   {inv.client}
                 </Text>
                 <Text style={[s.label, { color: colors.textSecondary }]} numberOfLines={1}>
-                  {inv.invoiceNo} · {t("track_spend.pct_funded", { pct: inv.advancePct })}
+                  {inv.invoiceNo} | {t("track_spend.pct_funded", { pct: inv.advancePct })}
                 </Text>
               </View>
               <View style={s.alignEnd}>

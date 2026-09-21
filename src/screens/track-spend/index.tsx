@@ -1,4 +1,4 @@
-import ScrollReveal from "@animations/scroll-reveal";
+import ScrollReveal, { ScrollRevealProvider, useScrollRevealValues } from "@animations/scroll-reveal";
 import DateRangePicker from "@components/date-range-picker";
 import ScreenHeader from "@components/screen-header";
 import { useTheme } from "@context/Theme/ThemeContext";
@@ -18,9 +18,9 @@ import Hero from "./components/hero";
 import Insight from "./components/insight";
 import InvoiceSpend from "./components/invoice-spend";
 import PeriodSwitch from "./components/period-switch";
-import RecentPayments from "./components/recent-payments";
+import RecentPayments from "@shared/recent-payments";
 import Repayments from "./components/repayments";
-import SpendChart from "./components/spend-chart";
+import SpendChart from "@shared/spend-chart";
 import StatementSheet from "./components/statement-sheet";
 import SectionHeader from "./components/shared/section-header";
 import SkeletonBlock from "./components/shared/skeleton-block";
@@ -30,7 +30,7 @@ const ROUTES = {
   paymentHistory: "payment-history",
 };
 
-export default function TrackSpendScreen() {
+function TrackSpendInner() {
   const { t } = useTranslation();
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
@@ -40,6 +40,7 @@ export default function TrackSpendScreen() {
   const [pickerOpen, setPickerOpen] = useState(false);
   const [statementOpen, setStatementOpen] = useState(false);
   const { data, isLoading, isRefetching, refetch } = useSpendSummary(period);
+  const { scrollY, viewportH } = useScrollRevealValues();
 
   const customLabel = customRange
     ? `${formatShortDate(customRange.start)} – ${formatShortDate(customRange.end)}`
@@ -57,6 +58,14 @@ export default function TrackSpendScreen() {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={[s.scroll, { paddingBottom: insets.bottom + 32 }]}
         refreshControl={<RefreshControl refreshing={isRefetching} onRefresh={refetch} tintColor={colors.accent} />}
+        scrollEventThrottle={16}
+        onScroll={(e) => {
+          scrollY.value = e.nativeEvent.contentOffset.y;
+          viewportH.value = e.nativeEvent.layoutMeasurement.height;
+        }}
+        onLayout={(e) => {
+          viewportH.value = e.nativeEvent.layout.height;
+        }}
       >
         <PeriodSwitch
           value={period}
@@ -144,6 +153,14 @@ export default function TrackSpendScreen() {
         }}
       />
     </View>
+  );
+}
+
+export default function TrackSpendScreen() {
+  return (
+    <ScrollRevealProvider>
+      <TrackSpendInner />
+    </ScrollRevealProvider>
   );
 }
 

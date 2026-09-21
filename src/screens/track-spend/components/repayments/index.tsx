@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { StyleSheet, Text, View } from "react-native";
 import type { SpendSummary } from "@data-types/track-spend/constants";
 import { daysUntil, formatINR, formatShortDate } from "@utils/format-locals";
-import Card from "../shared/card";
+import Card from "@shared/card";
 
 type Props = { data: SpendSummary };
 
@@ -53,7 +53,7 @@ export default function Repayments({ data }: Props) {
                   </View>
                 </View>
                 <Text style={[s.value, { color: colors.textPrimary }]} numberOfLines={1}>
-                  {r.client} · {r.invoiceNo}
+                  {r.client} | {r.invoiceNo}
                 </Text>
                 <Text style={[s.value, { color: colors.textPrimary }]}>{formatINR(r.amount)}</Text>
               </View>

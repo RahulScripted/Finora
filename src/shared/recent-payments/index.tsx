@@ -2,7 +2,7 @@ import { useTheme } from "@context/Theme/ThemeContext";
 import { StyleSheet, Text, View } from "react-native";
 import type { SpendSummary } from "@data-types/track-spend/constants";
 import { formatINR, formatShortDate, initialsOf } from "@utils/format-locals";
-import Card from "../shared/card";
+import Card from "@shared/card";
 
 type Props = { data: SpendSummary };
 
@@ -31,7 +31,7 @@ export default function RecentPayments({ data }: Props) {
               {p.payee}
             </Text>
             <Text style={[s.label, { color: colors.textSecondary }]}>
-              {formatShortDate(p.paidAt)} · {p.invoiceNo}
+              {formatShortDate(p.paidAt)} | {p.invoiceNo}
             </Text>
           </View>
           <Text style={[s.value, { color: colors.textPrimary }]}>{formatINR(p.amount)}</Text>

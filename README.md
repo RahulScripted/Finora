@@ -2,11 +2,11 @@
 
 <br/>
 
-# 📱 Finora
+# Finora
 
 ### Your finances, in your pocket.
 
-A secure, multilingual React Native app for **loans, invoices, repayments and documents**, built for customers who want everything in one tap.
+A secure, multilingual React Native app for **loans, invoices, repayments and spend tracking**, built for customers who want everything in one tap.
 
 <br/>
 
@@ -29,159 +29,253 @@ A secure, multilingual React Native app for **loans, invoices, repayments and do
 
 <br/>
 
+---
 
-
-## 🧱 Tech Stack
-
-<div align="center">
-
-| Layer                | Technology                                                           |
-| -------------------- | -------------------------------------------------------------------- |
-| **Framework**        | React Native 0.86 + Expo 57                                          |
-| **Language**         | TypeScript (strict)                                                  |
-| **Navigation**       | Expo Router + React Navigation (Stack + Bottom Tabs)                 |
-| **State Management** | Redux Toolkit + React Query                                          |
-| **Forms**            | React Hook Form + Zod                                                |
-| **Localisation**     | i18next + react-i18next (8 languages)                                |
-| **Animations**       | Reanimated + Animated API + Lottie                                   |
-| **Product Tour**     | Native spotlight walkthrough (`useTour` + `useTourTargets`)          |
-| **Auth**             | Biometric (`expo-local-authentication`) + MPIN                       |
-| **Secure Storage**   | `expo-secure-store` (auth + refresh tokens)                          |
-| **Error Reporting**  | Global report flow (`expo-mail-composer` + `react-native-view-shot`) |
-| **Notifications**    | Expo Notifications                                                   |
-| **Build & Release**  | EAS Build                                                            |
-
-</div>
-
-## 📁 Project Structure
-
-<details open>
-<summary><b>Click to expand / collapse the full directory tree</b></summary>
-
-```
-Customer-App/
-├── app/                                   ← Expo Router routes
-│   ├── _layout.tsx
-│   ├── index.tsx
-│   ├── coin-preview.tsx
-│   ├── [...unmatched].tsx
-│   └── public/                            ← auth-free deep-link screens
-│       ├── utils/
-│       │   ├── PublicSuccessView.tsx
-│       │   ├── PublicScreenShell.tsx
-│       │   ├── PublicLinkErrorView.tsx
-│       │   └── useColumnReveal.ts
-│       ├── bankstatement/
-│       ├── repay/
-│       ├── itr/
-│       ├── gst/
-│       ├── ckyc/
-│       ├── esign/
-│       ├── emandate/
-│       └── proposalletter/
-│
-├── src/
-│   ├── animations/
-│   ├── api-calls/
-│   ├── components/
-│   │   ├── product-tour/                  ← guided spotlight walkthrough
-│   │   ├── report-problem/                ← screenshot countdown overlay
-│   │   └── ...
-│   ├── context/
-│   │   ├── Auth/
-│   │   ├── ErrorReport/                   ← global "Report a problem" flow
-│   │   ├── language/                      ← i18next setup + resources
-│   │   ├── Loading/
-│   │   └── Theme/
-│   ├── env/
-│   │   └── index.ts                       ← all EXPO_PUBLIC_* keys, centralised
-│   ├── helpers/
-│   ├── hooks/
-│   ├── locales/                           ← 8 translation files + README
-│   ├── routes/
-│   ├── screens/
-│   ├── services/
-│   ├── shared/
-│   ├── store/
-│   ├── types/                             ← shared TS types (alias: @data-types)
-│   └── utils/
-│       ├── format-locals/
-│       └── message-pool/
-│
-├── assets/
-│   ├── fonts/
-│   ├── illustration/
-│   ├── json/                              ← Lottie animations
-│   └── svgs/
-│
-├── app.json
-├── babel.config.js
-├── package.json
-├── tsconfig.json
-└── README.md
-```
-
-</details>
-
-
-## 🌍 Localisation
+## Tech Stack
 
 <div align="center">
 
-| 🇬🇧 `en` | 🇮🇳 `hi` | 🇮🇳 `bn` | 🇮🇳 `mr` | 🇮🇳 `guj` | 🇮🇳 `ta` | 🇮🇳 `te` | 🇮🇳 `kn` |
-| ------- | ------- | ------- | ------- | -------- | ------- | ------- | ------- |
-| English | Hindi   | Bengali | Marathi | Gujarati | Tamil   | Telugu  | Kannada |
+| Layer | Technology |
+| --- | --- |
+| Framework | React Native 0.86 + Expo 57 |
+| Language | TypeScript (strict) |
+| Navigation | Expo Router + React Navigation (Stack + Bottom Tabs) |
+| State Management | Redux Toolkit + React Query |
+| Forms | React Hook Form + Zod |
+| Localisation | i18next + react-i18next (8 languages) |
+| Animations | Reanimated + Animated API + Lottie |
+| Product Tour | Native spotlight walkthrough (`TourContext`) |
+| Biometrics | `expo-local-authentication` |
+| Secure Storage | `expo-secure-store` |
+| Notifications | `expo-notifications` |
+| Build & Release | EAS Build |
 
 </div>
-
-All strings live in `src/locales/*.json` and are resolved through `src/context/language`. `fallbackLng` is `en`, so a missing key renders in English instead of breaking the screen. See `src/locales/README.md` for how to add new strings.
 
 ---
 
-## 🤝 Contributing
+## Project Structure
 
-Contributions are warmly welcome. Please review the guidelines below before opening a PR.
+```
+Finora/
+├── app/                          ← Expo Router entry
+│   ├── _layout.tsx               ← root layout (GestureHandler + SafeArea)
+│   ├── index.tsx                 ← app entry, all providers mounted here
+│   └── [...unmatched].tsx        ← wildcard redirect to /
+│
+├── assets/
+│   ├── png/                      ← all app icons and splash images
+│   │   ├── icon.png              ← 1024×1024, transparent
+│   │   ├── splash-icon.png       ← 1024×1024, transparent
+│   │   ├── favicon.png           ← 512×512, transparent
+│   │   ├── android-icon-foreground.png   ← 432×432, transparent
+│   │   ├── android-icon-background.png   ← 432×432, Finora orange
+│   │   ├── android-icon-monochrome.png   ← 432×432, white mark
+│   │   └── notification-icon.png         ← 96×96, white mark
+│   ├── illustration/             ← static illustration images
+│   ├── json/                     ← Lottie animation files
+│   ├── sounds/                   ← success / failure / notification mp3
+│   └── svgs/                     ← Logo.tsx, TabIcons.tsx
+│
+├── src/
+│   ├── animations/               ← reusable animation primitives
+│   │   ├── animated-bar/
+│   │   ├── scroll-reveal/
+│   │   └── spring-reveal/
+│   │
+│   ├── components/               ← generic, feature-agnostic UI components
+│   │   ├── chart/bar-chart/
+│   │   ├── confetti/
+│   │   ├── date-range-picker/
+│   │   ├── legal-content/
+│   │   ├── loaders/
+│   │   ├── menu-row/
+│   │   ├── product-tour/
+│   │   ├── profile-card/
+│   │   ├── screen-header/
+│   │   ├── service-request/
+│   │   ├── tab-bar/
+│   │   └── toast-config/
+│   │
+│   ├── context/                  ← React context providers
+│   │   ├── language/             ← i18next init + SUPPORTED_LANGUAGES
+│   │   ├── Loading/              ← global loading overlay
+│   │   ├── Notifications/        ← push notification state
+│   │   └── Theme/                ← color tokens + ThemeProvider
+│   │
+│   ├── helpers/                  ← shared render helpers (not pure utils)
+│   │   ├── button/               ← PrimaryButton, SecondaryButton, etc.
+│   │   ├── model/                ← reusable modal/bottom-sheet wrapper
+│   │   └── sounds/               ← expo-audio playback helpers
+│   │
+│   ├── hooks/                    ← custom React hooks
+│   │   ├── useLoadingAction/
+│   │   └── useSpendSummary/
+│   │
+│   ├── locales/                  ← translation JSON files
+│   │   ├── en.json  hi.json  bn.json  mr.json
+│   │   ├── ta.json  te.json  kn.json  guj.json
+│   │
+│   ├── mock/                     ← local mock data for development
+│   │   └── track-spend/
+│   │
+│   ├── routes/
+│   │   └── index.tsx             ← single Tab.Navigator, all screens registered
+│   │
+│   ├── screens/                  ← one folder per screen / feature
+│   │   ├── credit/
+│   │   ├── home/
+│   │   ├── invoices/
+│   │   ├── money/
+│   │   ├── more/
+│   │   ├── payment-history/
+│   │   ├── profile/              ← profile + all sub-screens
+│   │   │   ├── about-app/
+│   │   │   ├── company/
+│   │   │   ├── documents/
+│   │   │   ├── nach-cancellation/
+│   │   │   ├── ndc-certificate/
+│   │   │   ├── personal/
+│   │   │   ├── privacy-policy/
+│   │   │   ├── quick-review/
+│   │   │   ├── rate-us/
+│   │   │   ├── refund-cancellation/
+│   │   │   ├── settings/
+│   │   │   ├── terms-conditions/
+│   │   │   └── update-contact/
+│   │   └── track-spend/          ← spend analytics screen + sub-components
+│   │
+│   ├── shared/                   ← components shared across multiple screens
+│   │   ├── card/
+│   │   ├── contact-details/
+│   │   ├── notifications/        ← notification templates, config, service
+│   │   ├── recent-payments/
+│   │   └── spend-chart/
+│   │
+│   ├── store/                    ← Redux store
+│   │   ├── index.ts              ← configureStore + typed hooks
+│   │   └── navSlice.ts           ← navigation back-stack slice
+│   │
+│   ├── stubs/
+│   │   └── react-native-maps.web.js   ← web stub (maps not supported on web)
+│   │
+│   ├── types/                    ← shared TypeScript types (alias: @data-types)
+│   │   ├── chart/  date-range/  legal/  more/  nav/
+│   │   ├── notifications/  product-tour/  profile/  track-spend/
+│   │   └── index.ts
+│   │
+│   └── utils/                    ← pure utility functions
+│       ├── format-locals/        ← formatINR, formatDate, formatLakh, etc.
+│       ├── message-pool/
+│       ├── tagline/
+│       └── toast/
+│
+├── app.json                      ← Expo config (icons, splash, plugins)
+├── babel.config.js               ← path aliases (@hooks, @screens, etc.)
+├── metro.config.js               ← web stub resolver for react-native-maps
+├── package.json
+└── tsconfig.json
+```
 
-### Workflow
+---
+
+## Path Aliases
+
+Defined in `babel.config.js` and `tsconfig.json`:
+
+| Alias | Resolves to |
+| --- | --- |
+| `@hooks` | `src/hooks` |
+| `@context` | `src/context` |
+| `@components` | `src/components` |
+| `@utils` | `src/utils` |
+| `@store` | `src/store` |
+| `@data-types` | `src/types` |
+| `@animations` | `src/animations` |
+| `@helpers` | `src/helpers` |
+| `@assets` | `assets` |
+| `@screens` | `src/screens` |
+| `@shared` | `src/shared` |
+| `@mock` | `src/mock` |
+
+---
+
+## Localisation
+
+<div align="center">
+
+| `en` | `hi` | `bn` | `mr` | `guj` | `ta` | `te` | `kn` |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| English | Hindi | Bengali | Marathi | Gujarati | Tamil | Telugu | Kannada |
+
+</div>
+
+All strings live in `src/locales/*.json` and are resolved through `src/context/language`. `fallbackLng` is `en`, so a missing key renders in English instead of breaking the screen.
+
+---
+
+## Running Locally
 
 ```bash
-# 1. Sync with the latest main
-git checkout main
-git pull origin main
+# Install dependencies
+npm install
 
-# 2. Create a branch
+# Start dev server
+npm start
+
+# Run on Android
+npm run android
+
+# Run on iOS
+npm run ios
+
+# Web (uses Metro bundler)
+npm run web
+```
+
+## Building
+
+```bash
+# Web export (with cache clear)
+npx expo export --platform web --clear
+
+# Android / iOS via EAS
+npm run build:android
+npm run build:ios
+npm run build:all
+```
+
+---
+
+## Contributing
+
+```bash
+# 1. Sync with main
+git checkout main && git pull origin main
+
+# 2. Branch
 git checkout -b feature/<short-description>
-# or: git checkout -b fix/<short-description>
 
-# 3. Make your changes, then verify locally
+# 3. Verify before committing
 npm run typecheck
 npm run lint
 
 # 4. Commit using conventional commits
-git add .
 git commit -m "feat(invoices): add QR upload validation"
 
-# 5. Push and open a Pull Request into main
+# 5. Push and open PR
 git push origin feature/<short-description>
 ```
 
-**Commit convention:** `feat | fix | docs | style | refactor | test | chore` → `type(scope): message`
+Commit types: `feat | fix | docs | style | refactor | test | chore`
 
-### Checklist
-
-| Step              | Requirement                                       |
-| ----------------- | ------------------------------------------------- |
-| ✅ Branch naming  | `feature/*`, `fix/*`, `chore/*`                   |
-| ✅ Before PR      | `npm run typecheck` and `npm run lint` pass       |
-| ✅ PR description | What changed, why, and screenshots for UI changes |
-| ✅ Review         | At least 1 approval before merge                  |
-| ✅ Merge strategy | Squash & merge into `main`                        |
+PR checklist: typecheck passes, lint passes, screenshot for UI changes, 1 approval required, squash merge into `main`.
 
 ---
 
 <div align="center">
 
-**Made with ❤️ by Rahul Goswami**
+Made with love by Rahul Goswami
 
 <sub>Proprietary software · All rights reserved</sub>
 

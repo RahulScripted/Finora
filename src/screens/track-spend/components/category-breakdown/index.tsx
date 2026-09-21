@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from "react-native";
 import Svg, { Circle, G } from "react-native-svg";
 import type { SpendSummary } from "@data-types/track-spend/constants";
 import { formatLakh } from "@utils/format-locals";
-import Card from "../shared/card";
+import Card from "@shared/card";
 import { useCategoryColors } from "../shared/use-category-colors";
 
 type Props = { data: SpendSummary };

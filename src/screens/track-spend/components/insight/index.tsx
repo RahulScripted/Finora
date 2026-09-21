@@ -34,7 +34,7 @@ export default function Insight({ data }: Props) {
 }
 
 const s = StyleSheet.create({
-  insight: { flexDirection: "row", gap: 10, padding: 14, borderRadius: 18, borderWidth: StyleSheet.hairlineWidth },
+  insight: { flexDirection: "row", gap: 10, padding: 14, borderRadius: 18, borderWidth: StyleSheet.hairlineWidth, alignItems: "center" },
   icon: { width: 32, height: 32, borderRadius: 16, alignItems: "center", justifyContent: "center" },
   flex: { flex: 1, minWidth: 0 },
   title: { fontSize: 12, fontWeight: "600" },

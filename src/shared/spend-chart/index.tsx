@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { StyleSheet, Text, View } from "react-native";
 import { AVG_UNIT, type Period, type SpendBucket } from "@data-types/track-spend/constants";
 import { formatINR } from "@utils/format-locals";
-import Card from "../shared/card";
+import Card from "@shared/card";
 
 type Props = { buckets: SpendBucket[]; period: Period };
 
@@ -20,9 +20,11 @@ export default function SpendChart({ buckets, period }: Props) {
     <Card padded>
       <View style={s.header}>
         <Text style={[s.value, { color: colors.textPrimary }]}>{t(`track_spend.chart_${AVG_UNIT[period]}`)}</Text>
-        <Text style={[s.label, { color: colors.textSecondary }]}>
-          {t(`track_spend.avg_${AVG_UNIT[period]}`, { amount: formatINR(average) })}
-        </Text>
+        <View style={[s.badge, { backgroundColor: colors.surface }]}>
+          <Text style={[s.badgeText, { color: colors.textSecondary }]}>
+            {t(`track_spend.avg_${AVG_UNIT[period]}`, { amount: formatINR(average) })}
+          </Text>
+        </View>
       </View>
       <View style={s.chart}>
         <BarChart
@@ -36,8 +38,9 @@ export default function SpendChart({ buckets, period }: Props) {
 }
 
 const s = StyleSheet.create({
-  header: { flexDirection: "row", alignItems: "baseline", justifyContent: "space-between" },
+  header: { flexDirection: "row", alignItems: "center", justifyContent: "space-between" },
   value: { fontSize: 14, fontWeight: "600", lineHeight: 20, fontVariant: ["tabular-nums"] },
-  label: { fontSize: 12 },
+  badge: { paddingHorizontal: 10, paddingVertical: 4, borderRadius: 20 },
+  badgeText: { fontSize: 12, fontWeight: "500", fontVariant: ["tabular-nums"] },
   chart: { marginTop: 6 },
 });

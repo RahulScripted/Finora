@@ -3,13 +3,13 @@ import { useTheme } from "@context/Theme/ThemeContext";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { PrimaryButton } from "@helpers/button";
 import BottomSheet from "@helpers/model";
+import { useLoadingAction } from "@hooks/useLoadingAction";
+import { fireNotification, getDownloadNotification } from "@shared/notifications";
+import type { DateRange } from "@data-types/date-range/constants";
+import { formatShortDate } from "@utils/format-locals";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Pressable, StyleSheet, Text } from "react-native";
-import type { DateRange } from "@data-types/date-range/constants";
-import { useLoadingAction } from "@hooks/useLoadingAction";
-import { formatShortDate } from "@utils/format-locals";
-import { notify } from "@utils/toast";
+import { Platform, Pressable, StyleSheet, Text, ToastAndroid } from "react-native";
 
 type Props = {
   visible: boolean;
@@ -23,7 +23,6 @@ export type StatementSelection = {
 };
 
 type PresetKey = "1m" | "3m" | "6m" | "1y";
-
 const PRESETS: { key: PresetKey; labelKey: string }[] = [
   { key: "1m", labelKey: "track_spend.range_1m" },
   { key: "3m", labelKey: "track_spend.range_3m" },
@@ -54,20 +53,32 @@ export default function StatementSheet({ visible, onClose, onDownload }: Props) 
       onDownload({ type: selected as PresetKey });
     }
 
-    // Inline spinner on the button
     setDownloading(true);
 
-    // Close sheet after a beat so user sees "Downloading…" briefly
     setTimeout(() => {
       onClose();
       setDownloading(false);
     }, 800);
 
-    // Global coin loader for the full 3.5s, then success toast
     runWithLoader({
       message: t("track_spend.downloading"),
       duration: 3500,
-      onDone: () => notify.success({ title: t("track_spend.download_complete") }),
+      onDone: () => {
+        if (Platform.OS === "android") {
+          ToastAndroid.show(t("track_spend.download_complete"), ToastAndroid.SHORT);
+        }
+        const tpl = getDownloadNotification();
+        fireNotification({
+          id: `stmt_dl_${Date.now()}`,
+          type: "DOWNLOAD_COMPLETE",
+          channel: "transactions",
+          title: tpl.title,
+          body: tpl.body,
+          data: {},
+          timestamp: new Date().toISOString(),
+          priority: "default",
+        }).catch(() => {});
+      },
     });
   };
 

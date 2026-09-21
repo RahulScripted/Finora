@@ -7,7 +7,6 @@ type Props = {
   onAction?: () => void;
 };
 
-/** Section title with an optional right-aligned action link. */
 export default function SectionHeader({ title, action, onAction }: Props) {
   const { colors } = useTheme();
   return (

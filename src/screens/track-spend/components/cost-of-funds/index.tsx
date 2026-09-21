@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { StyleSheet, Text, View } from "react-native";
 import type { SpendSummary } from "@data-types/track-spend/constants";
 import { formatINR } from "@utils/format-locals";
-import Card from "../shared/card";
+import Card from "@shared/card";
 
 type Props = { data: SpendSummary };
 
