@@ -1,0 +1,124 @@
+<svg
+  id="icon-check-mark"
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 150 150"
+  role="img"
+  aria-label="Success"
+>
+  <style>
+    .green-stroke {
+      fill: none;
+      stroke: #57b849;
+      stroke-width: 13.3;
+      stroke-linejoin: round;
+      stroke-linecap: round;
+    }
+
+    #circle {
+      stroke-dasharray: 345;
+      stroke-dashoffset: 345;
+      transform-origin: 75px 75px;
+
+      animation:
+        circle-animation
+        5s
+        cubic-bezier(0.42, 0, 1, 1)
+        infinite;
+    }
+
+    #check {
+      stroke-linecap: square;
+      stroke-dasharray: 122;
+      stroke-dashoffset: 122;
+
+      animation:
+        check-animation
+        5s
+        cubic-bezier(0.19, 1, 0.22, 1)
+        infinite;
+    }
+
+    /*
+      5 SECOND LOOP
+
+      0.00s ───────── 0.50s
+      Small starting pause
+
+      0.50s ───────── 2.00s
+      Circle draws slowly
+
+      2.00s ───────── 2.70s
+      Checkmark draws
+
+      2.70s ───────── 4.20s
+      Completed success state
+
+      4.20s ───────── 5.00s
+      Reset and prepare for next loop
+    */
+
+    @keyframes circle-animation {
+      0% {
+        stroke-dashoffset: 345;
+        transform: rotate(0deg);
+      }
+
+      10% {
+        stroke-dashoffset: 345;
+        transform: rotate(0deg);
+      }
+
+      40% {
+        stroke-dashoffset: 0;
+        transform: rotate(360deg);
+      }
+
+      84% {
+        stroke-dashoffset: 0;
+        transform: rotate(360deg);
+      }
+
+      100% {
+        stroke-dashoffset: 345;
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes check-animation {
+      0% {
+        stroke-dashoffset: 122;
+      }
+
+      40% {
+        stroke-dashoffset: 122;
+      }
+
+      54% {
+        stroke-dashoffset: 0;
+      }
+
+      84% {
+        stroke-dashoffset: 0;
+      }
+
+      100% {
+        stroke-dashoffset: 122;
+      }
+    }
+  </style>
+
+  <path
+    id="circle"
+    class="green-stroke"
+    d="M141,69v6c0,37.5-31.3,67.7-69.2,65.9
+       c-33.8-1.6-61.2-29-62.8-62.8
+       C7.3,40.2,37.6,9,75,9
+       c9.2,0,18.4,2,26.8,5.7"
+  />
+
+  <path
+    id="check"
+    class="green-stroke"
+    d="M139.9,22.2l-66,66.1L54.1,68.5"
+  />
+</svg>

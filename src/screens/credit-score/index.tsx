@@ -9,6 +9,7 @@ import {
   KeyboardAvoidingView,
   Platform,
   Pressable,
+  RefreshControl,
   ScrollView,
   StyleSheet,
   Text,
@@ -55,7 +56,7 @@ function AccountInput({
 }: {
   onSubmit: (account: string) => void;
   onClear: () => void;
-  onChange: (raw: string) => void;
+  onChange?: (raw: string) => void;
   fetching: boolean;
   account: string;
 }) {
@@ -65,7 +66,7 @@ function AccountInput({
   const handleChange = (text: string) => {
     const formatted = formatAccountNumber(text);
     setAccount_local(formatted);
-    onChange(stripFormatting(formatted));
+    onChange?.(stripFormatting(formatted));
   };
 
   // local display state mirrors the formatted string
@@ -237,11 +238,12 @@ function CreditScoreInner() {
   const { data, isLoading, isRefetching, refetch, fetchForAccount } = useCreditSummary();
   const { scrollY, viewportH } = useScrollRevealValues();
   const [hasResult, setHasResult] = useState(false);
+  const [account, setAccount] = useState("");
   const scrollRef = useRef<ScrollView>(null);
   useScrollToTop(scrollRef);
 
-  const handleSubmit = (account: string) => {
-    fetchForAccount(account);
+  const handleSubmit = (acc: string) => {
+    fetchForAccount(acc);
     // Wait for the 2.5s loader then reveal results and scroll
     setTimeout(() => {
       setHasResult(true);
@@ -251,6 +253,11 @@ function CreditScoreInner() {
 
   const handleClear = () => {
     setHasResult(false);
+    setAccount("");
+  };
+
+  const handleRefetch = () => {
+    refetch();
   };
 
   return (
@@ -267,6 +274,15 @@ function CreditScoreInner() {
         contentContainerStyle={[s.scroll, { paddingBottom: insets.bottom + 32 }]}
         keyboardShouldPersistTaps="handled"
         scrollEventThrottle={16}
+        refreshControl={
+          hasResult ? (
+            <RefreshControl
+              refreshing={isRefetching}
+              onRefresh={handleRefetch}
+              tintColor={colors.accent}
+            />
+          ) : undefined
+        }
         onScroll={(e) => {
           scrollY.value = e.nativeEvent.contentOffset.y;
           viewportH.value = e.nativeEvent.layoutMeasurement.height;
@@ -278,7 +294,9 @@ function CreditScoreInner() {
         <AccountInput
           onSubmit={handleSubmit}
           onClear={handleClear}
+          onChange={setAccount}
           fetching={isRefetching}
+          account={account}
         />
 
         {/* Full-area loader while fetching (first time or re-check) */}
@@ -289,7 +307,7 @@ function CreditScoreInner() {
         ) : null}
 
         {hasResult && !isRefetching ? (
-          <ResultsSection data={data} isRefetching={isRefetching} refetch={refetch} />
+          <ResultsSection data={data} isRefetching={isRefetching} refetch={handleRefetch} />
         ) : null}
       </ScrollView>
     </KeyboardAvoidingView>

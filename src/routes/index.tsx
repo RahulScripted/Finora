@@ -21,6 +21,7 @@ import InvoicesScreen from "@screens/invoices";
 import MoreScreen from "@screens/more";
 import ProfileScreen from "@screens/profile";
 import PersonalScreen from "@screens/profile/personal";
+import CoApplicantDetailScreen from "@screens/profile/personal/components/coapplicant";
 import CompanyScreen from "@screens/profile/company";
 import ProfileDocumentsScreen from "@screens/profile/documents";
 import AboutAppScreen from "@screens/profile/about-app";
@@ -173,6 +174,7 @@ export default function AppRoutes() {
           {/* Hidden screens — navigated to from More/Profile, not shown in tab bar */}
           <Tab.Screen name="profile" component={ProfileScreen} options={HIDDEN_TAB} />
           <Tab.Screen name="personal" component={PersonalScreen} options={HIDDEN_TAB} />
+          <Tab.Screen name="co-applicant-detail" component={CoApplicantDetailScreen} options={HIDDEN_TAB} />
           <Tab.Screen name="company" component={CompanyScreen} options={HIDDEN_TAB} />
           <Tab.Screen name="documents" component={ProfileDocumentsScreen} options={HIDDEN_TAB} />
           <Tab.Screen name="about-app" component={AboutAppScreen} options={HIDDEN_TAB} />

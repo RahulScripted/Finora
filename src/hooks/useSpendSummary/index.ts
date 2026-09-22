@@ -12,17 +12,25 @@ export type UseSpendSummaryResult = {
 export function useSpendSummary(period: Period): UseSpendSummaryResult {
   const [isLoading, setIsLoading] = useState(true);
   const [isRefetching, setIsRefetching] = useState(false);
+  const [fetchKey, setFetchKey] = useState(0);
 
   useEffect(() => {
     const id = setTimeout(() => setIsLoading(false), 450);
     return () => clearTimeout(id);
   }, []);
 
-  const data = useMemo(() => buildSpendSummary(period), [period]);
+  const data = useMemo(
+    () => buildSpendSummary(period),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [period, fetchKey],
+  );
 
   const refetch = useCallback(() => {
     setIsRefetching(true);
-    setTimeout(() => setIsRefetching(false), 700);
+    setTimeout(() => {
+      setFetchKey((k) => k + 1);
+      setIsRefetching(false);
+    }, 700);
   }, []);
 
   return { data, isLoading, isRefetching, refetch };

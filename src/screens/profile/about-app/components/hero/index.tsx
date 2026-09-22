@@ -1,4 +1,4 @@
-import Logo from "@assets/svgs/Logo";
+import { Logo } from "@assets/svgs";
 import { useTheme } from "@context/Theme/ThemeContext";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import Constants from "expo-constants";

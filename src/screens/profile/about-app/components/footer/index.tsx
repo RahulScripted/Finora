@@ -1,4 +1,4 @@
-import Logo from "@assets/svgs/Logo";
+import { Logo } from "@assets/svgs";
 import { useTheme } from "@context/Theme/ThemeContext";
 import Constants from "expo-constants";
 import { useTranslation } from "react-i18next";

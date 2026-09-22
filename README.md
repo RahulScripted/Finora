@@ -6,7 +6,7 @@
 
 ### Your finances, in your pocket.
 
-A secure, multilingual React Native app for **loans, invoices, repayments and spend tracking**, built for customers who want everything in one tap.
+A secure, multilingual React Native app for **invoice financing, loans, repayments, spend tracking and credit scoring**, built for customers who want everything in one tap.
 
 <br/>
 
@@ -64,14 +64,7 @@ Finora/
 │   └── [...unmatched].tsx        ← wildcard redirect to /
 │
 ├── assets/
-│   ├── png/                      ← all app icons and splash images
-│   │   ├── icon.png              ← 1024×1024, transparent
-│   │   ├── splash-icon.png       ← 1024×1024, transparent
-│   │   ├── favicon.png           ← 512×512, transparent
-│   │   ├── android-icon-foreground.png   ← 432×432, transparent
-│   │   ├── android-icon-background.png   ← 432×432, Finora orange
-│   │   ├── android-icon-monochrome.png   ← 432×432, white mark
-│   │   └── notification-icon.png         ← 96×96, white mark
+│   ├── png/                      ← app icons and splash images
 │   ├── illustration/             ← static illustration images
 │   ├── json/                     ← Lottie animation files
 │   ├── sounds/                   ← success / failure / notification mp3
@@ -109,33 +102,40 @@ Finora/
 │   │   └── sounds/               ← expo-audio playback helpers
 │   │
 │   ├── hooks/                    ← custom React hooks
-│   │   ├── useLoadingAction/
-│   │   └── useSpendSummary/
+│   │   ├── useCreditSummary/     ← credit score fetch + refetch
+│   │   ├── useSpendSummary/      ← spend analytics fetch + refetch
+│   │   ├── usePersonal/          ← applicant + co-applicant data + updates
+│   │   ├── useCompany/           ← company data + updates
+│   │   ├── useUnmaskField/       ← on-demand sensitive field reveal (API stub)
+│   │   └── useLoadingAction/
 │   │
 │   ├── locales/                  ← translation JSON files
 │   │   ├── en.json  hi.json  bn.json  mr.json
-│   │   ├── ta.json  te.json  kn.json  guj.json
+│   │   └── ta.json  te.json  kn.json  guj.json
 │   │
-│   ├── mock/                     ← local mock data for development
-│   │   └── track-spend/
+│   ├── mock/                     ← local mock data (masked where sensitive)
+│   │   ├── credit-score/
+│   │   ├── track-spend/
+│   │   ├── personal/             ← applicant + co-applicant mock (PAN/Aadhaar masked)
+│   │   └── company/              ← company mock (GSTIN masked)
 │   │
 │   ├── routes/
 │   │   └── index.tsx             ← single Tab.Navigator, all screens registered
 │   │
 │   ├── screens/                  ← one folder per screen / feature
-│   │   ├── credit/
+│   │   ├── credit-score/         ← score, history, factors, utilization, tips
 │   │   ├── home/
 │   │   ├── invoices/
 │   │   ├── money/
 │   │   ├── more/
 │   │   ├── payment-history/
-│   │   ├── profile/              ← profile + all sub-screens
+│   │   ├── profile/
 │   │   │   ├── about-app/
-│   │   │   ├── company/
+│   │   │   ├── company/          ← registration, address, banking, signatory
 │   │   │   ├── documents/
 │   │   │   ├── nach-cancellation/
 │   │   │   ├── ndc-certificate/
-│   │   │   ├── personal/
+│   │   │   ├── personal/         ← selector + ApplicantDetail + CoApplicantDetail
 │   │   │   ├── privacy-policy/
 │   │   │   ├── quick-review/
 │   │   │   ├── rate-us/
@@ -148,7 +148,7 @@ Finora/
 │   ├── shared/                   ← components shared across multiple screens
 │   │   ├── card/
 │   │   ├── contact-details/
-│   │   ├── notifications/        ← notification templates, config, service
+│   │   ├── notifications/
 │   │   ├── recent-payments/
 │   │   └── spend-chart/
 │   │
@@ -156,17 +156,18 @@ Finora/
 │   │   ├── index.ts              ← configureStore + typed hooks
 │   │   └── navSlice.ts           ← navigation back-stack slice
 │   │
-│   ├── stubs/
-│   │   └── react-native-maps.web.js   ← web stub (maps not supported on web)
-│   │
 │   ├── types/                    ← shared TypeScript types (alias: @data-types)
-│   │   ├── chart/  date-range/  legal/  more/  nav/
-│   │   ├── notifications/  product-tour/  profile/  track-spend/
+│   │   ├── chart/  credit-score/  date-range/  legal/
+│   │   ├── more/  nav/  notifications/  product-tour/
+│   │   ├── profile/  track-spend/
+│   │   ├── personal/             ← Applicant, CoApplicant, PersonalData
+│   │   ├── company/              ← CompanyData, Registration, Banking, etc.
 │   │   └── index.ts
 │   │
 │   └── utils/                    ← pure utility functions
 │       ├── format-locals/        ← formatINR, formatDate, formatLakh, etc.
 │       ├── message-pool/
+│       ├── pick-random/          ← randomCreditSummary for demo data
 │       ├── tagline/
 │       └── toast/
 │
@@ -209,8 +210,6 @@ Defined in `babel.config.js` and `tsconfig.json`:
 | English | Hindi | Bengali | Marathi | Gujarati | Tamil | Telugu | Kannada |
 
 </div>
-
-All strings live in `src/locales/*.json` and are resolved through `src/context/language`. `fallbackLng` is `en`, so a missing key renders in English instead of breaking the screen.
 
 ---
 
@@ -261,7 +260,7 @@ npm run typecheck
 npm run lint
 
 # 4. Commit using conventional commits
-git commit -m "feat(invoices): add QR upload validation"
+git commit -m "feat(profile): add applicant detail with field masking"
 
 # 5. Push and open PR
 git push origin feature/<short-description>

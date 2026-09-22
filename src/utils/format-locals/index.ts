@@ -150,18 +150,54 @@ export function formatCompactValue(n: number): string {
   return convertDigits(formatted);
 }
 
-export function formatDate(iso: string): string {
-  if (!iso) return "";
-  const [y, m, day] = iso.split("-").map(Number);
-  if (!y || !m || !day) return "";
-  const d = new Date(y, m - 1, day);
-  if (isNaN(d.getTime())) return "";
-  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-  const formatted = `${d.getDate().toString().padStart(2, "0")} ${months[d.getMonth()]}, ${d.getFullYear()}`;
-  return convertDigits(formatted);
+/** ISO date string -> "14 Mar 1992" (en-IN locale) */
+export function formatDob(iso: string): string {
+  if (!iso) return "—";
+  const d = new Date(iso);
+  return d.toLocaleDateString("en-IN", { day: "2-digit", month: "short", year: "numeric" });
 }
 
-export function formatDateTime(iso: string): string {
+/** Address object -> single comma-separated string */
+export function formatAddress(a: {
+  line1: string;
+  line2?: string;
+  city: string;
+  state: string;
+  pincode: string;
+}): string {
+  return [a.line1, a.line2, `${a.city}, ${a.state} ${a.pincode}`].filter(Boolean).join(", ");
+}
+
+/** Mask Aadhaar — show only last 4 digits */
+export function maskAadhaar(last4: string): string {
+  return `XXXX XXXX ${last4}`;
+}
+
+/** Mask an email: "rahul@gmail.com" -> "r***@gmail.com" */
+export function maskEmail(email: string): string {
+  const [local, domain] = email.split("@");
+  if (!local || !domain) return email;
+  const first = local[0] ?? "";
+  return `${first}${"*".repeat(Math.max(local.length - 1, 2))}@${domain}`;
+}
+
+/** Mask a mobile: "+919833011267" -> "+91 98****1267" */
+export function maskMobile(mobile: string): string {
+  const digits = mobile.replace(/\s+/g, "");
+  if (digits.length < 6) return mobile;
+  const start = digits.slice(0, digits.length - 8 > 0 ? digits.length - 8 : 2);
+  const last4 = digits.slice(-4);
+  return `${start}${"*".repeat(4)}${last4}`;
+}
+
+/** "Rahul Goswami" -> "RG" */
+export function getPersonInitials(name: string): string {
+  return (
+    name.trim().split(" ").filter(Boolean).slice(0, 2).map((w) => w[0]).join("").toUpperCase() || "?"
+  );
+}
+
+export function formatDate(iso: string): string {
   const d = new Date(iso);
   const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   const day = d.getDate().toString().padStart(2, "0");

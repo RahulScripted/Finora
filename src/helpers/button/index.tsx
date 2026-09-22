@@ -17,7 +17,6 @@ type Variant = "primary" | "secondary";
 type Props = Omit<TouchableOpacityProps, "disabled" | "style"> & {
   title: string;
   loading?: boolean;
-  /** Text shown while loading. Falls back to `title`. */
   loadingLabel?: string;
   disabled?: boolean;
   variant?: Variant;

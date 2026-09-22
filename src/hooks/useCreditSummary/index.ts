@@ -16,6 +16,8 @@ export function useCreditSummary(): UseCreditSummaryResult {
   const [isLoading, setIsLoading] = useState(true);
   const [isRefetching, setIsRefetching] = useState(false);
   const [account, setAccount] = useState<string | null>(null);
+  // bump this to force data to recompute on refetch
+  const [fetchKey, setFetchKey] = useState(0);
 
   useEffect(() => {
     const id = setTimeout(() => setIsLoading(false), 450);
@@ -23,20 +25,25 @@ export function useCreditSummary(): UseCreditSummaryResult {
   }, []);
 
   const data = useMemo(
-    () => (account ? randomCreditSummary(account) : CREDIT_SCORE_MOCK),
-    [account],
+    () => (account ? randomCreditSummary(account + fetchKey) : CREDIT_SCORE_MOCK),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [account, fetchKey],
   );
 
   const refetch = useCallback(() => {
+    if (!account) return;
     setIsRefetching(true);
-    setTimeout(() => setIsRefetching(false), 700);
-  }, []);
+    setTimeout(() => {
+      setFetchKey((k) => k + 1);
+      setIsRefetching(false);
+    }, 700);
+  }, [account]);
 
   const fetchForAccount = useCallback((acc: string) => {
     setIsRefetching(true);
-    // 2.5s simulated latency so the loader is visible for 2-3 seconds
     setTimeout(() => {
       setAccount(acc.trim());
+      setFetchKey((k) => k + 1);
       setIsRefetching(false);
     }, 2500);
   }, []);

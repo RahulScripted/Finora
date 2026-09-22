@@ -1,7 +1,8 @@
 import { useTheme } from "@context/Theme/ThemeContext";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useTranslation } from "react-i18next";
-import { StyleSheet, Text, View, type ComponentProps } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
+import type { ComponentProps } from "react";
 import Animated, {
   useAnimatedStyle,
   useSharedValue,

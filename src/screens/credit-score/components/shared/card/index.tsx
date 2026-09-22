@@ -1,5 +1,6 @@
 import { useTheme } from "@context/Theme/ThemeContext";
-import { StyleSheet, View, type ReactNode } from "react-native";
+import { StyleSheet, View } from "react-native";
+import type { ReactNode } from "react";
 
 type Props = { children: ReactNode; padded?: boolean; tint?: string };
 

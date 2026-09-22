@@ -17,7 +17,6 @@ const fromISO = (iso: string) => {
 const sameDay = (a: Date, b: Date) =>
   a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate();
 
-/** Dependency-free month-grid date range picker in a bottom sheet modal. */
 export default function DateRangePicker({ visible, initial, onClose, onApply }: DateRangePickerProps) {
   const { t } = useTranslation();
   const { colors } = useTheme();
