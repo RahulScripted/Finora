@@ -37,6 +37,8 @@ import UpdateContactScreen from "@screens/profile/update-contact";
 import TrackSpendScreen from "@screens/track-spend";
 import CreditScoreScreen from "@screens/credit-score";
 import PaymentHistoryScreen from "@screens/payment-history";
+import BusinessPartnersScreen from "@screens/business-partners";
+import BusinessPartnerDetailScreen from "@screens/business-partners/detail";
 
 const Tab = createBottomTabNavigator();
 
@@ -190,6 +192,8 @@ export default function AppRoutes() {
           <Tab.Screen name="track-spends" component={TrackSpendScreen} options={HIDDEN_TAB} />
           <Tab.Screen name="credit-score" component={CreditScoreScreen} options={HIDDEN_TAB} />
           <Tab.Screen name="payment-history" component={PaymentHistoryScreen} options={HIDDEN_TAB} />
+          <Tab.Screen name="business-partners" component={BusinessPartnersScreen} options={HIDDEN_TAB} />
+          <Tab.Screen name="business-partner-detail" component={BusinessPartnerDetailScreen} options={HIDDEN_TAB} />
         </Tab.Navigator>
       </NavigationContainer>
     </NavigationIndependentTree>
