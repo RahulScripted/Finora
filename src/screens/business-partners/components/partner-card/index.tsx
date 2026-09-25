@@ -60,13 +60,6 @@ export default function PartnerCard({ partner, onPress }: Props) {
         </View>
         <UtilizationRing pct={pct} />
       </View>
-
-      <View style={[s.footer, { borderTopColor: colors.divider }]}>
-        <Text style={[s.footerText, { color: colors.accent }]}>
-          {t("business_partners.view_details")}
-        </Text>
-        <MaterialCommunityIcons name="arrow-right" size={14} color={colors.accent} />
-      </View>
     </Pressable>
   );
 }

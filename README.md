@@ -77,20 +77,25 @@ Finora/
 │   │   └── spring-reveal/
 │   │
 │   ├── components/               ← generic, feature-agnostic UI components
-│   │   ├── chart/bar-chart/
+│   │   ├── chart/                ← bar-chart, line-chart, column-chart, donut-chart, progress-ring, sparkline
 │   │   ├── confetti/
+│   │   ├── contact-action/
 │   │   ├── date-range-picker/
+│   │   ├── info-card/
+│   │   ├── key-value-row/
 │   │   ├── legal-content/
 │   │   ├── loaders/
 │   │   ├── menu-row/
 │   │   ├── product-tour/
 │   │   ├── profile-card/
 │   │   ├── screen-header/
+│   │   ├── screenshot-countdown/ ← fullscreen 3-2-1 capture overlay
 │   │   ├── service-request/
 │   │   ├── tab-bar/
 │   │   └── toast-config/
 │   │
 │   ├── context/                  ← React context providers
+│   │   ├── ErrorReport/          ← global "something went wrong" report sheet
 │   │   ├── language/             ← i18next init + SUPPORTED_LANGUAGES
 │   │   ├── Loading/              ← global loading overlay
 │   │   ├── Notifications/        ← push notification state
@@ -102,8 +107,10 @@ Finora/
 │   │   └── sounds/               ← expo-audio playback helpers
 │   │
 │   ├── hooks/                    ← custom React hooks
+│   │   ├── useBusinessPartners/  ← partners list + summary + detail lookup
 │   │   ├── useCreditSummary/     ← credit score fetch + refetch
 │   │   ├── useSpendSummary/      ← spend analytics fetch + refetch
+│   │   ├── useSupport/           ← support tickets store + submit + refetch
 │   │   ├── usePersonal/          ← applicant + co-applicant data + updates
 │   │   ├── useCompany/           ← company data + updates
 │   │   ├── useUnmaskField/       ← on-demand sensitive field reveal (API stub)
@@ -114,7 +121,9 @@ Finora/
 │   │   └── ta.json  te.json  kn.json  guj.json
 │   │
 │   ├── mock/                     ← local mock data (masked where sensitive)
+│   │   ├── business-partners/
 │   │   ├── credit-score/
+│   │   ├── support/              ← RM/escalation + seed tickets
 │   │   ├── track-spend/
 │   │   ├── personal/             ← applicant + co-applicant mock (PAN/Aadhaar masked)
 │   │   └── company/              ← company mock (GSTIN masked)
@@ -123,6 +132,7 @@ Finora/
 │   │   └── index.tsx             ← single Tab.Navigator, all screens registered
 │   │
 │   ├── screens/                  ← one folder per screen / feature
+│   │   ├── business-partners/    ← list + detail (exposure donut, drawdown, invoices)
 │   │   ├── credit-score/         ← score, history, factors, utilization, tips
 │   │   ├── home/
 │   │   ├── invoices/
@@ -141,6 +151,7 @@ Finora/
 │   │   │   ├── rate-us/
 │   │   │   ├── refund-cancellation/
 │   │   │   ├── settings/
+│   │   │   ├── support/          ← dashboard + create-ticket + track-ticket + ticket-detail
 │   │   │   ├── terms-conditions/
 │   │   │   └── update-contact/
 │   │   └── track-spend/          ← spend analytics screen + sub-components
@@ -156,18 +167,28 @@ Finora/
 │   │   ├── index.ts              ← configureStore + typed hooks
 │   │   └── navSlice.ts           ← navigation back-stack slice
 │   │
+│   ├── templates/                ← copy-ready message templates (alias: @templates)
+│   │   ├── email/                ← email + auto error-report body
+│   │   ├── whatsapp/             ← WhatsApp body + error report + example
+│   │   └── shared/               ← fillTemplate, vars, DEFAULT_CUSTOMER
+│   │
+│   ├── services/                 ← device services
+│   │   └── capture-screenshot.ts ← react-native-view-shot wrapper
+│   │
 │   ├── types/                    ← shared TypeScript types (alias: @data-types)
-│   │   ├── chart/  credit-score/  date-range/  legal/
+│   │   ├── business-partners/  chart/  credit-score/  date-range/  legal/
 │   │   ├── more/  nav/  notifications/  product-tour/
-│   │   ├── profile/  track-spend/
+│   │   ├── profile/  support/  track-spend/
 │   │   ├── personal/             ← Applicant, CoApplicant, PersonalData
 │   │   ├── company/              ← CompanyData, Registration, Banking, etc.
 │   │   └── index.ts
 │   │
 │   └── utils/                    ← pure utility functions
+│       ├── debounce/             ← useDebounce, debounce, useDebouncedCallback
 │       ├── format-locals/        ← formatINR, formatDate, formatLakh, etc.
 │       ├── message-pool/
 │       ├── pick-random/          ← randomCreditSummary for demo data
+│       ├── recommend/            ← search suggestions (recommend, suggestTerms)
 │       ├── tagline/
 │       └── toast/
 │
@@ -198,6 +219,7 @@ Defined in `babel.config.js` and `tsconfig.json`:
 | `@screens` | `src/screens` |
 | `@shared` | `src/shared` |
 | `@mock` | `src/mock` |
+| `@templates` | `src/templates` |
 
 ---
 

@@ -6,6 +6,7 @@ import Animated, {
   cancelAnimation,
   useAnimatedProps,
   useSharedValue,
+  withDelay,
   withRepeat,
   withSequence,
   withTiming,
@@ -17,7 +18,18 @@ export function Logo({ size = 72 }: { size?: number }) {
   return <LogoSvg width={size} height={size} />;
 }
 
-export function AnimatedTick({ size = 80, color = "#57b849", active = true }: { size?: number; color?: string; active?: boolean }) {
+export function AnimatedTick({
+  size = 80,
+  color = "#57b849",
+  active = true,
+  /** When true (default) the draw loops. Set false to draw the tick once and stop. */
+  loop = true,
+}: {
+  size?: number;
+  color?: string;
+  active?: boolean;
+  loop?: boolean;
+}) {
   const circleDash = useSharedValue(345);
   const circleRot  = useSharedValue(0);
   const checkDash  = useSharedValue(122);
@@ -31,6 +43,22 @@ export function AnimatedTick({ size = 80, color = "#57b849", active = true }: { 
       circleRot.value  = 0;
       checkDash.value  = 122;
       return;
+    }
+
+    // Play once: draw the circle, then the check, then hold — no bounce, no repeat.
+    if (!loop) {
+      circleDash.value = 345;
+      circleRot.value = 0;
+      checkDash.value = 122;
+      circleDash.value = withTiming(0, { duration: 600, easing: Easing.out(Easing.cubic) });
+      checkDash.value = withDelay(
+        450,
+        withTiming(0, { duration: 400, easing: Easing.bezier(0.19, 1, 0.22, 1) }),
+      );
+      return () => {
+        cancelAnimation(circleDash);
+        cancelAnimation(checkDash);
+      };
     }
 
     circleDash.value = withRepeat(

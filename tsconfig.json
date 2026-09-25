@@ -20,7 +20,8 @@
       "@assets/*": ["assets/*"],
       "@screens/*": ["src/screens/*"],
       "@shared/*": ["src/shared/*"],
-      "@mock/*": ["src/mock/*"]
+      "@mock/*": ["src/mock/*"],
+      "@templates/*": ["src/templates/*"]
     }
   },
   "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"]

@@ -9,9 +9,10 @@ import DateRangePicker from "@components/date-range-picker";
 import { useFocusEffect, useNavigation } from "@react-navigation/native";
 import { useCallback, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { RefreshControl, ScrollView, StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import type { DateRange } from "@data-types/date-range/constants";
+import { useRefresh } from "@shared/refresh";
 import { useScrollToTop } from "@shared/scroll-to-top";
 import SectionHeader from "./components/shared/section-header";
 import ListSkeleton from "./components/shared/skeleton";
@@ -24,7 +25,8 @@ function BusinessPartnersInner() {
   const insets = useSafeAreaInsets();
   const { t } = useTranslation();
   const navigation = useNavigation<any>();
-  const { data, isLoading, isRefetching, refetch } = useBusinessPartners();
+  const { data, isLoading, refetch } = useBusinessPartners();
+  const { refreshControl } = useRefresh(refetch);
   const { scrollY, viewportH } = useScrollRevealValues();
   const scrollRef = useRef<ScrollView>(null);
   useScrollToTop(scrollRef);
@@ -55,9 +57,7 @@ function BusinessPartnersInner() {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={[s.scroll, { paddingBottom: insets.bottom + 32 }]}
         scrollEventThrottle={16}
-        refreshControl={
-          <RefreshControl refreshing={isRefetching} onRefresh={refetch} tintColor={colors.accent} />
-        }
+        refreshControl={refreshControl}
         onScroll={(e) => {
           scrollY.value = e.nativeEvent.contentOffset.y;
           viewportH.value = e.nativeEvent.layoutMeasurement.height;

@@ -13,6 +13,7 @@ import { useTranslation } from "react-i18next";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import type { DateRange } from "@data-types/date-range/constants";
+import { useRefresh } from "@shared/refresh";
 import ScreenHeader from "@components/screen-header";
 import { totalInterestForPartner } from "@data-types/business-partners/constants";
 import SectionHeader from "../components/shared/section-header";
@@ -41,6 +42,7 @@ function DetailInner() {
       setRevealKey((k) => k + 1);
     }, []),
   );
+  const { refreshControl } = useRefresh(() => setRevealKey((k) => k + 1));
 
   // Custom range for the trend card — owned here so the picker Modal
   // renders at the screen root (slides up correctly on all platforms).
@@ -76,6 +78,7 @@ function DetailInner() {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={[s.scroll, { paddingBottom: insets.bottom + 24 }]}
         scrollEventThrottle={16}
+        refreshControl={refreshControl}
         onScroll={(e) => {
           scrollY.value = e.nativeEvent.contentOffset.y;
           viewportH.value = e.nativeEvent.layoutMeasurement.height;

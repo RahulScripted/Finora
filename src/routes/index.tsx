@@ -39,6 +39,10 @@ import CreditScoreScreen from "@screens/credit-score";
 import PaymentHistoryScreen from "@screens/payment-history";
 import BusinessPartnersScreen from "@screens/business-partners";
 import BusinessPartnerDetailScreen from "@screens/business-partners/detail";
+import SupportScreen from "@screens/profile/support";
+import CreateTicketScreen from "@screens/profile/support/create-ticket";
+import TrackTicketScreen from "@screens/profile/support/track-ticket";
+import TicketDetailScreen from "@screens/profile/support/ticket-detail";
 
 const Tab = createBottomTabNavigator();
 
@@ -194,6 +198,10 @@ export default function AppRoutes() {
           <Tab.Screen name="payment-history" component={PaymentHistoryScreen} options={HIDDEN_TAB} />
           <Tab.Screen name="business-partners" component={BusinessPartnersScreen} options={HIDDEN_TAB} />
           <Tab.Screen name="business-partner-detail" component={BusinessPartnerDetailScreen} options={HIDDEN_TAB} />
+          <Tab.Screen name="help-support" component={SupportScreen} options={HIDDEN_TAB} />
+          <Tab.Screen name="support-create-ticket" component={CreateTicketScreen} options={HIDDEN_TAB} />
+          <Tab.Screen name="support-track-ticket" component={TrackTicketScreen} options={HIDDEN_TAB} />
+          <Tab.Screen name="support-ticket-detail" component={TicketDetailScreen} options={HIDDEN_TAB} />
         </Tab.Navigator>
       </NavigationContainer>
     </NavigationIndependentTree>

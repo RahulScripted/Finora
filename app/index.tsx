@@ -1,6 +1,7 @@
 import { GlobalLoadingProvider } from "@context/Loading/GlobalLoadingContext";
 import { ThemeProvider } from "@context/Theme/ThemeContext";
 import { NotificationProvider } from "@context/Notifications/NotificationContext";
+import { ErrorReportProvider } from "@context/ErrorReport/ErrorReportContext";
 import { store } from "@store";
 import AppRoutes from "../src/routes";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
@@ -17,7 +18,9 @@ export default function App() {
           <ThemeProvider>
             <GlobalLoadingProvider>
               <NotificationProvider>
-                <AppRoutes />
+                <ErrorReportProvider>
+                  <AppRoutes />
+                </ErrorReportProvider>
               </NotificationProvider>
             </GlobalLoadingProvider>
           </ThemeProvider>

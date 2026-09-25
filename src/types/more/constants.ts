@@ -10,9 +10,9 @@ export const MORE_MENU: MoreMenuItem[] = [
   { label: "Documents", icon: "folder-outline", color: "#588FB5", route: "documents" },
   { label: "Track Spends", icon: "chart-waterfall", color: "#FF9C01", route: "track-spends" },
   { label: "Credit Score", icon: "shield-star-outline", color: "#8B5CF6", route: "credit-score" },
+  { label: "Quick Review", icon: "map-marker-path", color: "#FF5A36", route: "quick-review" },
   { label: "Support", icon: "headset", color: "#3B61FF", route: "help-support" },
+  { label: "Settings", icon: "cog-outline", color: "#666BA5", route: "settings" },
   { label: "Rate Us", icon: "star-outline", color: "#E99A24", route: "rate-us" },
   { label: "About App", icon: "information-outline", color: "#588FB5", route: "about-app" },
-  { label: "Quick Review", icon: "map-marker-path", color: "#FF5A36", route: "quick-review" },
-  { label: "Settings", icon: "cog-outline", color: "#666BA5", route: "settings" },
 ];
