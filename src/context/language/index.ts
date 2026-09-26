@@ -1,3 +1,4 @@
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
@@ -32,6 +33,10 @@ export const resources = {
   guj: { translation: guj },
 } as const;
 
+export type LanguageCode = (typeof SUPPORTED_LANGUAGES)[number]["code"];
+
+const LANGUAGE_KEY = "finora_language";
+
 i18n.use(initReactI18next).init({
   resources,
   lng: "en",
@@ -41,5 +46,24 @@ i18n.use(initReactI18next).init({
   },
   returnNull: false,
 });
+
+// Restore the previously chosen language on startup.
+AsyncStorage.getItem(LANGUAGE_KEY)
+  .then((stored) => {
+    if (stored && stored !== i18n.language) {
+      i18n.changeLanguage(stored);
+    }
+  })
+  .catch(() => {});
+
+/** Switch the app language and persist the choice. */
+export async function changeLanguage(code: LanguageCode): Promise<void> {
+  await i18n.changeLanguage(code);
+  try {
+    await AsyncStorage.setItem(LANGUAGE_KEY, code);
+  } catch {
+    // non-fatal — language still changes for this session
+  }
+}
 
 export default i18n;

@@ -18,7 +18,18 @@
     "coming_soon": "Coming soon",
     "done": "Done",
     "not_now": "Not now",
+    "choose_theme": "Choose theme",
+    "choose_language": "Choose language",
+    "theme_system": "System",
+    "theme_light": "Light",
+    "theme_dark": "Dark",
     "months": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+  },
+  "home": {
+    "greeting_morning": "Good morning",
+    "greeting_afternoon": "Good afternoon",
+    "greeting_evening": "Good evening",
+    "greeting_night": "Good night"
   },
   "profile": {
     "sections": {
@@ -510,8 +521,171 @@
     "download_complete": "Download complete"
   },
   "offers": {
-    "title": "Offers",
-    "coming_soon": "Offers coming soon"
+    "title": "More Loan Options",
+    "coming_soon": "Offers coming soon",
+    "categories": {
+      "all": "All",
+      "invoice": "Invoice",
+      "business_loan": "Business Loan",
+      "others": "Others"
+    },
+    "highlight": {
+      "up_to": "Up to",
+      "rate_from": "Rate from",
+      "interest_from": "Interest from",
+      "advance_up_to": "Advance up to"
+    },
+    "how_it_works": "How it works",
+    "fees_charges": "Fees & charges",
+    "not_sure_title": "Not sure which is right for you?",
+    "not_sure_subtitle": "Use our loan calculator to find the best option.",
+    "compare_calculate": "Compare & Calculate",
+    "hero_title": "Financing for every stage of your business",
+    "hero_subtitle": "From invoice financing to working capital, explore flexible options tailored for you.",
+    "not_found": "This offer could not be found.",
+    "empty_title": "No offers here yet",
+    "empty_subtitle": "Try a different category to see available loan options.",
+    "cta": {
+      "apply": "Apply now"
+    },
+    "products": {
+      "business_loan": {
+        "title": "Business loan",
+        "tagline": "For expansion, equipment & more",
+        "card_sub": "For expansion, equipment & more",
+        "fees": "Processing fee up to 2% + GST",
+        "steps": {
+          "choose_amount": "Choose loan amount",
+          "pick_tenure_36": "Pick tenure, up to 36 months",
+          "see_emi": "See your EMI and confirm"
+        }
+      },
+      "overdraft": {
+        "title": "Overdraft facility",
+        "tagline": "Flexible credit, pay only for what you use",
+        "card_sub": "Flexible credit, pay only for what you use",
+        "fees": "One-time setup fee ₹2,500 + GST",
+        "steps": {
+          "set_limit": "Set up a credit limit",
+          "draw_repay": "Draw and repay anytime, no fixed tenure",
+          "interest_on_used": "Interest charged only on amount used"
+        }
+      },
+      "supply_chain": {
+        "title": "Supply chain finance",
+        "tagline": "Finance your suppliers & buyers",
+        "card_sub": "Finance your suppliers & buyers",
+        "fees": "Available only for linked anchor partners",
+        "steps": {
+          "choose_anchor": "Choose an approved anchor partner",
+          "select_invoice": "Select the invoice to finance",
+          "anchor_repays": "Get paid, anchor repays on due date"
+        }
+      },
+      "purchase_order": {
+        "title": "Purchase order finance",
+        "tagline": "Get funds against confirmed POs",
+        "card_sub": "Get funds against confirmed POs",
+        "fees": "Processing fee 1.5% + GST",
+        "steps": {
+          "upload_po": "Upload your purchase order",
+          "verify_buyer": "We verify with the buyer",
+          "funds_released": "Funds released against the PO value"
+        }
+      },
+      "term_loan": {
+        "title": "Term loan",
+        "tagline": "Longer tenure, lower EMI",
+        "card_sub": "Longer tenure, lower EMI",
+        "fees": "Processing fee up to 2% + GST",
+        "steps": {
+          "choose_amount": "Choose loan amount",
+          "pick_tenure_60": "Pick tenure, up to 60 months",
+          "see_emi": "See your EMI and confirm"
+        }
+      },
+      "invoice_discounting": {
+        "title": "Invoice discounting",
+        "tagline": "Discount your invoices for quick funds",
+        "card_sub": "Discount your invoices for quick funds",
+        "fees": "Processing fee 1% + GST, no prepayment penalty",
+        "steps": {
+          "choose_amount": "Choose the amount you need",
+          "pick_tenure": "Pick a repayment tenure",
+          "review_confirm": "Review the cost and confirm"
+        }
+      }
+    },
+    "apply": {
+      "amount_title": "Choose amount",
+      "tenure_title": "Choose tenure",
+      "cost_title": "Cost breakdown",
+      "how_much": "How much do you need?",
+      "eligible_up_to": "Eligible up to {{amount}}",
+      "you_will_receive": "You'll receive",
+      "advance_note": "{{pct}}% advance · rest on invoice repayment",
+      "continue": "Continue",
+      "amount_for": "{{amount}} for",
+      "days": "{{count}} days",
+      "rate_per_mo": "{{rate}}%/mo",
+      "note_matches_due_date": "matches your invoice due date",
+      "tenure_hint": "{{days}} days matches your invoice's due date, so there's nothing to true up later.",
+      "see_full_cost": "See full cost",
+      "you_requested": "You requested",
+      "requested_for": "for {{days}} days · {{rate}}%/mo",
+      "charges": "Charges",
+      "interest_days": "Interest ({{days}} days)",
+      "processing_fee": "Processing fee ({{pct}}%)",
+      "gst_on_fee": "GST on fee ({{pct}}%)",
+      "stamp_duty": "Stamp duty",
+      "disbursed": "Amount disbursed to you",
+      "total_repayable": "Total repayable",
+      "agree_terms": "I agree to the loan terms and Key Fact Statement",
+      "confirm_apply": "Confirm & apply"
+    },
+    "confirmation": {
+      "title": "Application Submitted!",
+      "subtitle": "Your loan application for {{amount}} has been successfully submitted.",
+      "track_status": "Track status",
+      "application_id": "Application ID",
+      "applied_on": "Applied on",
+      "processing_time": "Estimated Processing Time",
+      "processing_default": "2 – 3 Business Days",
+      "view_status": "View Application Status",
+      "back_home": "Back to Home",
+      "tagline": "Your finances, in your pocket.",
+      "steps": {
+        "received": "Application received",
+        "review": "Under review",
+        "disbursed": "Disbursed to your account"
+      },
+      "time": {
+        "just_now": "Just now",
+        "in_2_hours": "~2 hours"
+      }
+    },
+    "tracker": {
+      "title": "Application Tracker",
+      "not_found": "This application could not be found.",
+      "applied_on": "Applied on {{date}}",
+      "back_to_offers": "Back to Offers",
+      "status": {
+        "under_review": "Under Review",
+        "approved": "Approved",
+        "rejected": "Rejected",
+        "disbursed": "Disbursed"
+      },
+      "steps": {
+        "submitted": "Application Submitted",
+        "document_verification": "Document Verification",
+        "credit_assessment": "Credit Assessment",
+        "approval": "Approval",
+        "disbursal": "Disbursal"
+      },
+      "pending": "Pending",
+      "note_title": "We're reviewing your application",
+      "note_body": "This usually takes 1–2 business days. We'll notify you once there's an update."
+    }
   },
   "more": {
     "menu": {

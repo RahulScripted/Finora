@@ -16,6 +16,9 @@ import { useGlobalLoading } from "@context/Loading/GlobalLoadingContext";
 
 import HomeScreen from "@screens/home";
 import CreditScreen from "@/src/screens/offer";
+import OfferDetailScreen from "@screens/offer/detail";
+import OfferApplyScreen from "@screens/offer/apply";
+import OfferTrackerScreen from "@screens/offer/tracker";
 import MoneyScreen from "@screens/money";
 import InvoicesScreen from "@screens/invoices";
 import MoreScreen from "@screens/more";
@@ -196,6 +199,9 @@ export default function AppRoutes() {
           <Tab.Screen name="track-spends" component={TrackSpendScreen} options={HIDDEN_TAB} />
           <Tab.Screen name="credit-score" component={CreditScoreScreen} options={HIDDEN_TAB} />
           <Tab.Screen name="payment-history" component={PaymentHistoryScreen} options={HIDDEN_TAB} />
+          <Tab.Screen name="offer-detail" component={OfferDetailScreen} options={HIDDEN_TAB} />
+          <Tab.Screen name="offer-apply" component={OfferApplyScreen} options={HIDDEN_TAB} />
+          <Tab.Screen name="offer-tracker" component={OfferTrackerScreen} options={HIDDEN_TAB} />
           <Tab.Screen name="business-partners" component={BusinessPartnersScreen} options={HIDDEN_TAB} />
           <Tab.Screen name="business-partner-detail" component={BusinessPartnerDetailScreen} options={HIDDEN_TAB} />
           <Tab.Screen name="help-support" component={SupportScreen} options={HIDDEN_TAB} />
