@@ -1,5 +1,5 @@
 import { useTheme } from "@context/Theme/ThemeContext";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { AnimatedTick, Logo } from "@assets/svgs";
 import { PrimaryButton } from "@helpers/button";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { useTranslation } from "react-i18next";
@@ -47,8 +47,8 @@ export default function ApplicationSubmitted({
       showsVerticalScrollIndicator={false}
       contentContainerStyle={[s.scroll, { paddingBottom: insets.bottom + 24 }]}
     >
-      <View style={[s.tick, { backgroundColor: colors.successSoft }]}>
-        <MaterialCommunityIcons name="check" size={40} color={colors.success} />
+      <View style={s.tickWrap}>
+        <AnimatedTick size={104} color={colors.success} loop={false} />
       </View>
 
       <Text style={[s.title, { color: colors.textPrimary }]}>{t("offers.confirmation.title")}</Text>
@@ -74,7 +74,7 @@ export default function ApplicationSubmitted({
       </View>
 
       <View style={s.brand}>
-        <MaterialCommunityIcons name="finance" size={22} color={colors.accent} />
+        <Logo size={24} />
         <Text style={[s.brandName, { color: colors.textPrimary }]}>Finora</Text>
       </View>
       <Text style={[s.tagline, { color: colors.textMuted }]}>{t("offers.confirmation.tagline")}</Text>
@@ -84,7 +84,7 @@ export default function ApplicationSubmitted({
 
 const s = StyleSheet.create({
   scroll: { alignItems: "center", paddingHorizontal: 20, paddingTop: 24 },
-  tick: { width: 88, height: 88, borderRadius: 44, alignItems: "center", justifyContent: "center", marginBottom: 16 },
+  tickWrap: { alignItems: "center", justifyContent: "center", marginBottom: 12 },
   title: { fontSize: 22, fontWeight: "800", textAlign: "center" },
   subtitle: { fontSize: 14, textAlign: "center", lineHeight: 20, marginTop: 8, marginBottom: 24, paddingHorizontal: 12 },
   card: { width: "100%", borderRadius: 18, borderWidth: StyleSheet.hairlineWidth, paddingHorizontal: 16 },

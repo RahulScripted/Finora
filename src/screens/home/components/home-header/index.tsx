@@ -37,7 +37,7 @@ export default function HomeHeader({ customerName }: Props) {
 
   return (
     <View style={s.row}>
-      <View style={[s.logo, { backgroundColor: colors.card, borderColor: colors.border }]}>
+      <View style={s.logo}>
         <Logo size={22} />
       </View>
 
@@ -55,7 +55,7 @@ export default function HomeHeader({ customerName }: Props) {
 
       <TouchableOpacity
         onPress={() => setLangVisible(true)}
-        style={[s.iconBtn, { backgroundColor: colors.card, borderColor: colors.border }]}
+        style={s.iconBtn}
         activeOpacity={0.7}
         accessibilityRole="button"
         accessibilityLabel="Change language"
@@ -65,7 +65,7 @@ export default function HomeHeader({ customerName }: Props) {
 
       <TouchableOpacity
         onPress={() => setThemeVisible(true)}
-        style={[s.iconBtn, { backgroundColor: colors.card, borderColor: colors.border }]}
+        style={s.iconBtn}
         activeOpacity={0.7}
         accessibilityRole="button"
         accessibilityLabel="Change theme"
@@ -98,10 +98,8 @@ const s = StyleSheet.create({
   logo: {
     width: 40,
     height: 40,
-    borderRadius: 20,
     alignItems: "center",
     justifyContent: "center",
-    borderWidth: StyleSheet.hairlineWidth,
   },
   textBlock: { flex: 1, marginLeft: 4 },
   greetingRow: { flexDirection: "row", alignItems: "center", gap: 5 },
@@ -110,9 +108,7 @@ const s = StyleSheet.create({
   iconBtn: {
     width: 40,
     height: 40,
-    borderRadius: 12,
     alignItems: "center",
     justifyContent: "center",
-    borderWidth: StyleSheet.hairlineWidth,
   },
 });

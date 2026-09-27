@@ -35,7 +35,7 @@ export default function OfferDetailScreen() {
     return (
       <View style={[s.root, { backgroundColor: colors.background }]}>
         <View style={[s.header, { paddingTop: insets.top + 12 }]}>
-          <NavHeader title={t("offers.title")} onBack={() => navigation.goBack()} />
+          <NavHeader title={t("offers.title")} />
         </View>
         <EmptyView
           title={t("offers.not_found")}
@@ -54,10 +54,7 @@ export default function OfferDetailScreen() {
   return (
     <View style={[s.root, { backgroundColor: colors.background }]}>
       <View style={[s.header, { paddingTop: insets.top + 12 }]}>
-        <NavHeader
-          title={t(`offers.products.${offer.id}.title`)}
-          onBack={() => navigation.goBack()}
-        />
+        <NavHeader title={t(`offers.products.${offer.id}.title`)} />
       </View>
 
       <ScrollView

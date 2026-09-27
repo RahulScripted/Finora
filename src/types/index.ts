@@ -9,3 +9,4 @@ export * from "./chart/constants";
 export * from "./date-range/constants";
 export * from "./notifications";
 export * from "./offers/constants";
+export * from "./birthday/constants";

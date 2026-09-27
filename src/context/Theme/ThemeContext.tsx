@@ -121,7 +121,11 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [preference, setPreferenceState] = useState<ThemePreference>("system");
-  const [systemTheme, setSystemTheme] = useState<"light" | "dark">("light");
+  // Seed from the device scheme immediately so "System" is correct on first paint.
+  const [systemTheme, setSystemTheme] = useState<"light" | "dark">(() => {
+    const { Appearance } = require("react-native");
+    return Appearance.getColorScheme() === "dark" ? "dark" : "light";
+  });
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {

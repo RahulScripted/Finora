@@ -1,9 +1,12 @@
 import { useTheme } from "@context/Theme/ThemeContext";
 import { usePersonal } from "@hooks/usePersonal";
-import { useRef } from "react";
+import { useCallback, useRef, useState } from "react";
 import { ScrollView, StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useScrollToTop } from "@shared/scroll-to-top";
+import { useRefresh } from "@shared/refresh";
+import BirthdayCelebration from "@celebrations/birthday";
+import { useBirthday } from "@hooks/useBirthday";
 import HomeHeader from "./components/home-header";
 
 export default function HomeScreen() {
@@ -13,7 +16,16 @@ export default function HomeScreen() {
   const scrollRef = useRef<ScrollView>(null);
   useScrollToTop(scrollRef);
 
+  // Pull-to-refresh reloads the dashboard content.
+  const [, setRefreshKey] = useState(0);
+  const { refreshControl } = useRefresh(
+    useCallback(() => setRefreshKey((k) => k + 1), []),
+  );
+
   const customerName = data.applicant.displayName;
+
+  // Auto-celebrate the user's birthday on login (once per day).
+  const birthday = useBirthday(data.applicant.dateOfBirth);
 
   return (
     <View style={[s.root, { backgroundColor: colors.background }]}>
@@ -25,6 +37,13 @@ export default function HomeScreen() {
         ref={scrollRef}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={[s.scroll, { paddingBottom: insets.bottom + 32 }]}
+        refreshControl={refreshControl}
+      />
+
+      <BirthdayCelebration
+        visible={birthday.visible}
+        name={customerName}
+        onClose={birthday.dismiss}
       />
     </View>
   );
@@ -33,5 +52,5 @@ export default function HomeScreen() {
 const s = StyleSheet.create({
   root: { flex: 1 },
   header: { paddingHorizontal: 16, paddingBottom: 8 },
-  scroll: { paddingHorizontal: 16, paddingTop: 8 },
+  scroll: { flexGrow: 1, paddingHorizontal: 16, paddingTop: 8 },
 });

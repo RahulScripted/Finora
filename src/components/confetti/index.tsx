@@ -107,13 +107,16 @@ function ConfettiPiece({ particle, onDone }: { particle: Particle; onDone: (id: 
     const sec = (t.value * LIFETIME) / 1000;
     const dx = particle.vx * sec;
     const dy = particle.vy * sec + 0.5 * GRAVITY * sec * sec;
+    // Hide the very first frame (t === 0) so particles never appear stacked
+    // as a blob at the origin before they fan out.
+    const opacity = t.value === 0 ? 0 : 1 - t.value * t.value;
     return {
       transform: [
         { translateX: particle.x + dx },
         { translateY: particle.y + dy },
         { rotate: `${t.value * 720}deg` },
       ],
-      opacity: 1 - t.value * t.value,
+      opacity,
     };
   });
 

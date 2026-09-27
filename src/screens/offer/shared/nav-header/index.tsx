@@ -4,28 +4,21 @@ import { Pressable, StyleSheet, Text, View } from "react-native";
 
 type Props = {
   title: string;
-  onBack: () => void;
   /** Shows a right-side close (X) button that calls this when set. */
   onClose?: () => void;
 };
 
 /**
- * Centered title with a circular back button — matches the offer
- * detail and apply-flow headers in the design.
+ * Centered title with an optional right-side close (X) button. No back button
+ * — offer screens are dismissed via the tab bar / close action.
  */
-export default function NavHeader({ title, onBack, onClose }: Props) {
+export default function NavHeader({ title, onClose }: Props) {
   const { colors } = useTheme();
 
   return (
     <View style={s.row}>
-      <Pressable
-        onPress={onBack}
-        accessibilityRole="button"
-        hitSlop={8}
-        style={[s.circle, { backgroundColor: colors.card, borderColor: colors.border }]}
-      >
-        <MaterialCommunityIcons name="chevron-left" size={24} color={colors.textPrimary} />
-      </Pressable>
+      {/* Left spacer keeps the title centered without a back button. */}
+      <View style={s.spacer} />
 
       <Text style={[s.title, { color: colors.textPrimary }]} numberOfLines={1}>
         {title}
@@ -41,7 +34,6 @@ export default function NavHeader({ title, onBack, onClose }: Props) {
           <MaterialCommunityIcons name="close" size={20} color={colors.textPrimary} />
         </Pressable>
       ) : (
-        // Invisible spacer keeps the title centered without drawing a circle.
         <View style={s.spacer} />
       )}
     </View>

@@ -30,6 +30,10 @@
     "greeting_evening": "शुभ संध्या",
     "greeting_night": "शुभ रात्रि"
   },
+  "birthday": {
+    "wish": "जन्मदिन मुबारक, {{name}}!",
+    "message": "आपका साल खुशियों, सफलता और शानदार नई शुरुआतों से भरा रहे। ढेर सारे प्यार के साथ, टीम Finora।"
+  },
   "profile": {
     "sections": {
       "policies": "नीतियां",
@@ -526,7 +530,7 @@
     "download_complete": "डाउनलोड पूर्ण"
   },
   "offers": {
-    "title": "और लोन विकल्प",
+    "title": "लोन ऑफर",
     "coming_soon": "ऑफर जल्द आ रहे हैं",
     "categories": {
       "all": "सभी",
@@ -646,7 +650,12 @@
       "disbursed": "आपको वितरित राशि",
       "total_repayable": "कुल चुकौती योग्य",
       "agree_terms": "मैं लोन शर्तों और की फैक्ट स्टेटमेंट से सहमत हूँ",
-      "confirm_apply": "पुष्टि करें और आवेदन करें"
+      "confirm_apply": "पुष्टि करें और आवेदन करें",
+      "step_of": "चरण {{current}} / {{total}}",
+      "application_id": "आवेदन आईडी",
+      "step_amount": "राशि",
+      "step_tenure": "अवधि",
+      "step_cost": "समीक्षा"
     },
     "confirmation": {
       "title": "आवेदन जमा हो गया!",

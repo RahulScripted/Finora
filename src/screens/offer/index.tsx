@@ -61,7 +61,7 @@ export default function OffersScreen() {
         ]}
         refreshControl={refreshControl}
       >
-        <HeroBanner onPress={() => navigation.navigate("offer-tracker")} />
+        <HeroBanner />
 
         <CategoryTabs active={category} onChange={setCategory} />
 

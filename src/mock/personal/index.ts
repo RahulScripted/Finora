@@ -10,7 +10,7 @@ export const PERSONAL_MOCK: PersonalData = {
     initials: "RG",
     fullNameAsPerPan: "Rahul Goswami",
     displayName: "Rahul Goswami",
-    dateOfBirth: "1992-03-14",
+    dateOfBirth: "1992-09-27",
     gender: "male",
     pan: "XXXXX1234F",
     panLocked: true,

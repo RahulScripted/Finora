@@ -22,6 +22,7 @@ module.exports = function (api) {
             "@shared": "./src/shared",
             "@mock": "./src/mock",
             "@templates": "./src/templates",
+            "@celebrations": "./src/celebrations",
           },
         },
       ],

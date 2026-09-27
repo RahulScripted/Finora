@@ -31,6 +31,10 @@
     "greeting_evening": "Good evening",
     "greeting_night": "Good night"
   },
+  "birthday": {
+    "wish": "Happy Birthday, {{name}}!",
+    "message": "Wishing you a year filled with happiness, success, and wonderful new beginnings. With love, Team Finora."
+  },
   "profile": {
     "sections": {
       "policies": "Policies",
@@ -521,7 +525,7 @@
     "download_complete": "Download complete"
   },
   "offers": {
-    "title": "More Loan Options",
+    "title": "Loan Offers",
     "coming_soon": "Offers coming soon",
     "categories": {
       "all": "All",
@@ -641,7 +645,12 @@
       "disbursed": "Amount disbursed to you",
       "total_repayable": "Total repayable",
       "agree_terms": "I agree to the loan terms and Key Fact Statement",
-      "confirm_apply": "Confirm & apply"
+      "confirm_apply": "Confirm & apply",
+      "step_of": "Step {{current}} of {{total}}",
+      "application_id": "Application ID",
+      "step_amount": "Amount",
+      "step_tenure": "Tenure",
+      "step_cost": "Review"
     },
     "confirmation": {
       "title": "Application Submitted!",

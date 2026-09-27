@@ -35,6 +35,10 @@ type Props = {
   dismissable?: boolean;
   footer?: React.ReactNode;
   confetti?: boolean;
+  /** Extra full-screen, non-interactive layer rendered above the backdrop
+   *  (e.g. balloons). Sits inside the sheet's own Modal so it never clips and
+   *  never blocks the close button. */
+  overlayContent?: React.ReactNode;
 };
 
 const SCREEN_WIDTH = Dimensions.get("window").width;
@@ -54,6 +58,7 @@ export default function BottomSheet({
   dismissable = true,
   footer,
   confetti = false,
+  overlayContent,
 }: Props) {
   const { colors } = useTheme();
   const { backdropStyle, contentStyle } = useSpringReveal(visible);
@@ -117,6 +122,11 @@ export default function BottomSheet({
           importantForAccessibility={dismissable ? "yes" : "no-hide-descendants"}
         />
         <ConfettiOverlay active={confetti} />
+        {overlayContent ? (
+          <View pointerEvents="none" style={StyleSheet.absoluteFill}>
+            {overlayContent}
+          </View>
+        ) : null}
         <Animated.View pointerEvents="box-none" style={[s.kavWrapper, { paddingBottom: keyboardOffset }]}>
           <Animated.View pointerEvents="box-none" style={[s.wrapper, contentStyle]}>
             {!hideClose && (

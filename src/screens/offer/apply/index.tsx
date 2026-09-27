@@ -13,7 +13,7 @@ import AmountStep from "./components/amount-step";
 import CostStep from "./components/cost-step";
 import TenureStep from "./components/tenure-step";
 import NavHeader from "../shared/nav-header";
-import StepProgress from "../shared/step-progress";
+import StepHeader from "../shared/step-header";
 import StickyFooter from "../shared/sticky-footer";
 import ApplicationSubmitted from "../shared/application-submitted";
 
@@ -46,8 +46,10 @@ export default function OfferApplyScreen() {
     tenures.find((tn) => tn.recommended)?.days ?? tenures[0].days,
   );
   const [agreed, setAgreed] = useState(false);
-  // Generated once the application is confirmed.
-  const [submission, setSubmission] = useState<{ id: string; at: string } | null>(null);
+  // Application reference is generated up-front so it can be shown as a badge
+  // throughout the flow (matches the Customer-App).
+  const [applicationId] = useState(() => makeApplicationId(offerId));
+  const [submittedAt, setSubmittedAt] = useState<string | null>(null);
 
   const selectedTenure = tenures.find((tn) => tn.days === tenureDays) ?? tenures[0];
   const cost = useMemo(
@@ -57,21 +59,21 @@ export default function OfferApplyScreen() {
 
   const stepIndex = FLOW_STEPS.indexOf(step);
 
-  const goBack = () => {
-    if (step === "amount") return navigation.goBack();
-    if (step === "tenure") return setStep("amount");
-    if (step === "cost") return setStep("tenure");
-  };
-
   const handleNext = () => {
     if (step === "amount") return setStep("tenure");
     if (step === "tenure") return setStep("cost");
     if (step === "cost") {
       playSuccess();
-      setSubmission({ id: makeApplicationId(offerId), at: formatNow() });
+      setSubmittedAt(formatNow());
       return setStep("done");
     }
   };
+
+  const stepLabels = [
+    t("offers.apply.step_amount"),
+    t("offers.apply.step_tenure"),
+    t("offers.apply.step_cost"),
+  ];
 
   const titleKey =
     step === "amount"
@@ -88,15 +90,15 @@ export default function OfferApplyScreen() {
         : t("offers.apply.confirm_apply");
 
   // ── Success screen ────────────────────────────────────────────────
-  if (step === "done" && submission) {
+  if (step === "done" && submittedAt) {
     return (
       <View style={[s.root, { backgroundColor: colors.background, paddingTop: insets.top + 12 }]}>
         <ApplicationSubmitted
           amount={amount}
-          applicationId={submission.id}
-          appliedAt={submission.at}
+          applicationId={applicationId}
+          appliedAt={submittedAt}
           processingTime={t("offers.confirmation.processing_default")}
-          onViewStatus={() => navigation.navigate("offer-tracker")}
+          onViewStatus={() => navigation.navigate("offer-tracker", { applicationId })}
           onBackHome={() => navigation.navigate("home")}
         />
       </View>
@@ -108,13 +110,16 @@ export default function OfferApplyScreen() {
     <View style={[s.root, { backgroundColor: colors.background }]}>
       <View style={[s.header, { paddingTop: insets.top + 12 }]}>
         <NavHeader
-          title={t(titleKey)}
-          onBack={goBack}
+          title={t(`offers.products.${offer.id}.title`)}
           onClose={() => navigation.navigate("credit")}
         />
-        <View style={s.progress}>
-          <StepProgress total={FLOW_STEPS.length} current={stepIndex} />
-        </View>
+        <StepHeader
+          stepLabel={t(titleKey)}
+          currentStep={stepIndex + 1}
+          totalSteps={FLOW_STEPS.length}
+          stepLabels={stepLabels}
+          applicationId={applicationId}
+        />
       </View>
 
       <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={s.scroll}>
@@ -147,7 +152,6 @@ export default function OfferApplyScreen() {
 
 const s = StyleSheet.create({
   root: { flex: 1 },
-  header: { paddingHorizontal: 16, paddingBottom: 8, gap: 14 },
-  progress: { paddingHorizontal: 4 },
+  header: { paddingHorizontal: 16, paddingBottom: 8, gap: 12 },
   scroll: { paddingHorizontal: 16, paddingTop: 8, paddingBottom: 24 },
 });

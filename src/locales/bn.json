@@ -30,6 +30,10 @@
     "greeting_evening": "শুভ সন্ধ্যা",
     "greeting_night": "শুভ রাত্রি"
   },
+  "birthday": {
+    "wish": "শুভ জন্মদিন, {{name}}!",
+    "message": "আপনার বছরটি সুখ, সাফল্য এবং দারুণ নতুন সূচনায় ভরে উঠুক। ভালোবাসা সহ, টিম Finora।"
+  },
   "profile": {
     "sections": {
       "policies": "নীতিমালা",
@@ -608,7 +612,7 @@
     "download_complete": "ডাউনলোড সম্পূর্ণ"
   },
   "offers": {
-    "title": "আরও ঋণের বিকল্প",
+    "title": "লোন অফার",
     "coming_soon": "অফার শীঘ্রই আসছে",
     "categories": {
       "all": "সব",
@@ -728,7 +732,12 @@
       "disbursed": "আপনাকে বিতরণ করা পরিমাণ",
       "total_repayable": "মোট পরিশোধযোগ্য",
       "agree_terms": "আমি ঋণের শর্তাবলী ও কী ফ্যাক্ট স্টেটমেন্টে সম্মত",
-      "confirm_apply": "নিশ্চিত করুন ও আবেদন করুন"
+      "confirm_apply": "নিশ্চিত করুন ও আবেদন করুন",
+      "step_of": "ধাপ {{current}} / {{total}}",
+      "application_id": "আবেদন আইডি",
+      "step_amount": "পরিমাণ",
+      "step_tenure": "মেয়াদ",
+      "step_cost": "পর্যালোচনা"
     },
     "confirmation": {
       "title": "আবেদন জমা হয়েছে!",

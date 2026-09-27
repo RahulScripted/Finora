@@ -23,7 +23,10 @@ export default function OfferTrackerScreen() {
   const { latestApplication, getApplication } = useOffers();
 
   const applicationId: string | undefined = route.params?.applicationId;
-  const application = applicationId ? getApplication(applicationId) : latestApplication;
+  // Fall back to the latest mock application when a freshly-generated id isn't
+  // in the mock list yet, so the tracker still shows a meaningful timeline.
+  const application =
+    (applicationId ? getApplication(applicationId) : undefined) ?? latestApplication;
 
   const [, setRefreshKey] = useState(0);
   const { refreshControl } = useRefresh(
@@ -34,7 +37,7 @@ export default function OfferTrackerScreen() {
     return (
       <View style={[s.root, { backgroundColor: colors.background }]}>
         <View style={[s.header, { paddingTop: insets.top + 12 }]}>
-          <NavHeader title={t("offers.tracker.title")} onBack={() => navigation.goBack()} />
+          <NavHeader title={t("offers.tracker.title")} />
         </View>
         <EmptyView
           title={t("offers.tracker.not_found")}
@@ -49,7 +52,7 @@ export default function OfferTrackerScreen() {
   return (
     <View style={[s.root, { backgroundColor: colors.background }]}>
       <View style={[s.header, { paddingTop: insets.top + 12 }]}>
-        <NavHeader title={t("offers.tracker.title")} onBack={() => navigation.goBack()} />
+        <NavHeader title={t("offers.tracker.title")} />
       </View>
 
       <ScrollView
@@ -84,6 +87,16 @@ export default function OfferTrackerScreen() {
           <Text style={[s.appliedOn, { color: colors.textMuted }]}>
             {t("offers.tracker.applied_on", { date: application.appliedOn })}
           </Text>
+          <View style={s.idRow}>
+            <Text style={[s.idLabel, { color: colors.textMuted }]}>
+              {t("offers.apply.application_id")}
+            </Text>
+            <View style={[s.idBadge, { backgroundColor: colors.surface, borderColor: colors.border }]}>
+              <Text style={[s.idValue, { color: colors.textPrimary }]}>
+                {applicationId ?? application.id}
+              </Text>
+            </View>
+          </View>
 
           <View style={[s.divider, { backgroundColor: colors.divider }]} />
 
@@ -131,6 +144,10 @@ const s = StyleSheet.create({
   badgeText: { fontSize: 12, fontWeight: "700" },
   amount: { fontSize: 22, fontWeight: "800", marginTop: 14 },
   appliedOn: { fontSize: 12.5, marginTop: 4 },
+  idRow: { flexDirection: "row", alignItems: "center", gap: 8, marginTop: 10 },
+  idLabel: { fontSize: 12 },
+  idBadge: { paddingHorizontal: 8, paddingVertical: 4, borderRadius: 6, borderWidth: StyleSheet.hairlineWidth },
+  idValue: { fontSize: 12, fontWeight: "700" },
   divider: { height: StyleSheet.hairlineWidth, marginVertical: 18 },
   note: { flexDirection: "row", gap: 10, borderRadius: 14, padding: 14, marginTop: 8, alignItems: "flex-start" },
   noteBody: { flex: 1, gap: 3 },

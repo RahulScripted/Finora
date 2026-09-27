@@ -21,7 +21,8 @@
       "@screens/*": ["src/screens/*"],
       "@shared/*": ["src/shared/*"],
       "@mock/*": ["src/mock/*"],
-      "@templates/*": ["src/templates/*"]
+      "@templates/*": ["src/templates/*"],
+      "@celebrations/*": ["src/celebrations/*"]
     }
   },
   "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"]

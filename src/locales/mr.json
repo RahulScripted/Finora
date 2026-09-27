@@ -30,6 +30,10 @@
     "greeting_evening": "शुभ संध्याकाळ",
     "greeting_night": "शुभ रात्री"
   },
+  "birthday": {
+    "wish": "वाढदिवसाच्या हार्दिक शुभेच्छा, {{name}}!",
+    "message": "तुमचे वर्ष आनंद, यश आणि सुंदर नवीन सुरुवातींनी भरलेले असो. प्रेमपूर्वक, टीम Finora."
+  },
   "profile": {
     "sections": {
       "policies": "धोरणे",
@@ -531,7 +535,7 @@
     "download_complete": "डाउनलोड पूर्ण"
   },
   "offers": {
-    "title": "अधिक कर्ज पर्याय",
+    "title": "कर्ज ऑफर",
     "coming_soon": "ऑफर लवकरच येत आहेत",
     "categories": {
       "all": "सर्व",
@@ -651,7 +655,12 @@
       "disbursed": "तुम्हाला वितरित रक्कम",
       "total_repayable": "एकूण परतफेड करण्यायोग्य",
       "agree_terms": "मी कर्ज अटी आणि की फॅक्ट स्टेटमेंटला सहमत आहे",
-      "confirm_apply": "पुष्टी करा आणि अर्ज करा"
+      "confirm_apply": "पुष्टी करा आणि अर्ज करा",
+      "step_of": "पायरी {{current}} / {{total}}",
+      "application_id": "अर्ज आयडी",
+      "step_amount": "रक्कम",
+      "step_tenure": "मुदत",
+      "step_cost": "पुनरावलोकन"
     },
     "confirmation": {
       "title": "अर्ज सादर झाला!",
