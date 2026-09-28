@@ -614,6 +614,24 @@
   "offers": {
     "title": "লোন অফার",
     "coming_soon": "অফার শীঘ্রই আসছে",
+    "section": {
+      "loan_offers": { "title": "লোন অফার", "subtitle": "প্রি-অ্যাপ্রুভড অফার পান" },
+      "track_applications": { "title": "আবেদন ট্র্যাক করুন", "subtitle": "আপনার আবেদনের অবস্থা দেখুন" }
+    },
+    "loan_offers_title": "লোন অফার",
+    "loan_categories_title": "লোন বিভাগ",
+    "featured_title": "ফিচার্ড অফার",
+    "featured_badge": "দ্রুত ও সহজ",
+    "view_all": "সব দেখুন",
+    "applications": {
+      "title": "আবেদন ট্র্যাক করুন",
+      "subtitle": "আপনার লোন আবেদনগুলোর অবস্থা রিয়েল-টাইমে দেখুন এবং ট্র্যাক করুন।",
+      "applied_on": "{{date}} তারিখে আবেদন করা হয়েছে",
+      "empty_title": "এখনও কোনো আবেদন নেই",
+      "empty_subtitle": "আবেদন করার পরে আপনার লোন আবেদনগুলো এখানে দেখা যাবে।",
+      "filter": { "all": "সব", "under_review": "পর্যালোচনাধীন", "approved": "অনুমোদিত", "rejected": "প্রত্যাখ্যাত", "disbursed": "বিতরণকৃত" },
+      "status": { "under_review": "পর্যালোচনাধীন", "approved": "অনুমোদিত", "rejected": "প্রত্যাখ্যাত", "disbursed": "বিতরণকৃত" }
+    },
     "categories": {
       "all": "সব",
       "invoice": "ইনভয়েস",
@@ -628,6 +646,17 @@
     },
     "how_it_works": "এটি কীভাবে কাজ করে",
     "fees_charges": "ফি ও চার্জ",
+    "why_choose": {
+      "title": "কেন ফিনোরা বেছে নেবেন?",
+      "quick_approval": "দ্রুত অনুমোদন",
+      "secure_compliant": "১০০% নিরাপদ ও সম্মত",
+      "flexible_repayment": "নমনীয় পরিশোধ",
+      "trusted_business": "ব্যবসার বিশ্বস্ত"
+    },
+    "need_help": {
+      "title": "সাহায্য দরকার বা প্রশ্ন আছে?",
+      "subtitle": "আমাদের সহায়তা দল আপনার জন্য ২৪/৭ প্রস্তুত।"
+    },
     "not_sure_title": "কোনটি আপনার জন্য সঠিক তা নিশ্চিত নন?",
     "not_sure_subtitle": "সেরা বিকল্প খুঁজতে আমাদের ঋণ ক্যালকুলেটর ব্যবহার করুন।",
     "compare_calculate": "তুলনা করুন ও গণনা করুন",

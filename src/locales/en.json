@@ -525,8 +525,43 @@
     "download_complete": "Download complete"
   },
   "offers": {
-    "title": "Loan Offers",
+    "title": "Offers",
     "coming_soon": "Offers coming soon",
+    "section": {
+      "loan_offers": {
+        "title": "Loan Offers",
+        "subtitle": "Get pre-approved offers"
+      },
+      "track_applications": {
+        "title": "Track Applications",
+        "subtitle": "Check your application status"
+      }
+    },
+    "loan_offers_title": "Loan Offers",
+    "loan_categories_title": "Loan Categories",
+    "featured_title": "Featured offers",
+    "featured_badge": "Quick & Easy",
+    "view_all": "View all",
+    "applications": {
+      "title": "Track Applications",
+      "subtitle": "View and track the status of your loan applications in real-time.",
+      "applied_on": "Applied on {{date}}",
+      "empty_title": "No applications yet",
+      "empty_subtitle": "Your loan applications will appear here once you apply.",
+      "filter": {
+        "all": "All",
+        "under_review": "Under Review",
+        "approved": "Approved",
+        "rejected": "Rejected",
+        "disbursed": "Disbursed"
+      },
+      "status": {
+        "under_review": "Under Review",
+        "approved": "Approved",
+        "rejected": "Rejected",
+        "disbursed": "Disbursed"
+      }
+    },
     "categories": {
       "all": "All",
       "invoice": "Invoice",
@@ -541,6 +576,17 @@
     },
     "how_it_works": "How it works",
     "fees_charges": "Fees & charges",
+    "why_choose": {
+      "title": "Why choose Finora?",
+      "quick_approval": "Quick Approval",
+      "secure_compliant": "100% Secure & Compliant",
+      "flexible_repayment": "Flexible Repayment",
+      "trusted_business": "Trusted by Businesses"
+    },
+    "need_help": {
+      "title": "Need help or have questions?",
+      "subtitle": "Our support team is here for you 24/7."
+    },
     "not_sure_title": "Not sure which is right for you?",
     "not_sure_subtitle": "Use our loan calculator to find the best option.",
     "compare_calculate": "Compare & Calculate",

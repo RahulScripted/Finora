@@ -537,6 +537,24 @@
   "offers": {
     "title": "कर्ज ऑफर",
     "coming_soon": "ऑफर लवकरच येत आहेत",
+    "section": {
+      "loan_offers": { "title": "कर्ज ऑफर", "subtitle": "प्री-अप्रूव्ड ऑफर मिळवा" },
+      "track_applications": { "title": "अर्ज ट्रॅक करा", "subtitle": "तुमच्या अर्जाची स्थिती पहा" }
+    },
+    "loan_offers_title": "कर्ज ऑफर",
+    "loan_categories_title": "कर्ज श्रेणी",
+    "featured_title": "वैशिष्ट्यीकृत ऑफर",
+    "featured_badge": "जलद आणि सोपे",
+    "view_all": "सर्व पहा",
+    "applications": {
+      "title": "अर्ज ट्रॅक करा",
+      "subtitle": "तुमच्या कर्ज अर्जांची स्थिती रिअल-टाइममध्ये पहा आणि ट्रॅक करा.",
+      "applied_on": "{{date}} रोजी अर्ज केला",
+      "empty_title": "अजून कोणतेही अर्ज नाहीत",
+      "empty_subtitle": "अर्ज केल्यानंतर तुमचे कर्ज अर्ज येथे दिसतील.",
+      "filter": { "all": "सर्व", "under_review": "पुनरावलोकनात", "approved": "मंजूर", "rejected": "नाकारले", "disbursed": "वितरित" },
+      "status": { "under_review": "पुनरावलोकनात", "approved": "मंजूर", "rejected": "नाकारले", "disbursed": "वितरित" }
+    },
     "categories": {
       "all": "सर्व",
       "invoice": "इनव्हॉइस",
@@ -551,6 +569,17 @@
     },
     "how_it_works": "हे कसे काम करते",
     "fees_charges": "शुल्क आणि आकार",
+    "why_choose": {
+      "title": "फिनोरा का निवडावे?",
+      "quick_approval": "जलद मंजुरी",
+      "secure_compliant": "100% सुरक्षित आणि अनुपालित",
+      "flexible_repayment": "लवचिक परतफेड",
+      "trusted_business": "व्यवसायांचा विश्वास"
+    },
+    "need_help": {
+      "title": "मदत हवी आहे किंवा प्रश्न आहेत?",
+      "subtitle": "आमची सहाय्य टीम तुमच्यासाठी 24/7 उपलब्ध आहे."
+    },
     "not_sure_title": "तुमच्यासाठी कोणते योग्य आहे याची खात्री नाही?",
     "not_sure_subtitle": "सर्वोत्तम पर्याय शोधण्यासाठी आमचे कर्ज कॅल्क्युलेटर वापरा.",
     "compare_calculate": "तुलना करा आणि गणना करा",

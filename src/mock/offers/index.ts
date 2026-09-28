@@ -1,4 +1,29 @@
-import type { Offer, TenureOption, ApplicationStatusStep } from "@data-types/offers/constants";
+import type {
+  Offer,
+  OfferSectionCard,
+  TenureOption,
+  ApplicationStatusStep,
+} from "@data-types/offers/constants";
+
+/* ------------------------------------------------------------------ */
+/* Flexible "offer section" entry cards (Offers tab landing)          */
+/* Add / reorder cards here — the UI renders whatever this returns.   */
+/* Icons are placeholders; drop an `image` in later to swap them out. */
+/* ------------------------------------------------------------------ */
+export const OFFER_SECTIONS_MOCK: OfferSectionCard[] = [
+  {
+    key: "loan_offers",
+    icon: "sale",
+    tint: "#16A477",
+    route: "offer-list",
+  },
+  {
+    key: "track_applications",
+    icon: "progress-clock",
+    tint: "#3787D8",
+    route: "offer-applications",
+  },
+];
 
 /* ------------------------------------------------------------------ */
 /* Loan products shown on the offers list                             */
@@ -19,6 +44,7 @@ export const OFFERS_MOCK: Offer[] = [
     feesKey: "offers.products.business_loan.fees",
     minAmount: 100_000,
     maxAmount: 20_000_000,
+    featured: true,
   },
   {
     id: "overdraft",
@@ -35,6 +61,7 @@ export const OFFERS_MOCK: Offer[] = [
     feesKey: "offers.products.overdraft.fees",
     minAmount: 50_000,
     maxAmount: 10_000_000,
+    featured: true,
   },
   {
     id: "supply_chain",
@@ -156,6 +183,63 @@ export const LOAN_APPLICATIONS_MOCK: LoanApplication[] = [
       { key: "submitted", state: "done", timestamp: "18 Sep 2026, 10:24 AM" },
       { key: "document_verification", state: "done", timestamp: "19 Sep 2026, 02:15 PM" },
       { key: "credit_assessment", state: "current", timestamp: "20 Sep 2026, 11:30 AM" },
+      { key: "approval", state: "pending", timestamp: "" },
+      { key: "disbursal", state: "pending", timestamp: "" },
+    ],
+  },
+  {
+    id: "FIN-OV-2026-00312",
+    offerId: "overdraft",
+    lender: "HDFC Bank",
+    lenderInitials: "HB",
+    amount: 1_500_000,
+    tenureDays: 0,
+    status: "approved",
+    appliedOn: "08 Sep 2026",
+    appliedAt: "08 Sep 2026, 09:10 AM",
+    processingTime: "1 – 2 Business Days",
+    steps: [
+      { key: "submitted", state: "done", timestamp: "08 Sep 2026, 09:10 AM" },
+      { key: "document_verification", state: "done", timestamp: "09 Sep 2026, 12:40 PM" },
+      { key: "credit_assessment", state: "done", timestamp: "10 Sep 2026, 03:05 PM" },
+      { key: "approval", state: "done", timestamp: "11 Sep 2026, 10:00 AM" },
+      { key: "disbursal", state: "pending", timestamp: "" },
+    ],
+  },
+  {
+    id: "FIN-SC-2026-00187",
+    offerId: "supply_chain",
+    lender: "ICICI Bank",
+    lenderInitials: "IC",
+    amount: 750_000,
+    tenureDays: 180,
+    status: "under_review",
+    appliedOn: "03 Sep 2026",
+    appliedAt: "03 Sep 2026, 02:20 PM",
+    processingTime: "2 – 3 Business Days",
+    steps: [
+      { key: "submitted", state: "done", timestamp: "03 Sep 2026, 02:20 PM" },
+      { key: "document_verification", state: "current", timestamp: "04 Sep 2026, 11:00 AM" },
+      { key: "credit_assessment", state: "pending", timestamp: "" },
+      { key: "approval", state: "pending", timestamp: "" },
+      { key: "disbursal", state: "pending", timestamp: "" },
+    ],
+  },
+  {
+    id: "FIN-IN-2026-00099",
+    offerId: "invoice_discounting",
+    lender: "Axis Bank",
+    lenderInitials: "AX",
+    amount: 1_200_000,
+    tenureDays: 90,
+    status: "rejected",
+    appliedOn: "28 Aug 2026",
+    appliedAt: "28 Aug 2026, 04:45 PM",
+    processingTime: "2 – 3 Business Days",
+    steps: [
+      { key: "submitted", state: "done", timestamp: "28 Aug 2026, 04:45 PM" },
+      { key: "document_verification", state: "done", timestamp: "29 Aug 2026, 01:30 PM" },
+      { key: "credit_assessment", state: "done", timestamp: "30 Aug 2026, 05:10 PM" },
       { key: "approval", state: "pending", timestamp: "" },
       { key: "disbursal", state: "pending", timestamp: "" },
     ],

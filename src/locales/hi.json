@@ -532,6 +532,24 @@
   "offers": {
     "title": "लोन ऑफर",
     "coming_soon": "ऑफर जल्द आ रहे हैं",
+    "section": {
+      "loan_offers": { "title": "लोन ऑफर", "subtitle": "प्री-अप्रूव्ड ऑफर पाएं" },
+      "track_applications": { "title": "आवेदन ट्रैक करें", "subtitle": "अपने आवेदन की स्थिति देखें" }
+    },
+    "loan_offers_title": "लोन ऑफर",
+    "loan_categories_title": "लोन श्रेणियाँ",
+    "featured_title": "फीचर्ड ऑफर",
+    "featured_badge": "तेज़ और आसान",
+    "view_all": "सभी देखें",
+    "applications": {
+      "title": "आवेदन ट्रैक करें",
+      "subtitle": "अपने लोन आवेदनों की स्थिति रीयल-टाइम में देखें और ट्रैक करें।",
+      "applied_on": "{{date}} को आवेदन किया",
+      "empty_title": "अभी कोई आवेदन नहीं",
+      "empty_subtitle": "आवेदन करने के बाद आपके लोन आवेदन यहाँ दिखेंगे।",
+      "filter": { "all": "सभी", "under_review": "समीक्षा में", "approved": "स्वीकृत", "rejected": "अस्वीकृत", "disbursed": "वितरित" },
+      "status": { "under_review": "समीक्षा में", "approved": "स्वीकृत", "rejected": "अस्वीकृत", "disbursed": "वितरित" }
+    },
     "categories": {
       "all": "सभी",
       "invoice": "इनवॉइस",
@@ -546,6 +564,17 @@
     },
     "how_it_works": "यह कैसे काम करता है",
     "fees_charges": "शुल्क और चार्ज",
+    "why_choose": {
+      "title": "फिनोरा क्यों चुनें?",
+      "quick_approval": "तेज़ मंज़ूरी",
+      "secure_compliant": "100% सुरक्षित और अनुपालित",
+      "flexible_repayment": "लचीली चुकौती",
+      "trusted_business": "व्यवसायों का भरोसा"
+    },
+    "need_help": {
+      "title": "मदद चाहिए या कोई सवाल है?",
+      "subtitle": "हमारी सहायता टीम आपके लिए 24/7 उपलब्ध है।"
+    },
     "not_sure_title": "पक्का नहीं कि कौन-सा सही है?",
     "not_sure_subtitle": "सबसे अच्छा विकल्प चुनने के लिए हमारे लोन कैलकुलेटर का उपयोग करें।",
     "compare_calculate": "तुलना करें और गणना करें",

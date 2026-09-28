@@ -41,9 +41,8 @@ export default function OfferTrackerScreen() {
         </View>
         <EmptyView
           title={t("offers.tracker.not_found")}
-          ctaIcon="arrow-left"
-          ctaLabel={t("common.back")}
-          onCtaPress={() => navigation.goBack()}
+          ctaLabel={t("offers.applications.title")}
+          onCtaPress={() => navigation.navigate("offer-applications")}
         />
       </View>
     );

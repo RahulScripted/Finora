@@ -39,9 +39,8 @@ export default function OfferDetailScreen() {
         </View>
         <EmptyView
           title={t("offers.not_found")}
-          ctaIcon="arrow-left"
-          ctaLabel={t("common.back")}
-          onCtaPress={() => navigation.goBack()}
+          ctaLabel={t("offers.loan_offers_title")}
+          onCtaPress={() => navigation.navigate("offer-list")}
         />
       </View>
     );

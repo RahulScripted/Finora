@@ -529,6 +529,24 @@
   "offers": {
     "title": "લોન ઑફર",
     "coming_soon": "ઑફર ટૂંક સમયમાં આવે છે",
+    "section": {
+      "loan_offers": { "title": "લોન ઑફર", "subtitle": "પ્રી-એપ્રૂવ્ડ ઑફર મેળવો" },
+      "track_applications": { "title": "અરજી ટ્રૅક કરો", "subtitle": "તમારી અરજીની સ્થિતિ તપાસો" }
+    },
+    "loan_offers_title": "લોન ઑફર",
+    "loan_categories_title": "લોન શ્રેણીઓ",
+    "featured_title": "ફીચર્ડ ઑફર",
+    "featured_badge": "ઝડપી અને સરળ",
+    "view_all": "બધું જુઓ",
+    "applications": {
+      "title": "અરજી ટ્રૅક કરો",
+      "subtitle": "તમારી લોન અરજીઓની સ્થિતિ રીઅલ-ટાઇમમાં જુઓ અને ટ્રૅક કરો.",
+      "applied_on": "{{date}} ના રોજ અરજી કરી",
+      "empty_title": "હજુ કોઈ અરજી નથી",
+      "empty_subtitle": "તમે અરજી કર્યા પછી તમારી લોન અરજીઓ અહીં દેખાશે.",
+      "filter": { "all": "બધું", "under_review": "સમીક્ષામાં", "approved": "મંજૂર", "rejected": "નકારેલ", "disbursed": "વિતરિત" },
+      "status": { "under_review": "સમીક્ષામાં", "approved": "મંજૂર", "rejected": "નકારેલ", "disbursed": "વિતરિત" }
+    },
     "categories": {
       "all": "બધું",
       "invoice": "ઇનવોઇસ",
@@ -543,6 +561,17 @@
     },
     "how_it_works": "તે કેવી રીતે કામ કરે છે",
     "fees_charges": "ફી અને ચાર્જ",
+    "why_choose": {
+      "title": "ફિનોરા શા માટે પસંદ કરવું?",
+      "quick_approval": "ઝડપી મંજૂરી",
+      "secure_compliant": "100% સુરક્ષિત અને સુસંગત",
+      "flexible_repayment": "લવચીક ચુકવણી",
+      "trusted_business": "વ્યવસાયોનો વિશ્વાસ"
+    },
+    "need_help": {
+      "title": "મદદ જોઈએ છે અથવા પ્રશ્નો છે?",
+      "subtitle": "અમારી સહાય ટીમ તમારા માટે 24/7 ઉપલબ્ધ છે."
+    },
     "not_sure_title": "તમારા માટે કયું યોગ્ય છે તેની ખાતરી નથી?",
     "not_sure_subtitle": "શ્રેષ્ઠ વિકલ્પ શોધવા માટે અમારા લોન કેલ્ક્યુલેટરનો ઉપયોગ કરો.",
     "compare_calculate": "તુલના કરો અને ગણતરી કરો",

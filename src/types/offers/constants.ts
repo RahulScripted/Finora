@@ -2,6 +2,25 @@
 /* Offers — domain types                                              */
 /* ------------------------------------------------------------------ */
 
+/**
+ * A single entry card in the flexible "offer section" on the Offers tab.
+ * Fully data-driven so cards can be added / reordered without touching UI.
+ * Uses an icon for now; swap `icon` for `image` later without breaking types.
+ */
+export type OfferSectionKey = "loan_offers" | "track_applications";
+
+export type OfferSectionCard = {
+  key: OfferSectionKey;
+  /** MaterialCommunityIcons name — placeholder until images are supplied. */
+  icon: string;
+  /** Optional image asset (takes priority over `icon` once provided). */
+  image?: number;
+  /** Hex accent used behind the icon / image. */
+  tint: string;
+  /** Route this card navigates to on press. */
+  route: string;
+};
+
 /** Top-level filter categories on the offers list screen. */
 export type OfferCategory = "all" | "invoice" | "business_loan" | "others";
 
@@ -60,6 +79,8 @@ export type Offer = {
   maxAmount: number;
   /** Advance percentage disbursed up-front (invoice/PO products). */
   advancePct?: number;
+  /** Surfaced in the "Featured offers" strip on the Offers tab. */
+  featured?: boolean;
 };
 
 /* --------------------------- application ---------------------------- */
