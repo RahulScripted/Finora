@@ -62,6 +62,8 @@ export type Offer = {
   category: Exclude<OfferCategory, "all">;
   /** MaterialCommunityIcons name for the product icon. */
   icon: string;
+  /** Optional illustration blended into the right edge of the featured card. */
+  image?: number;
   /** Hex accent used behind the icon and on chips. */
   tint: string;
   /** Short headline shown on the list card, e.g. "Up to ₹2 Cr". */

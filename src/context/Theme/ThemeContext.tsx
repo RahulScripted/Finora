@@ -1,10 +1,11 @@
-import React, {
+import {
   createContext,
   useContext,
   useEffect,
   useState,
   type ReactNode,
 } from "react";
+import { useColorScheme } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export type ThemePreference = "light" | "dark" | "system";
@@ -73,7 +74,7 @@ export const LightColors: ThemeColors = {
   overlay: "rgba(17, 18, 20, 0.45)",
   icon: "#111214",
   iconSecondary: "#73767D",
-  tabBar: "#FFFFFF",
+  tabBar: "#F7F7F5",
   tabBarBorder: "#E6E7E9",
 };
 
@@ -106,7 +107,7 @@ export const DarkColors: ThemeColors = {
   overlay: "rgba(0, 0, 0, 0.65)",
   icon: "#F7F7F5",
   iconSecondary: "#A5A9B1",
-  tabBar: "#111316",
+  tabBar: "#090A0C",
   tabBarBorder: "#292D33",
 };
 
@@ -121,34 +122,19 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [preference, setPreferenceState] = useState<ThemePreference>("system");
-  // Seed from the device scheme immediately so "System" is correct on first paint.
-  const [systemTheme, setSystemTheme] = useState<"light" | "dark">(() => {
-    const { Appearance } = require("react-native");
-    return Appearance.getColorScheme() === "dark" ? "dark" : "light";
-  });
-  const [mounted, setMounted] = useState(false);
+  // RN's hook subscribes to OS scheme changes and re-renders reliably — no
+  // manual Appearance listener, no transient-null flash on reload.
+  const systemScheme = useColorScheme();
 
+  // Rehydrate the persisted preference on mount.
   useEffect(() => {
-    let active = true;
     AsyncStorage.getItem(THEME_PREF_KEY)
       .then((stored) => {
-        if (!active) return;
         if (stored === "light" || stored === "dark" || stored === "system") {
           setPreferenceState(stored);
         }
       })
-      .catch((e) => console.warn("Failed to load theme preference:", e))
-      .finally(() => { if (active) setMounted(true); });
-    return () => { active = false; };
-  }, []);
-
-  useEffect(() => {
-    const { Appearance } = require("react-native");
-    setSystemTheme(Appearance.getColorScheme() === "dark" ? "dark" : "light");
-    const sub = Appearance.addChangeListener(({ colorScheme }: { colorScheme: "light" | "dark" | null }) => {
-      setSystemTheme(colorScheme === "dark" ? "dark" : "light");
-    });
-    return () => sub.remove();
+      .catch((e) => console.warn("Failed to load theme preference:", e));
   }, []);
 
   const setPreference = async (next: ThemePreference) => {
@@ -160,10 +146,9 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     }
   };
 
-  const resolved = preference === "system" ? systemTheme : preference;
+  const resolved: "light" | "dark" =
+    preference === "system" ? (systemScheme === "dark" ? "dark" : "light") : preference;
   const colors = resolved === "dark" ? DarkColors : LightColors;
-
-  if (!mounted) return null;
 
   return (
     <ThemeContext.Provider value={{ preference, setPreference, resolved, colors }}>

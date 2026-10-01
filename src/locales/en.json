@@ -524,6 +524,16 @@
     "downloading": "Preparing your statement…",
     "download_complete": "Download complete"
   },
+  "transaction_history": {
+    "title": "Transaction History",
+    "menu_label": "Transaction History",
+    "menu_subtitle": "All your payments in one place",
+    "total_paid": "Total paid",
+    "count_one": "{{count}} transaction",
+    "count_other": "{{count}} transactions",
+    "empty_title": "No transactions yet",
+    "empty_label": "Your payments will show up here once you start spending."
+  },
   "offers": {
     "title": "Offers",
     "coming_soon": "Offers coming soon",

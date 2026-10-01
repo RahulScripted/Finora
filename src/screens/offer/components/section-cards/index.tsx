@@ -1,5 +1,6 @@
 import { useTheme } from "@context/Theme/ThemeContext";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { LinearGradient } from "expo-linear-gradient";
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import { useTranslation } from "react-i18next";
 import type { OfferSectionCard } from "@data-types/offers/constants";
@@ -11,8 +12,9 @@ type Props = {
 
 /**
  * Flexible entry-card grid for the Offers tab. Renders whatever cards the
- * config provides, wrapping to new rows automatically. Uses an icon for now;
- * if a card supplies an `image`, that is shown instead.
+ * config provides, wrapping to new rows automatically. Always shows the tinted
+ * icon badge; when a card supplies an `image`, it is additionally blended into
+ * the bottom-right corner of the card as a decorative illustration.
  */
 export default function OfferSectionCards({ cards, onPress }: Props) {
   const { colors } = useTheme();
@@ -34,12 +36,21 @@ export default function OfferSectionCards({ cards, onPress }: Props) {
             },
           ]}
         >
+          {card.image ? (
+            <View style={s.blendLayer} pointerEvents="none">
+              <Image source={card.image} style={s.blendImage} resizeMode="contain" />
+              {/* Fade the illustration into the card from the bottom-left. */}
+              <LinearGradient
+                colors={[colors.card, colors.card + "00"]}
+                start={{ x: 0, y: 1 }}
+                end={{ x: 1, y: 0 }}
+                style={StyleSheet.absoluteFill}
+              />
+            </View>
+          ) : null}
+
           <View style={[s.iconWrap, { backgroundColor: card.tint + "1F" }]}>
-            {card.image ? (
-              <Image source={card.image} style={s.image} resizeMode="contain" />
-            ) : (
-              <MaterialCommunityIcons name={card.icon as any} size={24} color={card.tint} />
-            )}
+            <MaterialCommunityIcons name={card.icon as any} size={24} color={card.tint} />
           </View>
 
           <Text style={[s.title, { color: colors.textPrimary }]} numberOfLines={1}>
@@ -64,6 +75,22 @@ const s = StyleSheet.create({
     padding: 16,
     gap: 6,
     minHeight: 128,
+    overflow: "hidden",
+  },
+  // Illustration pinned to the top-right corner, fading into the card.
+  blendLayer: {
+    position: "absolute",
+    right: 0,
+    top: 0,
+    width: "52%",
+    height: "66%",
+  },
+  blendImage: {
+    position: "absolute",
+    right: -6,
+    top: -6,
+    width: "100%",
+    height: "100%",
   },
   iconWrap: {
     width: 44,
@@ -73,7 +100,6 @@ const s = StyleSheet.create({
     justifyContent: "center",
     marginBottom: 6,
   },
-  image: { width: 26, height: 26 },
   title: { fontSize: 15, fontWeight: "700" },
   sub: { fontSize: 12, lineHeight: 17 },
 });

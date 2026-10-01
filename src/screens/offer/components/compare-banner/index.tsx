@@ -1,6 +1,6 @@
 import { useTheme } from "@context/Theme/ThemeContext";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import { useTranslation } from "react-i18next";
 
 type Props = {
@@ -14,8 +14,12 @@ export default function CompareBanner({ onPress }: Props) {
 
   return (
     <View style={[s.wrap, { backgroundColor: colors.accent + "14" }]}>
-      <View style={[s.illustration, { backgroundColor: colors.card }]}>
-        <MaterialCommunityIcons name="calculator-variant-outline" size={28} color={colors.accent} />
+      <View style={s.illustration}>
+        <Image
+          source={require("@assets/illustration/offer/not-sure.png")}
+          style={s.illustrationImage}
+          resizeMode="contain"
+        />
       </View>
 
       <View style={s.body}>
@@ -42,7 +46,8 @@ export default function CompareBanner({ onPress }: Props) {
 
 const s = StyleSheet.create({
   wrap: { flexDirection: "row", gap: 14, borderRadius: 18, padding: 16, alignItems: "center" },
-  illustration: { width: 56, height: 56, borderRadius: 28, alignItems: "center", justifyContent: "center" },
+  illustration: { width: 118, height: 138, alignItems: "center", justifyContent: "center" },
+  illustrationImage: { width: "100%", height: "100%" },
   body: { flex: 1, gap: 4 },
   title: { fontSize: 14, fontWeight: "700" },
   sub: { fontSize: 12, lineHeight: 17 },

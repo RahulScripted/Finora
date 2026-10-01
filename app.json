@@ -6,7 +6,7 @@
     "scheme": "finora",
     "orientation": "portrait",
     "icon": "./assets/png/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/png/splash-icon.png",
       "resizeMode": "contain",

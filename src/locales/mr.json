@@ -534,6 +534,16 @@
     "downloading": "तुमचे स्टेटमेंट तयार होत आहे…",
     "download_complete": "डाउनलोड पूर्ण"
   },
+  "transaction_history": {
+    "title": "व्यवहार इतिहास",
+    "menu_label": "व्यवहार इतिहास",
+    "menu_subtitle": "तुमची सर्व देयके एकाच ठिकाणी",
+    "total_paid": "एकूण भरलेले",
+    "count_one": "{{count}} व्यवहार",
+    "count_other": "{{count}} व्यवहार",
+    "empty_title": "अजून कोणतेही व्यवहार नाहीत",
+    "empty_label": "तुम्ही खर्च सुरू केल्यानंतर तुमची देयके येथे दिसतील."
+  },
   "offers": {
     "title": "कर्ज ऑफर",
     "coming_soon": "ऑफर लवकरच येत आहेत",

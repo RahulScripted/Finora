@@ -611,6 +611,16 @@
     "downloading": "আপনার স্টেটমেন্ট তৈরি হচ্ছে…",
     "download_complete": "ডাউনলোড সম্পূর্ণ"
   },
+  "transaction_history": {
+    "title": "লেনদেনের ইতিহাস",
+    "menu_label": "লেনদেনের ইতিহাস",
+    "menu_subtitle": "আপনার সব পেমেন্ট এক জায়গায়",
+    "total_paid": "মোট পরিশোধিত",
+    "count_one": "{{count}}টি লেনদেন",
+    "count_other": "{{count}}টি লেনদেন",
+    "empty_title": "এখনও কোনো লেনদেন নেই",
+    "empty_label": "আপনি খরচ শুরু করলে আপনার পেমেন্ট এখানে দেখা যাবে।"
+  },
   "offers": {
     "title": "লোন অফার",
     "coming_soon": "অফার শীঘ্রই আসছে",

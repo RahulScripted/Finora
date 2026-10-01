@@ -16,7 +16,8 @@ function useGreeting() {
   if (h >= 5 && h < 12) return { text: t("home.greeting_morning"), icon: "weather-sunny", tint: "#F5A623" };
   if (h >= 12 && h < 17) return { text: t("home.greeting_afternoon"), icon: "weather-partly-cloudy", tint: "#F5A623" };
   if (h >= 17 && h < 21) return { text: t("home.greeting_evening"), icon: "weather-sunset", tint: "#E8763A" };
-  return { text: t("home.greeting_night"), icon: "weather-night", tint: "#6C7BE0" };
+  // Night uses the theme accent (orange) rather than a fixed hue.
+  return { text: t("home.greeting_night"), icon: "weather-night", tint: null };
 }
 
 type Props = {
@@ -46,7 +47,11 @@ export default function HomeHeader({ customerName }: Props) {
           <Text style={[s.greeting, { color: colors.textSecondary }]} numberOfLines={1}>
             {greeting.text}
           </Text>
-          <MaterialCommunityIcons name={greeting.icon as any} size={16} color={greeting.tint} />
+          <MaterialCommunityIcons
+            name={greeting.icon as any}
+            size={16}
+            color={greeting.tint ?? colors.accent}
+          />
         </View>
         <Text style={[s.name, { color: colors.textPrimary }]} numberOfLines={1}>
           {customerName}

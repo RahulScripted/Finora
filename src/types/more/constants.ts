@@ -9,6 +9,7 @@ export const MORE_MENU: MoreMenuItem[] = [
   { label: "Business Partners", icon: "briefcase-account-outline", color: "#3B61FF", route: "business-partners" },
   { label: "Documents", icon: "folder-outline", color: "#588FB5", route: "documents" },
   { label: "Track Spends", icon: "chart-waterfall", color: "#FF9C01", route: "track-spends" },
+  { label: "Transaction History", icon: "history", color: "#16A477", route: "payment-history" },
   { label: "Credit Score", icon: "shield-star-outline", color: "#8B5CF6", route: "credit-score" },
   { label: "Quick Review", icon: "map-marker-path", color: "#FF5A36", route: "quick-review" },
   { label: "Support", icon: "headset", color: "#3B61FF", route: "help-support" },

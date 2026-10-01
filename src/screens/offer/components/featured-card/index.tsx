@@ -1,6 +1,7 @@
 import { useTheme } from "@context/Theme/ThemeContext";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
+import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import { useTranslation } from "react-i18next";
 import type { Offer } from "@data-types/offers/constants";
 
@@ -23,6 +24,19 @@ export default function FeaturedCard({ offer, onPress }: Props) {
         { backgroundColor: colors.card, borderColor: colors.border, opacity: pressed ? 0.9 : 1 },
       ]}
     >
+      {offer.image ? (
+        <View style={s.blendLayer} pointerEvents="none">
+          <Image source={offer.image} style={s.blendImage} resizeMode="contain" />
+          {/* Fade the illustration into the card background from the left. */}
+          <LinearGradient
+            colors={[colors.card, colors.card + "00"]}
+            start={{ x: 0, y: 0.5 }}
+            end={{ x: 1, y: 0.5 }}
+            style={StyleSheet.absoluteFill}
+          />
+        </View>
+      ) : null}
+
       <View style={s.head}>
         <View style={[s.iconWrap, { backgroundColor: offer.tint + "1F" }]}>
           <MaterialCommunityIcons name={offer.icon as any} size={20} color={offer.tint} />
@@ -55,6 +69,23 @@ const s = StyleSheet.create({
     borderWidth: StyleSheet.hairlineWidth,
     padding: 16,
     gap: 10,
+    overflow: "hidden",
+  },
+  // Illustration pinned to the right edge, fading into the card.
+  blendLayer: {
+    position: "absolute",
+    top: 0,
+    right: 0,
+    bottom: 0,
+    width: "48%",
+  },
+  blendImage: {
+    position: "absolute",
+    right: -10,
+    top: 0,
+    bottom: 0,
+    width: "100%",
+    height: "100%",
   },
   head: { flexDirection: "row", alignItems: "center", gap: 10 },
   iconWrap: { width: 36, height: 36, borderRadius: 11, alignItems: "center", justifyContent: "center" },

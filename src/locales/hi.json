@@ -529,6 +529,16 @@
     "downloading": "आपका स्टेटमेंट तैयार हो रहा है…",
     "download_complete": "डाउनलोड पूर्ण"
   },
+  "transaction_history": {
+    "title": "लेन-देन इतिहास",
+    "menu_label": "लेन-देन इतिहास",
+    "menu_subtitle": "आपके सभी भुगतान एक ही जगह",
+    "total_paid": "कुल भुगतान",
+    "count_one": "{{count}} लेन-देन",
+    "count_other": "{{count}} लेन-देन",
+    "empty_title": "अभी कोई लेन-देन नहीं",
+    "empty_label": "खर्च शुरू करने के बाद आपके भुगतान यहाँ दिखेंगे।"
+  },
   "offers": {
     "title": "लोन ऑफर",
     "coming_soon": "ऑफर जल्द आ रहे हैं",

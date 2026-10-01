@@ -526,6 +526,16 @@
     "downloading": "તમારું સ્ટેટમેન્ટ તૈયાર થઈ રહ્યું છે…",
     "download_complete": "ડાઉનલોડ પૂર્ણ"
   },
+  "transaction_history": {
+    "title": "વ્યવહાર ઇતિહાસ",
+    "menu_label": "વ્યવહાર ઇતિહાસ",
+    "menu_subtitle": "તમારી બધી ચુકવણી એક જ જગ્યાએ",
+    "total_paid": "કુલ ચૂકવેલ",
+    "count_one": "{{count}} વ્યવહાર",
+    "count_other": "{{count}} વ્યવહારો",
+    "empty_title": "હજુ કોઈ વ્યવહાર નથી",
+    "empty_label": "તમે ખર્ચ શરૂ કરશો પછી તમારી ચુકવણી અહીં દેખાશે."
+  },
   "offers": {
     "title": "લોન ઑફર",
     "coming_soon": "ઑફર ટૂંક સમયમાં આવે છે",

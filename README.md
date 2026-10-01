@@ -10,9 +10,9 @@ A secure, multilingual React Native app for **invoice financing, loans, repaymen
 
 <br/>
 
-![React Native](https://img.shields.io/badge/React_Native-0.86-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![React Native](https://img.shields.io/badge/React_Native-0.86.3-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Expo](https://img.shields.io/badge/Expo-57-000020?style=for-the-badge&logo=expo&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-Strict-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-6.0-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![Redux Toolkit](https://img.shields.io/badge/Redux_Toolkit-State-764ABC?style=for-the-badge&logo=redux&logoColor=white)
 ![EAS Build](https://img.shields.io/badge/EAS-Build-4630EB?style=for-the-badge&logo=expo&logoColor=white)
 
@@ -37,7 +37,7 @@ A secure, multilingual React Native app for **invoice financing, loans, repaymen
 
 | Layer | Technology |
 | --- | --- |
-| Framework | React Native 0.86 + Expo 57 |
+| Framework | React Native 0.86.3 + Expo 57 |
 | Language | TypeScript (strict) |
 | Navigation | Expo Router + React Navigation (Stack + Bottom Tabs) |
 | State Management | Redux Toolkit + React Query |
@@ -76,13 +76,20 @@ Finora/
 │   │   ├── scroll-reveal/
 │   │   └── spring-reveal/
 │   │
+│   ├── celebrations/             ← seasonal celebration overlays
+│   │   ├── birthday/
+│   │   └── new-year/
+│   │
 │   ├── components/               ← generic, feature-agnostic UI components
+│   │   ├── animated-progress-bar/
+│   │   ├── avatar-initials/
 │   │   ├── chart/                ← bar-chart, line-chart, column-chart, donut-chart, progress-ring, sparkline
 │   │   ├── confetti/
 │   │   ├── contact-action/
 │   │   ├── date-range-picker/
 │   │   ├── info-card/
 │   │   ├── key-value-row/
+│   │   ├── language-sheet/       ← in-app language switcher bottom sheet
 │   │   ├── legal-content/
 │   │   ├── loaders/
 │   │   ├── menu-row/
@@ -92,6 +99,7 @@ Finora/
 │   │   ├── screenshot-countdown/ ← fullscreen 3-2-1 capture overlay
 │   │   ├── service-request/
 │   │   ├── tab-bar/
+│   │   ├── theme-sheet/          ← in-app theme switcher bottom sheet
 │   │   └── toast-config/
 │   │
 │   ├── context/                  ← React context providers
@@ -107,8 +115,10 @@ Finora/
 │   │   └── sounds/               ← expo-audio playback helpers
 │   │
 │   ├── hooks/                    ← custom React hooks
+│   │   ├── useBirthday/          ← birthday detection + celebration trigger
 │   │   ├── useBusinessPartners/  ← partners list + summary + detail lookup
 │   │   ├── useCreditSummary/     ← credit score fetch + refetch
+│   │   ├── useOffers/            ← offers fetch + state
 │   │   ├── useSpendSummary/      ← spend analytics fetch + refetch
 │   │   ├── useSupport/           ← support tickets store + submit + refetch
 │   │   ├── usePersonal/          ← applicant + co-applicant data + updates
@@ -122,11 +132,12 @@ Finora/
 │   │
 │   ├── mock/                     ← local mock data (masked where sensitive)
 │   │   ├── business-partners/
+│   │   ├── company/              ← company mock (GSTIN masked)
 │   │   ├── credit-score/
-│   │   ├── support/              ← RM/escalation + seed tickets
-│   │   ├── track-spend/
+│   │   ├── offers/
 │   │   ├── personal/             ← applicant + co-applicant mock (PAN/Aadhaar masked)
-│   │   └── company/              ← company mock (GSTIN masked)
+│   │   ├── support/              ← RM/escalation + seed tickets
+│   │   └── track-spend/
 │   │
 │   ├── routes/
 │   │   └── index.tsx             ← single Tab.Navigator, all screens registered
@@ -138,6 +149,7 @@ Finora/
 │   │   ├── invoices/
 │   │   ├── money/
 │   │   ├── more/
+│   │   ├── offer/
 │   │   ├── payment-history/
 │   │   ├── profile/
 │   │   │   ├── about-app/
@@ -159,36 +171,45 @@ Finora/
 │   ├── shared/                   ← components shared across multiple screens
 │   │   ├── card/
 │   │   ├── contact-details/
+│   │   ├── empty-screen/
+│   │   ├── empty-view/
 │   │   ├── notifications/
+│   │   ├── profile/
 │   │   ├── recent-payments/
+│   │   ├── refresh/
+│   │   ├── scroll-to-top/
 │   │   └── spend-chart/
 │   │
 │   ├── store/                    ← Redux store
 │   │   ├── index.ts              ← configureStore + typed hooks
 │   │   └── navSlice.ts           ← navigation back-stack slice
 │   │
+│   ├── services/                 ← device services
+│   │   └── capture-screenshot.ts ← react-native-view-shot wrapper
+│   │
 │   ├── templates/                ← copy-ready message templates (alias: @templates)
 │   │   ├── email/                ← email + auto error-report body
 │   │   ├── whatsapp/             ← WhatsApp body + error report + example
 │   │   └── shared/               ← fillTemplate, vars, DEFAULT_CUSTOMER
 │   │
-│   ├── services/                 ← device services
-│   │   └── capture-screenshot.ts ← react-native-view-shot wrapper
-│   │
 │   ├── types/                    ← shared TypeScript types (alias: @data-types)
-│   │   ├── business-partners/  chart/  credit-score/  date-range/  legal/
-│   │   ├── more/  nav/  notifications/  product-tour/
-│   │   ├── profile/  support/  track-spend/
-│   │   ├── personal/             ← Applicant, CoApplicant, PersonalData
+│   │   ├── about/  birthday/  business-partners/  chart/
 │   │   ├── company/              ← CompanyData, Registration, Banking, etc.
-│   │   └── index.ts
+│   │   ├── credit-score/  date-range/  legal/  more/  nav/
+│   │   ├── notifications/  offers/  product-tour/  profile/
+│   │   ├── personal/             ← Applicant, CoApplicant, PersonalData
+│   │   ├── support/  track-spend/
+│   │   ├── index.ts
+│   │   └── svg.d.ts              ← SVG module declarations
 │   │
 │   └── utils/                    ← pure utility functions
+│       ├── birthday/             ← birthday date helpers
 │       ├── debounce/             ← useDebounce, debounce, useDebouncedCallback
 │       ├── format-locals/        ← formatINR, formatDate, formatLakh, etc.
 │       ├── message-pool/
 │       ├── pick-random/          ← randomCreditSummary for demo data
 │       ├── recommend/            ← search suggestions (recommend, suggestTerms)
+│       ├── spend-format/         ← spend-specific formatting helpers
 │       ├── tagline/
 │       └── toast/
 │
@@ -213,6 +234,7 @@ Defined in `babel.config.js` and `tsconfig.json`:
 | `@utils` | `src/utils` |
 | `@store` | `src/store` |
 | `@data-types` | `src/types` |
+| `@api-calls` | `src/api-calls` |
 | `@animations` | `src/animations` |
 | `@helpers` | `src/helpers` |
 | `@assets` | `assets` |
@@ -220,6 +242,7 @@ Defined in `babel.config.js` and `tsconfig.json`:
 | `@shared` | `src/shared` |
 | `@mock` | `src/mock` |
 | `@templates` | `src/templates` |
+| `@celebrations` | `src/celebrations` |
 
 ---
 
