@@ -22,7 +22,20 @@
     "theme_system": "સિસ્ટમ",
     "theme_light": "લાઇટ",
     "theme_dark": "ડાર્ક",
-    "months": ["જાન્યુ", "ફેબ્રુ", "માર્ચ", "એપ્રિલ", "મે", "જૂન", "જુલા", "ઑગ", "સપ્ટે", "ઑક્ટો", "નવે", "ડિસે"]
+    "months": [
+      "જાન્યુ",
+      "ફેબ્રુ",
+      "માર્ચ",
+      "એપ્રિલ",
+      "મે",
+      "જૂન",
+      "જુલા",
+      "ઑગ",
+      "સપ્ટે",
+      "ઑક્ટો",
+      "નવે",
+      "ડિસે"
+    ]
   },
   "home": {
     "greeting_morning": "સુપ્રભાત",
@@ -40,13 +53,22 @@
       "benefits": "લાભો"
     },
     "items": {
-      "personal": { "label": "વ્યક્તિગત", "subtitle": "તમારી વ્યક્તિગત વિગતો" },
-      "company": { "label": "કંપની", "subtitle": "વ્યવસાય માહિતી" },
+      "personal": {
+        "label": "વ્યક્તિગત",
+        "subtitle": "તમારી વ્યક્તિગત વિગતો"
+      },
+      "company": {
+        "label": "કંપની",
+        "subtitle": "વ્યવસાય માહિતી"
+      },
       "documents": {
         "label": "દસ્તાવેજો",
         "subtitle": "અપલોડ કરેલા દસ્તાવેજો"
       },
-      "settings": { "label": "સેટિંગ્સ", "subtitle": "એપ્લિકેશન પસંદગીઓ" },
+      "settings": {
+        "label": "સેટિંગ્સ",
+        "subtitle": "એપ્લિકેશન પસંદગીઓ"
+      },
       "privacyPolicy": {
         "label": "ગોપનીયતા નીતિ",
         "subtitle": "અમે તમારો ડેટા કેવી રીતે સંભાળીએ છીએ"
@@ -514,9 +536,9 @@
     "due_later_other": "{{count}} દિવસમાં",
     "recent_payments": "તાજેતરની ચુકવણી",
     "see_all": "બધું જુઓ",
-    "download_statement": "સ્ટેટમેન્ટ ડાઉનલોડ કરો",
-    "statement_title": "સ્ટેટમેન્ટ ડાઉનલોડ કરો",
-    "statement_subtitle": "નિકાસ માટે સમયગાળો પસંદ કરો",
+    "download_statement": "SOA ડાઉનલોડ કરો",
+    "statement_title": "SOA ડાઉનલોડ કરો",
+    "statement_subtitle": "ખાતા વિવરણ — નિકાસ માટે સમયગાળો પસંદ કરો",
     "range_1m": "છેલ્લો 1 મહિનો",
     "range_3m": "છેલ્લા 3 મહિના",
     "range_6m": "છેલ્લા 6 મહિના",
@@ -534,14 +556,99 @@
     "count_one": "{{count}} વ્યવહાર",
     "count_other": "{{count}} વ્યવહારો",
     "empty_title": "હજુ કોઈ વ્યવહાર નથી",
-    "empty_label": "તમે ખર્ચ શરૂ કરશો પછી તમારી ચુકવણી અહીં દેખાશે."
+    "empty_label": "તમે ખર્ચ શરૂ કરશો પછી તમારી ચુકવણી અહીં દેખાશે.",
+    "recent_transactions": "તાજેતરના વ્યવહારો",
+    "search_placeholder": "UTR, ટ્રાન્ઝેક્શન ID, સંદર્ભ અથવા ભાગીદારથી શોધો…",
+    "detail_title": "વ્યવહાર વિગતો",
+    "not_found": "વ્યવહાર મળ્યો નથી",
+    "no_results": "મેળ ખાતો વ્યવહાર નથી",
+    "try_adjusting": "ફિલ્ટર અથવા શોધ બદલીને જુઓ.",
+    "sort_by": "ક્રમમાં ગોઠવો",
+    "copy": "કૉપિ",
+    "copied": "ક્લિપબોર્ડ પર કૉપિ થયું",
+    "utr_number": "UTR નંબર",
+    "transaction_id": "ટ્રાન્ઝેક્શન ID",
+    "reference": "ઇન્વોઇસ સંદર્ભ",
+    "type": "વ્યવહારનો પ્રકાર",
+    "partner": "ફાઇનાન્સિંગ ભાગીદાર",
+    "invoice_amount": "ઇન્વોઇસ રકમ",
+    "financed_amount": "ફાઇનાન્સ કરેલ રકમ",
+    "financing_fee": "ફાઇનાન્સિંગ ફી",
+    "date_time": "વ્યવહારની તારીખ અને સમય",
+    "credited_to": "અહીં જમા",
+    "charges_interest": "ચાર્જ અને વ્યાજ",
+    "remarks": "ટિપ્પણીઓ",
+    "download_receipt": "રસીદ ડાઉનલોડ કરો",
+    "need_help": "મદદ જોઈએ",
+    "filters": {
+      "all": "બધા",
+      "inflow": "આવક",
+      "outflow": "જાવક",
+      "loans": "લોન",
+      "charges": "ચાર્જ",
+      "repayments": "ચુકવણી"
+    },
+    "sort": {
+      "recent": "સૌથી તાજેતરનું",
+      "oldest": "સૌથી જૂનું",
+      "amount_high": "રકમ: વધુથી ઓછું",
+      "amount_low": "રકમ: ઓછાથી વધુ"
+    },
+    "status": {
+      "credited": "જમા",
+      "debited": "ઉધાર",
+      "pending": "બાકી",
+      "failed": "નિષ્ફળ"
+    },
+    "available_limit": "ઉપલબ્ધ મર્યાદા",
+    "used_limit": "વપરાયેલ મર્યાદા",
+    "of_total": "{{amount}} માંથી",
+    "cash_flow": "કૅશ ફ્લો",
+    "inflow": "આવક",
+    "outflow": "જાવક",
+    "filter": "ફિલ્ટર",
+    "filter_by": "આ પ્રમાણે ફિલ્ટર કરો",
+    "last_3_months": "(છેલ્લા 3 મહિના)",
+    "today": "આજે",
+    "yesterday": "ગઈકાલે",
+    "amount": "રકમ",
+    "chart": {
+      "weekdays": [
+        "સોમ",
+        "મંગળ",
+        "બુધ",
+        "ગુરુ",
+        "શુક્ર",
+        "શનિ",
+        "રવિ"
+      ],
+      "time": {
+        "morning": "સવારે 9",
+        "noon": "બપોરે 12",
+        "afternoon": "બપોરે 3",
+        "evening": "સાંજે 6"
+      },
+      "week": "સપ્તાહ {{n}}"
+    },
+    "downloading": "રસીદ તૈયાર થઈ રહી છે…",
+    "receipt_downloaded_title": "રસીદ ડાઉનલોડ થઈ",
+    "receipt_downloaded_body": "{{reference}} માટેની તમારી રસીદ સફળતાપૂર્વક સાચવવામાં આવી.",
+    "saved_to_downloads": "{{name}} ડાઉનલોડ્સમાં સાચવ્યું",
+    "receipt": "રસીદ",
+    "soa": "SOA"
   },
   "offers": {
     "title": "લોન ઑફર",
     "coming_soon": "ઑફર ટૂંક સમયમાં આવે છે",
     "section": {
-      "loan_offers": { "title": "લોન ઑફર", "subtitle": "પ્રી-એપ્રૂવ્ડ ઑફર મેળવો" },
-      "track_applications": { "title": "અરજી ટ્રૅક કરો", "subtitle": "તમારી અરજીની સ્થિતિ તપાસો" }
+      "loan_offers": {
+        "title": "લોન ઑફર",
+        "subtitle": "પ્રી-એપ્રૂવ્ડ ઑફર મેળવો"
+      },
+      "track_applications": {
+        "title": "અરજી ટ્રૅક કરો",
+        "subtitle": "તમારી અરજીની સ્થિતિ તપાસો"
+      }
     },
     "loan_offers_title": "લોન ઑફર",
     "loan_categories_title": "લોન શ્રેણીઓ",
@@ -554,8 +661,19 @@
       "applied_on": "{{date}} ના રોજ અરજી કરી",
       "empty_title": "હજુ કોઈ અરજી નથી",
       "empty_subtitle": "તમે અરજી કર્યા પછી તમારી લોન અરજીઓ અહીં દેખાશે.",
-      "filter": { "all": "બધું", "under_review": "સમીક્ષામાં", "approved": "મંજૂર", "rejected": "નકારેલ", "disbursed": "વિતરિત" },
-      "status": { "under_review": "સમીક્ષામાં", "approved": "મંજૂર", "rejected": "નકારેલ", "disbursed": "વિતરિત" }
+      "filter": {
+        "all": "બધું",
+        "under_review": "સમીક્ષામાં",
+        "approved": "મંજૂર",
+        "rejected": "નકારેલ",
+        "disbursed": "વિતરિત"
+      },
+      "status": {
+        "under_review": "સમીક્ષામાં",
+        "approved": "મંજૂર",
+        "rejected": "નકારેલ",
+        "disbursed": "વિતરિત"
+      }
     },
     "categories": {
       "all": "બધું",

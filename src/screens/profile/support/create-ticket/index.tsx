@@ -33,7 +33,7 @@ import Animated, {
 } from "react-native-reanimated";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import FilePickerSheet from "../components/file-picker-sheet";
-import TicketStyleCard, { TicketInfoBlock } from "../components/ticket-style-card";
+import TicketStyleCard, { TicketInfoBlock } from "@shared/ticket-card";
 
 const MIN_DESC = 10;
 

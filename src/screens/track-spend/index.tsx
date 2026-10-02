@@ -22,7 +22,7 @@ import PeriodSwitch from "./components/period-switch";
 import RecentPayments from "@shared/recent-payments";
 import Repayments from "./components/repayments";
 import SpendChart from "@shared/spend-chart";
-import StatementSheet from "./components/statement-sheet";
+import StatementSheet from "@shared/statement-sheet";
 import SectionHeader from "./components/shared/section-header";
 import SkeletonBlock from "./components/shared/skeleton-block";
 

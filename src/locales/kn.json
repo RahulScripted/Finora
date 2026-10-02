@@ -22,7 +22,20 @@
     "theme_system": "ಸಿಸ್ಟಮ್",
     "theme_light": "ಲೈಟ್",
     "theme_dark": "ಡಾರ್ಕ್",
-    "months": ["ಜನ", "ಫೆಬ್ರ", "ಮಾರ್ಚ್", "ಏಪ್ರಿ", "ಮೇ", "ಜೂನ್", "ಜುಲೈ", "ಆಗ", "ಸೆಪ್ಟೆಂ", "ಅಕ್ಟೋ", "ನವೆಂ", "ಡಿಸೆಂ"]
+    "months": [
+      "ಜನ",
+      "ಫೆಬ್ರ",
+      "ಮಾರ್ಚ್",
+      "ಏಪ್ರಿ",
+      "ಮೇ",
+      "ಜೂನ್",
+      "ಜುಲೈ",
+      "ಆಗ",
+      "ಸೆಪ್ಟೆಂ",
+      "ಅಕ್ಟೋ",
+      "ನವೆಂ",
+      "ಡಿಸೆಂ"
+    ]
   },
   "home": {
     "greeting_morning": "ಶುಭೋದಯ",
@@ -40,8 +53,14 @@
       "benefits": "ಪ್ರಯೋಜನಗಳು"
     },
     "items": {
-      "personal": { "label": "ವೈಯಕ್ತಿಕ", "subtitle": "ನಿಮ್ಮ ವೈಯಕ್ತಿಕ ವಿವರಗಳು" },
-      "company": { "label": "ಕಂಪನಿ", "subtitle": "ವ್ಯಾಪಾರ ಮಾಹಿತಿ" },
+      "personal": {
+        "label": "ವೈಯಕ್ತಿಕ",
+        "subtitle": "ನಿಮ್ಮ ವೈಯಕ್ತಿಕ ವಿವರಗಳು"
+      },
+      "company": {
+        "label": "ಕಂಪನಿ",
+        "subtitle": "ವ್ಯಾಪಾರ ಮಾಹಿತಿ"
+      },
       "documents": {
         "label": "ದಾಖಲೆಗಳು",
         "subtitle": "ಅಪ್‌ಲೋಡ್ ಮಾಡಿದ ದಾಖಲೆಗಳು"
@@ -517,9 +536,9 @@
     "due_later_other": "{{count}} ದಿನಗಳಲ್ಲಿ",
     "recent_payments": "ಇತ್ತೀಚಿನ ಪಾವತಿಗಳು",
     "see_all": "ಎಲ್ಲಾ ನೋಡಿ",
-    "download_statement": "ಸ್ಟೇಟ್‌ಮೆಂಟ್ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ",
-    "statement_title": "ಸ್ಟೇಟ್‌ಮೆಂಟ್ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ",
-    "statement_subtitle": "ರಫ್ತಿಗಾಗಿ ಅವಧಿಯನ್ನು ಆಯ್ಕೆಮಾಡಿ",
+    "download_statement": "SOA ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ",
+    "statement_title": "SOA ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ",
+    "statement_subtitle": "ಖಾತೆ ವಿವರಣೆ — ರಫ್ತಿಗಾಗಿ ಅವಧಿಯನ್ನು ಆರಿಸಿ",
     "range_1m": "ಕಳೆದ 1 ತಿಂಗಳು",
     "range_3m": "ಕಳೆದ 3 ತಿಂಗಳು",
     "range_6m": "ಕಳೆದ 6 ತಿಂಗಳು",
@@ -537,14 +556,99 @@
     "count_one": "{{count}} ವಹಿವಾಟು",
     "count_other": "{{count}} ವಹಿವಾಟುಗಳು",
     "empty_title": "ಇನ್ನೂ ಯಾವುದೇ ವಹಿವಾಟು ಇಲ್ಲ",
-    "empty_label": "ನೀವು ಖರ್ಚು ಮಾಡಲು ಪ್ರಾರಂಭಿಸಿದ ನಂತರ ನಿಮ್ಮ ಪಾವತಿಗಳು ಇಲ್ಲಿ ಕಾಣಿಸುತ್ತವೆ."
+    "empty_label": "ನೀವು ಖರ್ಚು ಮಾಡಲು ಪ್ರಾರಂಭಿಸಿದ ನಂತರ ನಿಮ್ಮ ಪಾವತಿಗಳು ಇಲ್ಲಿ ಕಾಣಿಸುತ್ತವೆ.",
+    "recent_transactions": "ಇತ್ತೀಚಿನ ವಹಿವಾಟುಗಳು",
+    "search_placeholder": "UTR, ವಹಿವಾಟು ID, ಉಲ್ಲೇಖ ಅಥವಾ ಪಾಲುದಾರರಿಂದ ಹುಡುಕಿ…",
+    "detail_title": "ವಹಿವಾಟು ವಿವರಗಳು",
+    "not_found": "ವಹಿವಾಟು ಸಿಗಲಿಲ್ಲ",
+    "no_results": "ಹೊಂದಾಣಿಕೆಯ ವಹಿವಾಟು ಇಲ್ಲ",
+    "try_adjusting": "ಫಿಲ್ಟರ್ ಅಥವಾ ಹುಡುಕಾಟವನ್ನು ಬದಲಾಯಿಸಿ ನೋಡಿ.",
+    "sort_by": "ವಿಂಗಡಿಸಿ",
+    "copy": "ನಕಲಿಸಿ",
+    "copied": "ಕ್ಲಿಪ್‌ಬೋರ್ಡ್‌ಗೆ ನಕಲಿಸಲಾಗಿದೆ",
+    "utr_number": "UTR ಸಂಖ್ಯೆ",
+    "transaction_id": "ವಹಿವಾಟು ID",
+    "reference": "ಇನ್‌ವಾಯ್ಸ್ ಉಲ್ಲೇಖ",
+    "type": "ವಹಿವಾಟು ಪ್ರಕಾರ",
+    "partner": "ಫೈನಾನ್ಸಿಂಗ್ ಪಾಲುದಾರ",
+    "invoice_amount": "ಇನ್‌ವಾಯ್ಸ್ ಮೊತ್ತ",
+    "financed_amount": "ಹಣಕಾಸು ಒದಗಿಸಿದ ಮೊತ್ತ",
+    "financing_fee": "ಫೈನಾನ್ಸಿಂಗ್ ಶುಲ್ಕ",
+    "date_time": "ವಹಿವಾಟು ದಿನಾಂಕ ಮತ್ತು ಸಮಯ",
+    "credited_to": "ಜಮೆ ಮಾಡಲಾಗಿದೆ",
+    "charges_interest": "ಶುಲ್ಕಗಳು ಮತ್ತು ಬಡ್ಡಿ",
+    "remarks": "ಟಿಪ್ಪಣಿಗಳು",
+    "download_receipt": "ರಸೀದಿ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ",
+    "need_help": "ಸಹಾಯ ಬೇಕು",
+    "filters": {
+      "all": "ಎಲ್ಲಾ",
+      "inflow": "ಒಳಹರಿವು",
+      "outflow": "ಹೊರಹರಿವು",
+      "loans": "ಸಾಲಗಳು",
+      "charges": "ಶುಲ್ಕಗಳು",
+      "repayments": "ಮರುಪಾವತಿಗಳು"
+    },
+    "sort": {
+      "recent": "ಇತ್ತೀಚಿನವು",
+      "oldest": "ಹಳೆಯವು",
+      "amount_high": "ಮೊತ್ತ: ಹೆಚ್ಚಿನಿಂದ ಕಡಿಮೆ",
+      "amount_low": "ಮೊತ್ತ: ಕಡಿಮೆಯಿಂದ ಹೆಚ್ಚು"
+    },
+    "status": {
+      "credited": "ಜಮೆ",
+      "debited": "ಡೆಬಿಟ್",
+      "pending": "ಬಾಕಿ",
+      "failed": "ವಿಫಲ"
+    },
+    "available_limit": "ಲಭ್ಯ ಮಿತಿ",
+    "used_limit": "ಬಳಸಿದ ಮಿತಿ",
+    "of_total": "{{amount}} ರಲ್ಲಿ",
+    "cash_flow": "ಕ್ಯಾಶ್ ಫ್ಲೋ",
+    "inflow": "ಒಳಹರಿವು",
+    "outflow": "ಹೊರಹರಿವು",
+    "filter": "ಫಿಲ್ಟರ್",
+    "filter_by": "ಇದರ ಪ್ರಕಾರ ಫಿಲ್ಟರ್ ಮಾಡಿ",
+    "last_3_months": "(ಕಳೆದ 3 ತಿಂಗಳು)",
+    "today": "ಇಂದು",
+    "yesterday": "ನಿನ್ನೆ",
+    "amount": "ಮೊತ್ತ",
+    "chart": {
+      "weekdays": [
+        "ಸೋಮ",
+        "ಮಂಗಳ",
+        "ಬುಧ",
+        "ಗುರು",
+        "ಶುಕ್ರ",
+        "ಶನಿ",
+        "ಭಾನು"
+      ],
+      "time": {
+        "morning": "ಬೆಳಿಗ್ಗೆ 9",
+        "noon": "ಮಧ್ಯಾಹ್ನ 12",
+        "afternoon": "ಮಧ್ಯಾಹ್ನ 3",
+        "evening": "ಸಂಜೆ 6"
+      },
+      "week": "ವಾರ {{n}}"
+    },
+    "downloading": "ರಸೀದಿ ಸಿದ್ಧವಾಗುತ್ತಿದೆ…",
+    "receipt_downloaded_title": "ರಸೀದಿ ಡೌನ್‌ಲೋಡ್ ಆಗಿದೆ",
+    "receipt_downloaded_body": "{{reference}} ಗಾಗಿ ನಿಮ್ಮ ರಸೀದಿ ಯಶಸ್ವಿಯಾಗಿ ಉಳಿಸಲಾಗಿದೆ.",
+    "saved_to_downloads": "{{name}} ಡೌನ್‌ಲೋಡ್‌ಗಳಲ್ಲಿ ಉಳಿಸಲಾಗಿದೆ",
+    "receipt": "ರಸೀದಿ",
+    "soa": "SOA"
   },
   "offers": {
     "title": "ಸಾಲ ಆಫರ್‌ಗಳು",
     "coming_soon": "ಆಫರ್‌ಗಳು ಶೀಘ್ರದಲ್ಲೇ ಬರುತ್ತಿವೆ",
     "section": {
-      "loan_offers": { "title": "ಸಾಲ ಆಫರ್‌ಗಳು", "subtitle": "ಪೂರ್ವ-ಅನುಮೋದಿತ ಆಫರ್‌ಗಳನ್ನು ಪಡೆಯಿರಿ" },
-      "track_applications": { "title": "ಅರ್ಜಿಗಳನ್ನು ಟ್ರ್ಯಾಕ್ ಮಾಡಿ", "subtitle": "ನಿಮ್ಮ ಅರ್ಜಿ ಸ್ಥಿತಿಯನ್ನು ಪರಿಶೀಲಿಸಿ" }
+      "loan_offers": {
+        "title": "ಸಾಲ ಆಫರ್‌ಗಳು",
+        "subtitle": "ಪೂರ್ವ-ಅನುಮೋದಿತ ಆಫರ್‌ಗಳನ್ನು ಪಡೆಯಿರಿ"
+      },
+      "track_applications": {
+        "title": "ಅರ್ಜಿಗಳನ್ನು ಟ್ರ್ಯಾಕ್ ಮಾಡಿ",
+        "subtitle": "ನಿಮ್ಮ ಅರ್ಜಿ ಸ್ಥಿತಿಯನ್ನು ಪರಿಶೀಲಿಸಿ"
+      }
     },
     "loan_offers_title": "ಸಾಲ ಆಫರ್‌ಗಳು",
     "loan_categories_title": "ಸಾಲ ವರ್ಗಗಳು",
@@ -557,8 +661,19 @@
       "applied_on": "{{date}} ರಂದು ಅರ್ಜಿ ಸಲ್ಲಿಸಲಾಗಿದೆ",
       "empty_title": "ಇನ್ನೂ ಯಾವುದೇ ಅರ್ಜಿಗಳಿಲ್ಲ",
       "empty_subtitle": "ನೀವು ಅರ್ಜಿ ಸಲ್ಲಿಸಿದ ನಂತರ ನಿಮ್ಮ ಸಾಲ ಅರ್ಜಿಗಳು ಇಲ್ಲಿ ಕಾಣಿಸುತ್ತವೆ.",
-      "filter": { "all": "ಎಲ್ಲಾ", "under_review": "ಪರಿಶೀಲನೆಯಲ್ಲಿ", "approved": "ಅನುಮೋದಿತ", "rejected": "ತಿರಸ್ಕೃತ", "disbursed": "ವಿತರಿಸಲಾಗಿದೆ" },
-      "status": { "under_review": "ಪರಿಶೀಲನೆಯಲ್ಲಿ", "approved": "ಅನುಮೋದಿತ", "rejected": "ತಿರಸ್ಕೃತ", "disbursed": "ವಿತರಿಸಲಾಗಿದೆ" }
+      "filter": {
+        "all": "ಎಲ್ಲಾ",
+        "under_review": "ಪರಿಶೀಲನೆಯಲ್ಲಿ",
+        "approved": "ಅನುಮೋದಿತ",
+        "rejected": "ತಿರಸ್ಕೃತ",
+        "disbursed": "ವಿತರಿಸಲಾಗಿದೆ"
+      },
+      "status": {
+        "under_review": "ಪರಿಶೀಲನೆಯಲ್ಲಿ",
+        "approved": "ಅನುಮೋದಿತ",
+        "rejected": "ತಿರಸ್ಕೃತ",
+        "disbursed": "ವಿತರಿಸಲಾಗಿದೆ"
+      }
     },
     "categories": {
       "all": "ಎಲ್ಲಾ",

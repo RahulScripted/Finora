@@ -22,7 +22,20 @@
     "theme_system": "सिस्टम",
     "theme_light": "लाइट",
     "theme_dark": "डार्क",
-    "months": ["जन", "फ़र", "मार्च", "अप्रैल", "मई", "जून", "जुल", "अग", "सित", "अक्तू", "नव", "दिस"]
+    "months": [
+      "जन",
+      "फ़र",
+      "मार्च",
+      "अप्रैल",
+      "मई",
+      "जून",
+      "जुल",
+      "अग",
+      "सित",
+      "अक्तू",
+      "नव",
+      "दिस"
+    ]
   },
   "home": {
     "greeting_morning": "सुप्रभात",
@@ -44,12 +57,18 @@
         "label": "व्यक्तिगत",
         "subtitle": "आपकी व्यक्तिगत जानकारी"
       },
-      "company": { "label": "कंपनी", "subtitle": "व्यावसायिक जानकारी" },
+      "company": {
+        "label": "कंपनी",
+        "subtitle": "व्यावसायिक जानकारी"
+      },
       "documents": {
         "label": "दस्तावेज़",
         "subtitle": "अपलोड किए गए दस्तावेज़"
       },
-      "settings": { "label": "सेटिंग्स", "subtitle": "ऐप प्राथमिकताएं" },
+      "settings": {
+        "label": "सेटिंग्स",
+        "subtitle": "ऐप प्राथमिकताएं"
+      },
       "privacyPolicy": {
         "label": "गोपनीयता नीति",
         "subtitle": "हम आपके डेटा को कैसे संभालते हैं"
@@ -517,9 +536,9 @@
     "due_later_other": "{{count}} दिनों में",
     "recent_payments": "हाल के भुगतान",
     "see_all": "सभी देखें",
-    "download_statement": "स्टेटमेंट डाउनलोड करें",
-    "statement_title": "स्टेटमेंट डाउनलोड करें",
-    "statement_subtitle": "निर्यात के लिए अवधि चुनें",
+    "download_statement": "SOA डाउनलोड करें",
+    "statement_title": "SOA डाउनलोड करें",
+    "statement_subtitle": "खाता विवरण — निर्यात के लिए अवधि चुनें",
     "range_1m": "पिछला 1 माह",
     "range_3m": "पिछले 3 माह",
     "range_6m": "पिछले 6 माह",
@@ -537,14 +556,99 @@
     "count_one": "{{count}} लेन-देन",
     "count_other": "{{count}} लेन-देन",
     "empty_title": "अभी कोई लेन-देन नहीं",
-    "empty_label": "खर्च शुरू करने के बाद आपके भुगतान यहाँ दिखेंगे।"
+    "empty_label": "खर्च शुरू करने के बाद आपके भुगतान यहाँ दिखेंगे।",
+    "recent_transactions": "हाल के लेन-देन",
+    "search_placeholder": "UTR, ट्रांज़ैक्शन ID, रेफरेंस या पार्टनर से खोजें…",
+    "detail_title": "लेन-देन विवरण",
+    "not_found": "लेन-देन नहीं मिला",
+    "no_results": "कोई मेल खाता लेन-देन नहीं",
+    "try_adjusting": "फ़िल्टर या खोज बदलकर देखें।",
+    "sort_by": "क्रमबद्ध करें",
+    "copy": "कॉपी",
+    "copied": "क्लिपबोर्ड पर कॉपी किया गया",
+    "utr_number": "UTR नंबर",
+    "transaction_id": "ट्रांज़ैक्शन ID",
+    "reference": "इनवॉइस रेफरेंस",
+    "type": "लेन-देन का प्रकार",
+    "partner": "फाइनेंसिंग पार्टनर",
+    "invoice_amount": "इनवॉइस राशि",
+    "financed_amount": "वित्तपोषित राशि",
+    "financing_fee": "फाइनेंसिंग शुल्क",
+    "date_time": "लेन-देन की तारीख और समय",
+    "credited_to": "यहाँ जमा",
+    "charges_interest": "शुल्क और ब्याज",
+    "remarks": "टिप्पणियाँ",
+    "download_receipt": "रसीद डाउनलोड करें",
+    "need_help": "मदद चाहिए",
+    "filters": {
+      "all": "सभी",
+      "inflow": "आवक",
+      "outflow": "जावक",
+      "loans": "ऋण",
+      "charges": "शुल्क",
+      "repayments": "पुनर्भुगतान"
+    },
+    "sort": {
+      "recent": "सबसे नया",
+      "oldest": "सबसे पुराना",
+      "amount_high": "राशि: अधिक से कम",
+      "amount_low": "राशि: कम से अधिक"
+    },
+    "status": {
+      "credited": "जमा",
+      "debited": "नामे",
+      "pending": "लंबित",
+      "failed": "विफल"
+    },
+    "available_limit": "उपलब्ध सीमा",
+    "used_limit": "उपयोग की गई सीमा",
+    "of_total": "{{amount}} में से",
+    "cash_flow": "कैश फ्लो",
+    "inflow": "आवक",
+    "outflow": "जावक",
+    "filter": "फ़िल्टर",
+    "filter_by": "इसके अनुसार फ़िल्टर करें",
+    "last_3_months": "(पिछले 3 महीने)",
+    "today": "आज",
+    "yesterday": "कल",
+    "amount": "राशि",
+    "chart": {
+      "weekdays": [
+        "सोम",
+        "मंगल",
+        "बुध",
+        "गुरु",
+        "शुक्र",
+        "शनि",
+        "रवि"
+      ],
+      "time": {
+        "morning": "सुबह 9",
+        "noon": "दोपहर 12",
+        "afternoon": "दोपहर 3",
+        "evening": "शाम 6"
+      },
+      "week": "सप्ताह {{n}}"
+    },
+    "downloading": "रसीद तैयार हो रही है…",
+    "receipt_downloaded_title": "रसीद डाउनलोड हो गई",
+    "receipt_downloaded_body": "{{reference}} की आपकी रसीद सफलतापूर्वक सहेजी गई।",
+    "saved_to_downloads": "{{name}} डाउनलोड में सहेजा गया",
+    "receipt": "रसीद",
+    "soa": "SOA"
   },
   "offers": {
     "title": "लोन ऑफर",
     "coming_soon": "ऑफर जल्द आ रहे हैं",
     "section": {
-      "loan_offers": { "title": "लोन ऑफर", "subtitle": "प्री-अप्रूव्ड ऑफर पाएं" },
-      "track_applications": { "title": "आवेदन ट्रैक करें", "subtitle": "अपने आवेदन की स्थिति देखें" }
+      "loan_offers": {
+        "title": "लोन ऑफर",
+        "subtitle": "प्री-अप्रूव्ड ऑफर पाएं"
+      },
+      "track_applications": {
+        "title": "आवेदन ट्रैक करें",
+        "subtitle": "अपने आवेदन की स्थिति देखें"
+      }
     },
     "loan_offers_title": "लोन ऑफर",
     "loan_categories_title": "लोन श्रेणियाँ",
@@ -557,8 +661,19 @@
       "applied_on": "{{date}} को आवेदन किया",
       "empty_title": "अभी कोई आवेदन नहीं",
       "empty_subtitle": "आवेदन करने के बाद आपके लोन आवेदन यहाँ दिखेंगे।",
-      "filter": { "all": "सभी", "under_review": "समीक्षा में", "approved": "स्वीकृत", "rejected": "अस्वीकृत", "disbursed": "वितरित" },
-      "status": { "under_review": "समीक्षा में", "approved": "स्वीकृत", "rejected": "अस्वीकृत", "disbursed": "वितरित" }
+      "filter": {
+        "all": "सभी",
+        "under_review": "समीक्षा में",
+        "approved": "स्वीकृत",
+        "rejected": "अस्वीकृत",
+        "disbursed": "वितरित"
+      },
+      "status": {
+        "under_review": "समीक्षा में",
+        "approved": "स्वीकृत",
+        "rejected": "अस्वीकृत",
+        "disbursed": "वितरित"
+      }
     },
     "categories": {
       "all": "सभी",

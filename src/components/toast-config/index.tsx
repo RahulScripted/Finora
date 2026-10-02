@@ -5,6 +5,19 @@ import type { ToastConfig } from "react-native-toast-message";
 import { LightColors } from "@context/Theme/ThemeContext";
 const C = LightColors;
 
+/** Compact, centered pill that mimics the Android native toast (used on iOS). */
+function PillToast({ text1 }: { text1?: string }) {
+  return (
+    <View style={s.pillWrap} pointerEvents="none">
+      <View style={s.pill}>
+        <Text style={s.pillText} numberOfLines={2}>
+          {text1}
+        </Text>
+      </View>
+    </View>
+  );
+}
+
 type NotifProps = {
   text1?: string;
   text2?: string;
@@ -59,6 +72,7 @@ export const toastConfig: ToastConfig = {
       iconColor={C.info}
     />
   ),
+  pill: ({ text1 }) => <PillToast text1={text1} />,
 };
 
 const s = StyleSheet.create({
@@ -108,5 +122,20 @@ const s = StyleSheet.create({
     fontSize: 12,
     color: "#686B72",
     lineHeight: 17,
+  },
+  // Android-style pill (shown on iOS)
+  pillWrap: { flex: 1, alignItems: "center", justifyContent: "flex-end" },
+  pill: {
+    maxWidth: "88%",
+    backgroundColor: "rgba(30,32,36,0.95)",
+    paddingHorizontal: 18,
+    paddingVertical: 11,
+    borderRadius: 22,
+  },
+  pillText: {
+    fontSize: 13,
+    fontWeight: "500",
+    color: "#FFFFFF",
+    textAlign: "center",
   },
 });

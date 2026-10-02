@@ -23,7 +23,20 @@
     "theme_system": "System",
     "theme_light": "Light",
     "theme_dark": "Dark",
-    "months": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    "months": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec"
+    ]
   },
   "home": {
     "greeting_morning": "Good morning",
@@ -41,10 +54,22 @@
       "benefits": "Benefits"
     },
     "items": {
-      "personal": { "label": "Personal", "subtitle": "Your personal details" },
-      "company": { "label": "Company", "subtitle": "Business information" },
-      "documents": { "label": "Documents", "subtitle": "Uploaded documents" },
-      "settings": { "label": "Settings", "subtitle": "App preferences" },
+      "personal": {
+        "label": "Personal",
+        "subtitle": "Your personal details"
+      },
+      "company": {
+        "label": "Company",
+        "subtitle": "Business information"
+      },
+      "documents": {
+        "label": "Documents",
+        "subtitle": "Uploaded documents"
+      },
+      "settings": {
+        "label": "Settings",
+        "subtitle": "App preferences"
+      },
       "privacyPolicy": {
         "label": "Privacy Policy",
         "subtitle": "How we handle your data"
@@ -512,9 +537,9 @@
     "due_later_other": "In {{count}} days",
     "recent_payments": "Recent payments",
     "see_all": "See all",
-    "download_statement": "Download statement",
-    "statement_title": "Download statement",
-    "statement_subtitle": "Choose a period to export",
+    "download_statement": "Download SOA",
+    "statement_title": "Download SOA",
+    "statement_subtitle": "Statement of Accounts — choose a period to export",
     "range_1m": "Last 1 month",
     "range_3m": "Last 3 months",
     "range_6m": "Last 6 months",
@@ -532,7 +557,86 @@
     "count_one": "{{count}} transaction",
     "count_other": "{{count}} transactions",
     "empty_title": "No transactions yet",
-    "empty_label": "Your payments will show up here once you start spending."
+    "empty_label": "Your payments will show up here once you start spending.",
+    "recent_transactions": "Recent Transactions",
+    "search_placeholder": "Search by UTR, transaction ID, reference or partner…",
+    "detail_title": "Transaction Details",
+    "not_found": "Transaction not found",
+    "no_results": "No matching transactions",
+    "try_adjusting": "Try adjusting your filters or search.",
+    "sort_by": "Sort by",
+    "copy": "Copy",
+    "copied": "Copied to clipboard",
+    "utr_number": "UTR Number",
+    "transaction_id": "Transaction ID",
+    "reference": "Invoice Reference",
+    "type": "Transaction Type",
+    "partner": "Financing Partner",
+    "invoice_amount": "Invoice Amount",
+    "financed_amount": "Financed Amount",
+    "financing_fee": "Financing Fee",
+    "date_time": "Transaction Date & Time",
+    "credited_to": "Credited To",
+    "charges_interest": "Charges & Interest",
+    "remarks": "Remarks",
+    "download_receipt": "Download Receipt",
+    "need_help": "Need Help",
+    "filters": {
+      "all": "All",
+      "inflow": "Inflow",
+      "outflow": "Outflow",
+      "loans": "Loans",
+      "charges": "Charges",
+      "repayments": "Repayments"
+    },
+    "sort": {
+      "recent": "Most Recent",
+      "oldest": "Oldest First",
+      "amount_high": "Amount: High to Low",
+      "amount_low": "Amount: Low to High"
+    },
+    "status": {
+      "credited": "Credited",
+      "debited": "Debited",
+      "pending": "Pending",
+      "failed": "Failed"
+    },
+    "available_limit": "Available Limit",
+    "used_limit": "Used Limit",
+    "of_total": "of {{amount}}",
+    "cash_flow": "Cash Flow",
+    "inflow": "Inflow",
+    "outflow": "Outflow",
+    "filter": "Filter",
+    "filter_by": "Filter by",
+    "last_3_months": "(Last 3 Months)",
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "amount": "Amount",
+    "chart": {
+      "weekdays": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat",
+        "Sun"
+      ],
+      "time": {
+        "morning": "9 AM",
+        "noon": "12 PM",
+        "afternoon": "3 PM",
+        "evening": "6 PM"
+      },
+      "week": "Week {{n}}"
+    },
+    "downloading": "Preparing receipt…",
+    "receipt_downloaded_title": "Receipt downloaded",
+    "receipt_downloaded_body": "Your receipt for {{reference}} has been saved successfully.",
+    "saved_to_downloads": "{{name}} saved to Downloads",
+    "receipt": "Receipt",
+    "soa": "SOA"
   },
   "offers": {
     "title": "Offers",

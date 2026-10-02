@@ -42,6 +42,7 @@ import UpdateContactScreen from "@screens/profile/update-contact";
 import TrackSpendScreen from "@screens/track-spend";
 import CreditScoreScreen from "@screens/credit-score";
 import PaymentHistoryScreen from "@screens/payment-history";
+import TransactionDetailScreen from "@screens/payment-history/detail";
 import BusinessPartnersScreen from "@screens/business-partners";
 import BusinessPartnerDetailScreen from "@screens/business-partners/detail";
 import SupportScreen from "@screens/profile/support";
@@ -201,6 +202,7 @@ export default function AppRoutes() {
           <Tab.Screen name="track-spends" component={TrackSpendScreen} options={HIDDEN_TAB} />
           <Tab.Screen name="credit-score" component={CreditScoreScreen} options={HIDDEN_TAB} />
           <Tab.Screen name="payment-history" component={PaymentHistoryScreen} options={HIDDEN_TAB} />
+          <Tab.Screen name="transaction-detail" component={TransactionDetailScreen} options={HIDDEN_TAB} />
           <Tab.Screen name="offer-list" component={OfferListScreen} options={HIDDEN_TAB} />
           <Tab.Screen name="offer-applications" component={OfferApplicationsScreen} options={HIDDEN_TAB} />
           <Tab.Screen name="offer-detail" component={OfferDetailScreen} options={HIDDEN_TAB} />

@@ -155,20 +155,14 @@ function SelectRow({ active, icon, label, onPress }: RowProps) {
       onPress={onPress}
       accessibilityRole="radio"
       accessibilityState={{ selected: active }}
-      style={[
-        s.row,
-        {
-          borderColor: active ? colors.accent : colors.border,
-          backgroundColor: active ? colors.accent + "12" : "transparent",
-        },
-      ]}
+      style={({ pressed }) => [s.row, pressed && s.pressed]}
     >
       <MaterialCommunityIcons
         name={icon as any}
         size={20}
         color={active ? colors.accent : colors.textSecondary}
       />
-      <Text style={[s.rowLabel, { color: colors.textPrimary }]}>{label}</Text>
+      <Text style={[s.rowLabel, { color: active ? colors.accent : colors.textPrimary }]}>{label}</Text>
       <MaterialCommunityIcons
         name={active ? "radiobox-marked" : "radiobox-blank"}
         size={20}
@@ -184,11 +178,9 @@ const s = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     gap: 12,
-    paddingVertical: 14,
-    paddingHorizontal: 14,
-    borderRadius: 14,
-    borderWidth: StyleSheet.hairlineWidth,
-    marginBottom: 10,
+    paddingVertical: 15,
+    paddingHorizontal: 4,
   },
-  rowLabel: { flex: 1, fontSize: 14, fontWeight: "600" },
+  pressed: { opacity: 0.6 },
+  rowLabel: { flex: 1, fontSize: 15, fontWeight: "600" },
 });

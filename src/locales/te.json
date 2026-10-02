@@ -22,7 +22,20 @@
     "theme_system": "సిస్టమ్",
     "theme_light": "లైట్",
     "theme_dark": "డార్క్",
-    "months": ["జన", "ఫిబ్ర", "మార్చి", "ఏప్రి", "మే", "జూన్", "జులై", "ఆగ", "సెప్టెం", "అక్టో", "నవం", "డిసెం"]
+    "months": [
+      "జన",
+      "ఫిబ్ర",
+      "మార్చి",
+      "ఏప్రి",
+      "మే",
+      "జూన్",
+      "జులై",
+      "ఆగ",
+      "సెప్టెం",
+      "అక్టో",
+      "నవం",
+      "డిసెం"
+    ]
   },
   "home": {
     "greeting_morning": "శుభోదయం",
@@ -40,10 +53,22 @@
       "benefits": "ప్రయోజనాలు"
     },
     "items": {
-      "personal": { "label": "వ్యక్తిగత", "subtitle": "మీ వ్యక్తిగత వివరాలు" },
-      "company": { "label": "కంపెనీ", "subtitle": "వ్యాపార సమాచారం" },
-      "documents": { "label": "పత్రాలు", "subtitle": "అప్‌లోడ్ చేసిన పత్రాలు" },
-      "settings": { "label": "సెట్టింగ్‌లు", "subtitle": "యాప్ ప్రాధాన్యతలు" },
+      "personal": {
+        "label": "వ్యక్తిగత",
+        "subtitle": "మీ వ్యక్తిగత వివరాలు"
+      },
+      "company": {
+        "label": "కంపెనీ",
+        "subtitle": "వ్యాపార సమాచారం"
+      },
+      "documents": {
+        "label": "పత్రాలు",
+        "subtitle": "అప్‌లోడ్ చేసిన పత్రాలు"
+      },
+      "settings": {
+        "label": "సెట్టింగ్‌లు",
+        "subtitle": "యాప్ ప్రాధాన్యతలు"
+      },
       "privacyPolicy": {
         "label": "గోప్యతా విధానం",
         "subtitle": "మేము మీ డేటాను ఎలా నిర్వహిస్తాము"
@@ -511,9 +536,9 @@
     "due_later_other": "{{count}} రోజుల్లో",
     "recent_payments": "ఇటీవలి చెల్లింపులు",
     "see_all": "అన్నీ చూడండి",
-    "download_statement": "స్టేట్‌మెంట్ డౌన్‌లోడ్ చేయండి",
-    "statement_title": "స్టేట్‌మెంట్ డౌన్‌లోడ్ చేయండి",
-    "statement_subtitle": "ఎగుమతి కోసం వ్యవధిని ఎంచుకోండి",
+    "download_statement": "SOA డౌన్‌లోడ్ చేయండి",
+    "statement_title": "SOA డౌన్‌లోడ్ చేయండి",
+    "statement_subtitle": "ఖాతా వివరణ — ఎగుమతి కోసం వ్యవధిని ఎంచుకోండి",
     "range_1m": "గత 1 నెల",
     "range_3m": "గత 3 నెలలు",
     "range_6m": "గత 6 నెలలు",
@@ -531,14 +556,99 @@
     "count_one": "{{count}} లావాదేవీ",
     "count_other": "{{count}} లావాదేవీలు",
     "empty_title": "ఇంకా లావాదేవీలు లేవు",
-    "empty_label": "మీరు ఖర్చు చేయడం ప్రారంభించిన తర్వాత మీ చెల్లింపులు ఇక్కడ కనిపిస్తాయి."
+    "empty_label": "మీరు ఖర్చు చేయడం ప్రారంభించిన తర్వాత మీ చెల్లింపులు ఇక్కడ కనిపిస్తాయి.",
+    "recent_transactions": "ఇటీవలి లావాదేవీలు",
+    "search_placeholder": "UTR, లావాదేవీ ID, రిఫరెన్స్ లేదా భాగస్వామి ద్వారా వెతకండి…",
+    "detail_title": "లావాదేవీ వివరాలు",
+    "not_found": "లావాదేవీ కనబడలేదు",
+    "no_results": "సరిపోలే లావాదేవీ లేదు",
+    "try_adjusting": "ఫిల్టర్లు లేదా శోధనను మార్చి చూడండి.",
+    "sort_by": "క్రమబద్ధీకరించు",
+    "copy": "కాపీ",
+    "copied": "క్లిప్‌బోర్డ్‌కు కాపీ చేయబడింది",
+    "utr_number": "UTR నంబర్",
+    "transaction_id": "లావాదేవీ ID",
+    "reference": "ఇన్వాయిస్ రిఫరెన్స్",
+    "type": "లావాదేవీ రకం",
+    "partner": "ఫైనాన్సింగ్ భాగస్వామి",
+    "invoice_amount": "ఇన్వాయిస్ మొత్తం",
+    "financed_amount": "ఫైనాన్స్ చేసిన మొత్తం",
+    "financing_fee": "ఫైనాన్సింగ్ ఫీజు",
+    "date_time": "లావాదేవీ తేదీ & సమయం",
+    "credited_to": "జమ చేయబడింది",
+    "charges_interest": "ఛార్జీలు & వడ్డీ",
+    "remarks": "వ్యాఖ్యలు",
+    "download_receipt": "రసీదు డౌన్‌లోడ్ చేయండి",
+    "need_help": "సహాయం కావాలి",
+    "filters": {
+      "all": "అన్నీ",
+      "inflow": "రాక",
+      "outflow": "పోక",
+      "loans": "రుణాలు",
+      "charges": "ఛార్జీలు",
+      "repayments": "తిరిగి చెల్లింపులు"
+    },
+    "sort": {
+      "recent": "ఇటీవలివి",
+      "oldest": "పాతవి",
+      "amount_high": "మొత్తం: ఎక్కువ నుండి తక్కువ",
+      "amount_low": "మొత్తం: తక్కువ నుండి ఎక్కువ"
+    },
+    "status": {
+      "credited": "జమ",
+      "debited": "డెబిట్",
+      "pending": "పెండింగ్",
+      "failed": "విఫలం"
+    },
+    "available_limit": "అందుబాటులో ఉన్న పరిమితి",
+    "used_limit": "వాడిన పరిమితి",
+    "of_total": "{{amount}} లో",
+    "cash_flow": "క్యాష్ ఫ్లో",
+    "inflow": "రాక",
+    "outflow": "పోక",
+    "filter": "ఫిల్టర్",
+    "filter_by": "దీని ద్వారా ఫిల్టర్ చేయండి",
+    "last_3_months": "(గత 3 నెలలు)",
+    "today": "ఈ రోజు",
+    "yesterday": "నిన్న",
+    "amount": "మొత్తం",
+    "chart": {
+      "weekdays": [
+        "సోమ",
+        "మంగళ",
+        "బుధ",
+        "గురు",
+        "శుక్ర",
+        "శని",
+        "ఆది"
+      ],
+      "time": {
+        "morning": "ఉదయం 9",
+        "noon": "మధ్యాహ్నం 12",
+        "afternoon": "మధ్యాహ్నం 3",
+        "evening": "సాయంత్రం 6"
+      },
+      "week": "వారం {{n}}"
+    },
+    "downloading": "రసీదు సిద్ధమవుతోంది…",
+    "receipt_downloaded_title": "రసీదు డౌన్‌లోడ్ అయింది",
+    "receipt_downloaded_body": "{{reference}} కోసం మీ రసీదు విజయవంతంగా సేవ్ చేయబడింది.",
+    "saved_to_downloads": "{{name}} డౌన్‌లోడ్‌లలో సేవ్ చేయబడింది",
+    "receipt": "రసీదు",
+    "soa": "SOA"
   },
   "offers": {
     "title": "రుణ ఆఫర్లు",
     "coming_soon": "ఆఫర్లు త్వరలో వస్తున్నాయి",
     "section": {
-      "loan_offers": { "title": "రుణ ఆఫర్లు", "subtitle": "ముందస్తు ఆమోదిత ఆఫర్లను పొందండి" },
-      "track_applications": { "title": "దరఖాస్తులను ట్రాక్ చేయండి", "subtitle": "మీ దరఖాస్తు స్థితిని తనిఖీ చేయండి" }
+      "loan_offers": {
+        "title": "రుణ ఆఫర్లు",
+        "subtitle": "ముందస్తు ఆమోదిత ఆఫర్లను పొందండి"
+      },
+      "track_applications": {
+        "title": "దరఖాస్తులను ట్రాక్ చేయండి",
+        "subtitle": "మీ దరఖాస్తు స్థితిని తనిఖీ చేయండి"
+      }
     },
     "loan_offers_title": "రుణ ఆఫర్లు",
     "loan_categories_title": "రుణ వర్గాలు",
@@ -551,8 +661,19 @@
       "applied_on": "{{date}} న దరఖాస్తు చేశారు",
       "empty_title": "ఇంకా దరఖాస్తులు లేవు",
       "empty_subtitle": "మీరు దరఖాస్తు చేసిన తర్వాత మీ రుణ దరఖాస్తులు ఇక్కడ కనిపిస్తాయి.",
-      "filter": { "all": "అన్నీ", "under_review": "సమీక్షలో", "approved": "ఆమోదించబడింది", "rejected": "తిరస్కరించబడింది", "disbursed": "పంపిణీ చేయబడింది" },
-      "status": { "under_review": "సమీక్షలో", "approved": "ఆమోదించబడింది", "rejected": "తిరస్కరించబడింది", "disbursed": "పంపిణీ చేయబడింది" }
+      "filter": {
+        "all": "అన్నీ",
+        "under_review": "సమీక్షలో",
+        "approved": "ఆమోదించబడింది",
+        "rejected": "తిరస్కరించబడింది",
+        "disbursed": "పంపిణీ చేయబడింది"
+      },
+      "status": {
+        "under_review": "సమీక్షలో",
+        "approved": "ఆమోదించబడింది",
+        "rejected": "తిరస్కరించబడింది",
+        "disbursed": "పంపిణీ చేయబడింది"
+      }
     },
     "categories": {
       "all": "అన్నీ",
