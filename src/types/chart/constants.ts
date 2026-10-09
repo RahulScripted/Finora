@@ -92,3 +92,48 @@ export type SparklineProps = {
   width?: number;
   height?: number;
 };
+
+/* ------------------------------------------------------------------ */
+/* Pie panel (donut + legend breakdown, shared across features)        */
+/* ------------------------------------------------------------------ */
+export type PieSlice = {
+  /** Display name / legend label. */
+  name: string;
+  value: number;
+  color: string;
+};
+
+export type PiePanelProps = {
+  /** Slices to render; values are summed for the aggregate. */
+  data: PieSlice[];
+  /** Optional card title. */
+  title?: string;
+  /** Optional caption under the title. */
+  subtitle?: string;
+  /** Center + fallback legend label for the aggregate value. */
+  totalLabel?: string;
+  /** Format a slice / total value for display. Defaults to the raw number. */
+  format?: (value: number) => string;
+  /** Donut diameter in px. */
+  size?: number;
+  /** Ring thickness in px. */
+  stroke?: number;
+  /** Hide the legend breakdown (donut only). */
+  hideLegend?: boolean;
+  /** Render inside a bordered card (default) or bare. */
+  bare?: boolean;
+  /** Donut + legend stacked vertically (default) or placed side by side. */
+  layout?: "vertical" | "horizontal";
+  /**
+   * How each legend row's trailing value is derived.
+   *  - "value" (default) → formatted slice value
+   *  - "pct"             → percentage of the total
+   */
+  legendValue?: "value" | "pct";
+  /** Format a percentage for the legend (defaults to "{n}%"). */
+  formatPct?: (pct: number) => string;
+  /** Center value override (defaults to the aggregate / active slice value). */
+  centerValue?: React.ReactNode;
+  /** Center label override. */
+  centerLabel?: React.ReactNode;
+};

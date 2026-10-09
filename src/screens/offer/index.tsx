@@ -15,7 +15,6 @@ import HeroBanner from "./components/hero-banner";
 import NeedHelp from "./components/need-help";
 import OfferSectionCards from "./components/section-cards";
 import SectionHeading from "./components/section-heading";
-import WhyChoose from "./components/why-choose";
 
 export default function OffersScreen() {
   const { colors } = useTheme();
@@ -80,8 +79,6 @@ export default function OffersScreen() {
             ))}
           </View>
         </View>
-
-        <WhyChoose />
 
         <NeedHelp onPress={() => navigation.navigate("help-support")} />
       </ScrollView>

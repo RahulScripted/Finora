@@ -94,7 +94,7 @@ export default function OfferListScreen() {
               </View>
             ) : null}
 
-            <CompareBanner />
+            <CompareBanner onPress={() => navigation.navigate("offer-compare")} />
           </>
         )}
       </ScrollView>

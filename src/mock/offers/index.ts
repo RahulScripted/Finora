@@ -3,6 +3,7 @@ import type {
   OfferSectionCard,
   TenureOption,
   ApplicationStatusStep,
+  OfferRateProfile,
 } from "@data-types/offers/constants";
 
 /* ------------------------------------------------------------------ */
@@ -249,3 +250,26 @@ export const LOAN_APPLICATIONS_MOCK: LoanApplication[] = [
     ],
   },
 ];
+
+/* ------------------------------------------------------------------ */
+/* Compare & Calculate — baseline rate / fee per product             */
+/* Pre-fills the calculator; the user can override either value.      */
+/* ------------------------------------------------------------------ */
+export const OFFER_RATE_PROFILES_MOCK: Record<string, OfferRateProfile> = {
+  business_loan: { id: "business_loan", annualRate: 11.5, feePct: 2 },
+  overdraft: { id: "overdraft", annualRate: 12.5, feePct: 1.5 },
+  supply_chain: { id: "supply_chain", annualRate: 9.5, feePct: 1 },
+  purchase_order: { id: "purchase_order", annualRate: 13, feePct: 1.5 },
+  term_loan: { id: "term_loan", annualRate: 10.25, feePct: 2.5 },
+  invoice_discounting: { id: "invoice_discounting", annualRate: 10.8, feePct: 1 },
+};
+
+export function rateProfileFor(offerId: string): OfferRateProfile {
+  return (
+    OFFER_RATE_PROFILES_MOCK[offerId] ?? {
+      id: offerId as OfferRateProfile["id"],
+      annualRate: 12,
+      feePct: 2,
+    }
+  );
+}

@@ -209,3 +209,121 @@ export function computeCost(
 export function formatRupees(value: number): string {
   return "₹" + value.toLocaleString("en-IN");
 }
+
+/* ------------------------------------------------------------------ */
+/* Compare & Calculate — domain types + finance maths                 */
+/* ------------------------------------------------------------------ */
+
+/** The two comparison slots. */
+export type CompareSlot = "A" | "B";
+
+/** Baseline rate/fee for an offer, pre-filled into the calculator. */
+export type OfferRateProfile = {
+  id: OfferId;
+  /** Annual interest rate as a percentage, e.g. 11.5. */
+  annualRate: number;
+  /** Processing fee as a percentage of principal, e.g. 2. */
+  feePct: number;
+};
+
+/** User-editable inputs for one side of the comparison. */
+export type CompareInput = {
+  annualRate: number;
+  feePct: number;
+};
+
+/** Shared loan parameters applied to both offers. */
+export type CompareParams = {
+  principal: number;
+  /** Tenure in months. */
+  months: number;
+};
+
+/** Full computed result for a single offer. */
+export type CompareResult = {
+  /** Equated monthly instalment. */
+  emi: number;
+  annualRate: number;
+  /** Processing fee + GST on the fee. */
+  feePlusGst: number;
+  processingFee: number;
+  gstOnFee: number;
+  /** Total interest paid across the tenure. */
+  totalInterest: number;
+  /** principal + interest + fee + gst. */
+  totalPayable: number;
+  /** Interest grouped into four quarters of the tenure. */
+  interestByQuarter: number[];
+  /** Split of total payable: principal / interest / fees. */
+  split: { principal: number; interest: number; fees: number };
+};
+
+const GST_ON_FEE_PCT = 18;
+
+/**
+ * Standard reducing-balance EMI.
+ * EMI = P·r·(1+r)^n / ((1+r)^n − 1), where r is the monthly rate.
+ */
+export function computeEmi(principal: number, annualRate: number, months: number): number {
+  if (principal <= 0 || months <= 0) return 0;
+  const r = annualRate / 12 / 100;
+  if (r === 0) return Math.round(principal / months);
+  const pow = Math.pow(1 + r, months);
+  return Math.round((principal * r * pow) / (pow - 1));
+}
+
+/**
+ * Full comparison maths for one offer. Interest is derived from the
+ * amortised schedule so it matches the EMI exactly, then bucketed into
+ * four quarters for the chart.
+ */
+export function computeCompare(input: CompareInput, params: CompareParams): CompareResult {
+  const { principal, months } = params;
+  const { annualRate, feePct } = input;
+
+  const emi = computeEmi(principal, annualRate, months);
+  const r = annualRate / 12 / 100;
+
+  // Walk the amortisation schedule to get per-month interest.
+  const monthlyInterest: number[] = [];
+  let balance = principal;
+  for (let m = 0; m < months; m += 1) {
+    const interest = balance * r;
+    const principalPaid = emi - interest;
+    balance = Math.max(0, balance - principalPaid);
+    monthlyInterest.push(interest);
+  }
+
+  const totalInterest = Math.round(monthlyInterest.reduce((a, b) => a + b, 0));
+  const processingFee = Math.round(principal * (feePct / 100));
+  const gstOnFee = Math.round(processingFee * (GST_ON_FEE_PCT / 100));
+  const feePlusGst = processingFee + gstOnFee;
+  const totalPayable = principal + totalInterest + feePlusGst;
+
+  // Bucket monthly interest into four even quarters of the tenure.
+  const interestByQuarter = [0, 0, 0, 0];
+  const perQuarter = months / 4;
+  monthlyInterest.forEach((val, i) => {
+    const q = Math.min(3, Math.floor(i / perQuarter));
+    interestByQuarter[q] += val;
+  });
+
+  return {
+    emi,
+    annualRate,
+    feePlusGst,
+    processingFee,
+    gstOnFee,
+    totalInterest,
+    totalPayable,
+    interestByQuarter: interestByQuarter.map((v) => Math.round(v)),
+    split: { principal, interest: totalInterest, fees: feePlusGst },
+  };
+}
+
+/** Compact lakh/crore formatter for large totals, e.g. 1630000 → "₹16.30 L". */
+export function formatCompact(value: number): string {
+  if (value >= 1_00_00_000) return "₹" + (value / 1_00_00_000).toFixed(2) + " Cr";
+  if (value >= 1_00_000) return "₹" + (value / 1_00_000).toFixed(2) + " L";
+  return "₹" + value.toLocaleString("en-IN");
+}
